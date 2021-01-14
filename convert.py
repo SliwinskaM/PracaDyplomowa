@@ -3,7 +3,7 @@ import pandas as pd
 
 
 # Funkcje przynależności
-################ FUZZY CURVES ##################################
+############## FUZZY CURVES ##################
 def low_curve(score, min_score, max_score):
     # normalize the score to scale 0-1
     score_norm = (score - min_score) / (max_score - min_score)
@@ -37,10 +37,11 @@ def high_curve(score, min_score, max_score):
     return 0
 
 
+# Import i rozmycie danych
 ########### CONVERT ##################
 class Convert:
     def __init__(self):
-        self.r_matrix = []  # np.array([[[np.nan]]])  # np.full((1, 1, 2), np.nan) ##users x products
+        self.r_matrix = []
         self.t_matrix = []
         self.similarity = []
         self.users = np.array([], dtype=str)
@@ -60,7 +61,7 @@ class Convert:
                 r_matrix[user_idx][prod_idx] = [low_curve(score, 1, 5), medium_curve(score, 1, 5), high_curve(score, 1, 5)]
                 continue
 
-            if row['UserId'] not in self.users:  # jakieś bardziej efektywne przeszukiwanie?
+            if row['UserId'] not in self.users:
                 user_idx += 1
                 self.users = np.append(self.users, row['UserId'])
                 r_matrix.append([[np.nan, np.nan, np.nan]] * user_idx)
@@ -74,45 +75,13 @@ class Convert:
             r_matrix[user_idx][prod_idx] = [low_curve(score, 1, 5), medium_curve(score, 1, 5), high_curve(score, 1, 5)]
 
         self.r_matrix = np.array(r_matrix, dtype=object)
-        # print('u')
-        # print(len(self.users))
-        # print(len(self.products))
-        # print(len(self.r_matrix))
-        # print(self.r_matrix)
 
-    # # Import Shortened Amazon Fine Food REFERENCE PROBLEM
-    # def import_amazon_fine_food_short2(self):
-    #     df = pd.read_csv('Datasets/AmazonFineFoodShort.csv')
-    #     df = df.drop(['Id', 'ProfileName', 'HelpfulnessNumerator', 'HelpfulnessDenominator', 'Text', 'Summary'], axis=1)  # może zamiast drop to wybierać?
-    #     r_matrix = [[np.nan]*len(df)]*len(df)
-    #     user_idx = 0
-    #     prod_idx = 0
-    #     for index, row in df.iterrows():
-    #         if index == 0: #ROBOCZO
-    #             print(r_matrix[user_idx][prod_idx])
-    #             print(row['Score'])
-    #             r_matrix[0][0] = -1
-    #             r_matrix[user_idx][prod_idx] = -2
-    #             r_matrix[user_idx][prod_idx] = row['Score']
-    #             continue
-    #
-    #         if row['UserId'] not in self.users: #jakieś bardziej efektywne przeszukiwanie?
-    #             user_idx += 1
-    #             self.users = np.append(self.users, row['UserId'])
-    #
-    #         if row['ProductId'] not in self.products:
-    #             prod_idx += 1
-    #             self.products = np.append(self.products, row['ProductId'])
-    #
-    #         r_matrix[user_idx][prod_idx] = row['Score']
-    #
-    #     self.r_matrix = np.array(r_matrix, dtype=object)
 
     # Import Shortened Amazon Fine Food
     def import_amazon_fine_food_short2(self):
         df = pd.read_csv('Datasets/AmazonFineFoodShort.csv')
         df = df.drop(['Id', 'ProfileName', 'HelpfulnessNumerator', 'HelpfulnessDenominator', 'Text', 'Summary'],
-                     axis=1)  # może zamiast drop to wybierać?
+                     axis=1)
         r_matrix = np.array([[np.nan] * len(df)] * len(df))
         user_idx = 0
         prod_idx = 0
@@ -133,6 +102,7 @@ class Convert:
 
         self.r_matrix = r_matrix
 
+
     # Import Amazon Fine Food
     def import_amazon_fine_food(self):
         df = pd.read_csv('Datasets/AmazonFineFood.csv')
@@ -143,8 +113,3 @@ class Convert:
         df_R = df.drop([''])  # trzeba to przerobić na wiersze-kolumny
         return df_R.to_numpy()
 
-        # # Import Electronics
-        # def import_electronics():
-        #     df = pd.read_csv('Datasets/Electronics.csv')
-        #     df.head()
-        #     print(df.head())
