@@ -109,7 +109,7 @@ class Convert:
     #     self.r_matrix = np.array(r_matrix, dtype=object)
 
     # Import Shortened Amazon Fine Food
-    def import_amazon_fine_food_short3(self):
+    def import_amazon_fine_food_short2(self):
         df = pd.read_csv('Datasets/AmazonFineFoodShort.csv')
         df = df.drop(['Id', 'ProfileName', 'HelpfulnessNumerator', 'HelpfulnessDenominator', 'Text', 'Summary'],
                      axis=1)  # może zamiast drop to wybierać?
