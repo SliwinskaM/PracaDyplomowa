@@ -10,8 +10,8 @@ r_matrix = cn.r_matrix
 t_matrix = cn.t_matrix
 
 
-# Wizualizacja funkcji przynależności
-# ########### PLOTS #######################
+### Wizualizacja funkcji przynależności ###
+############# PLOTS #######################
 # x = np.linspace(0.0, 1.0)
 # sc = np.linspace(1.0, 5.0)
 # y1 = [convert.low_curve(i, 1, 5) for i in sc]

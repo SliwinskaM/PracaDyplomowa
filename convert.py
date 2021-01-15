@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 
-# Funkcje przynależności
+######### Funkcje przynależności #############
 ############## FUZZY CURVES ##################
 def low_curve(score, min_score, max_score):
     # normalize the score to scale 0-1
@@ -36,8 +36,8 @@ def high_curve(score, min_score, max_score):
     return 0
 
 
-# Import i rozmycie danych
-########### CONVERT ##################
+####### Import i rozmycie danych #######
+############# CONVERT ##################
 class Convert:
     def __init__(self):
         self.r_matrix = []  # macierz R (wiersze users, kolumny products, elementy ratings - rozmyte)
