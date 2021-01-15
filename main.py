@@ -1,12 +1,13 @@
 import convert
 import apriori_algorithm as apr
 import matplotlib.pyplot as plt
-
 import numpy as np
 
+
 cn = convert.Convert()
-cn.import_amazon_fine_food_short1()
+cn.import_amazon_fine_food_short()
 r_matrix = cn.r_matrix
+t_matrix = cn.t_matrix
 
 
 # Wizualizacja funkcji przynależności
