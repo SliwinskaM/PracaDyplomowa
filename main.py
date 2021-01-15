@@ -12,6 +12,7 @@ cn.import_amazon_fine_food_short()
 # end = time()
 # print(end - start)
 r_matrix = cn.r_matrix
+t_matrix = cn.t_matrix
 
 
 # Wizualizacja funkcji przynależności
