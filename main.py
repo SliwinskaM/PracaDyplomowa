@@ -1,9 +1,10 @@
-import convert
-import apriori_algorithm as apr
 from time import time
 import matplotlib.pyplot as plt
-
 import numpy as np
+
+import convert
+import apriori_algorithm as apr
+from additional_functions import create_converted_r_matrix
 
 
 cn = convert.Convert()
@@ -13,6 +14,9 @@ cn.import_amazon_fine_food_short()
 # print(end - start)
 r_matrix = cn.r_matrix
 t_matrix = cn.t_matrix
+conv_r_matrix = create_converted_r_matrix(r_matrix)
+apriori = apr.Apriori(conv_r_matrix, ["Low", "Medium", "High"])
+reg = apriori.apriori_main()
 
 
 # Wizualizacja funkcji przynależności
