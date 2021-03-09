@@ -1,18 +1,19 @@
 import pandas as pd
 import numpy as np
 from math import isnan
-from fuzzy_curves import low_curve, medium_curve, high_curve
+import fuzzy_curves
 
-
-def create_converted_r_matrix(prev_r_matrix):
-    score = prev_r_matrix[0][0]
-    conv_r_matrix = np.empty([len(prev_r_matrix), len(prev_r_matrix[0]), 3]) # [[[low_curve(score, 1, 5), medium_curve(score, 1, 5), high_curve(score, 1, 5)]]]
+# Create a matrix with fuzzy values for every transaction
+def create_converted_r_matrix(prev_r_matrix, curves: fuzzy_curves.FuzzyCurves):
+    number_of_sets = curves.get_number_of_sets()
+    conv_r_matrix = np.empty([len(prev_r_matrix), len(prev_r_matrix[0]), number_of_sets])
     conv_r_matrix[:] = np.nan
-
     for user_idx in range(len(conv_r_matrix)):
         for prod_idx in range(len(conv_r_matrix[0])):
             score = prev_r_matrix[user_idx][prod_idx]
             if not isnan(score):
-                conv_r_matrix[user_idx][prod_idx] = [low_curve(score, 1, 5), medium_curve(score, 1, 5), high_curve(score, 1, 5)]
-
+                # changeable number of sets
+                for i in range(number_of_sets):
+                    fuzzy_curve = curves.get_list_of_curves()[i]
+                    conv_r_matrix[user_idx][prod_idx][i] = fuzzy_curve(score)
     return conv_r_matrix
