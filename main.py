@@ -14,10 +14,11 @@ t_matrix = data.t_matrix
 #choose fuzzy curves class
 curves = fc.Curves1(data.min_score, data.max_score)
 # create fuzzy association rules
-conv_r_matrix = create_converted_r_matrix(r_matrix, curves)
-apriori = apr.AssociationRules(conv_r_matrix)
-rules = apriori.algorithm_main()
-print(rules)
+print(curves.curves_enum)
+# conv_r_matrix = create_converted_r_matrix(r_matrix, curves)
+# apriori = apr.AssociationRules(conv_r_matrix)
+# rules = apriori.algorithm_main()
+# print(rules)
 
 
 # Wizualizacja funkcji przynależności

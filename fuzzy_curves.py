@@ -1,13 +1,9 @@
 # Parent class for fuzzy curves
 class FuzzyCurves():
-    def __init__(self, min_score, max_score, list_of_curves, curves_enum):
+    def __init__(self, min_score, max_score, list_of_curves):
         self.min_score = min_score
         self.max_score = max_score
         self._list_of_curves = list_of_curves
-        if curves_enum:
-            self.curves_enum = curves_enum
-        else:
-            self.curves_enum = enumerate(["Set" + str(i) for i in range(len(list_of_curves))])
 
     def get_number_of_sets(self):
         return len(self._list_of_curves)
@@ -19,8 +15,7 @@ class FuzzyCurves():
 # Three curves
 class Curves1(FuzzyCurves):
     def __init__(self, min_score, max_score):
-        super().__init__(min_score, max_score, [self.low_curve, self.medium_curve, self.high_curve],
-                         enumerate(["Low", "Medium", "High"]))
+        super().__init__(min_score, max_score, [self.low_curve, self.medium_curve, self.high_curve])
 
     def low_curve(self, score):
         # normalize the score to scale 0-1
@@ -55,7 +50,7 @@ class Curves1(FuzzyCurves):
 # Two curves
 class Curves2(FuzzyCurves):
     def __init__(self, min_score, max_score):
-        super().__init__(min_score, max_score, [self.low_curve, self.high_curve], enumerate(["Low", "High"]))
+        super().__init__(min_score, max_score, [self.low_curve, self.high_curve])
 
     def low_curve(self, score):
         # normalize the score to scale 0-1
