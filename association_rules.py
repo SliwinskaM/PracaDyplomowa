@@ -3,7 +3,7 @@ import random
 from itertools import combinations
 
 class AssociationRules:
-    def __init__(self, conv_r_matrix, min_support=0.0001, min_confidence=0.6):
+    def __init__(self, conv_r_matrix, min_support=0.00000001, min_confidence=0.6):
         self.conv_r_matrix = conv_r_matrix
         self.number_of_sets = len(conv_r_matrix[0][0])
         self.number_of_transactions = np.count_nonzero(~np.isnan(conv_r_matrix))/self.number_of_sets
@@ -12,7 +12,7 @@ class AssociationRules:
         self.min_support = min_support
         self.min_confidence = min_confidence
 
-    # "Product" representation
+    # "Product" representation: [index of Product, index of Fuzzy Set]
     ProductScore = tuple[int, int]
 
     def support(self, items: list[ProductScore]):
@@ -22,31 +22,33 @@ class AssociationRules:
             items_nums = [item[0] for item in items] # indexes of items
             items_scores = [item[1] for item in items] # idexes of items' scores
             if all(item in user_transactions for item in items_nums): # if all items are in a transaction
+                count_temp = []
                 for i in range(len(items)):
-                    count += user_transactions_all[items_nums[i]][items_scores[i]] # add their score
-        # if count:
-        #     print(count)
+                    count_temp.append(user_transactions_all[items_nums[i]][items_scores[i]]) # add their score
+                count += np.min(count_temp)
         return count / self.number_of_transactions
 
     # optional
     def support_heuristic(self, items: list[ProductScore]):
         count = 0
-        chosen_sample = random.sample(range(round(self.number_of_users)), round(0.6 * self.number_of_users)) #count only for random sample of users
+        # chosen_sample = random.sample(range(round(self.number_of_users)), round(0.6 * self.number_of_users)) #count only for random sample of users
         # checkpoint = round(0.6 * self.number_of_users)
         count_threshold = self.min_support * self.number_of_transactions # threshold to stop counting after
         # c = 0
-        for i in chosen_sample: # range(len(self.conv_r_matrix)):
+        for i in range(len(self.conv_r_matrix)):  # chosen_sample:
             user_transactions_all = self.conv_r_matrix[i]
             user_transactions = np.nonzero(~np.isnan(user_transactions_all))[0] # products bought by the user (with repetition)
             items_nums = [item[0] for item in items] # indexes of items
             items_scores = [item[1] for item in items] # indexes of items' scores
             if all(item in user_transactions for item in items_nums): # if all items are in a transaction
+                count_temp = []
                 for i in range(len(items)):
-                    count += user_transactions_all[items_nums[i]][items_scores[i]] # add their score
+                    count_temp.append(user_transactions_all[items_nums[i]][items_scores[i]]) # add their score
+                count += np.min(count_temp)
             # heuristics - stop counting when possible
             if count >= count_threshold:
                 break
-            # if i == checkpoint:
+            # if i == checkpoint: # w tym celu trzebaby pomieszać kolejność próbek, dla których są wykonywane obliczenia
             #     if count == 0:
             #         break
             # c += 1
@@ -65,7 +67,7 @@ class AssociationRules:
                 count_pred_temp = []
                 for i in range(len(pred)):
                     count_pred_temp.append(user_transactions_all[pred_nums[i]][pred_scores[i]]) # add their fuzzy function
-                count_pred += np.median(count_pred_temp) # median of the scores
+                count_pred += np.min(count_pred_temp) # median of the scores
                 desc_nums = [item[0] for item in desc]  # indexes of descending items
                 desc_scores = [item[1] for item in desc]  # idexes of descending items' scores
                 if all(item in user_transactions for item in desc_nums):  # if all descending items are in a transaction
@@ -73,7 +75,7 @@ class AssociationRules:
                     count_both_temp.append(user_transactions_all[pred_nums[i]][pred_scores[i]]) # add predescessors' fuzzy function
                     for i in range(len(desc)):
                         count_both_temp.append(user_transactions_all[desc_nums[i]][desc_scores[i]])  # add descendors' fuzzy function
-                    count_both += np.median(count_both_temp) # median of the scores
+                    count_both += np.min(count_both_temp) # median of the scores
         return count_both / count_pred
 
     # First candidates - all possibilities
@@ -89,7 +91,7 @@ class AssociationRules:
     def gen_l_k(self, c_k):
         l_k = []
         for products_scores in c_k:
-            if self.support_heuristic(products_scores) >= self.min_support:
+            if self.support(products_scores) >= self.min_support:
                 l_k.append(products_scores) # add accepted products to L
         return l_k
 
@@ -126,7 +128,7 @@ class AssociationRules:
                     break
         return candidates
 
-
+    # Main Apriori
     def apriori(self):
         c = self.create_c_1()
         l = self.gen_l_k(c)

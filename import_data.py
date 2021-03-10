@@ -17,7 +17,7 @@ class ImportData:
         self.max_score = 5
 
         # create database
-        df = pd.read_csv('Datasets/AmazonFineFoodShort4.csv')
+        df = pd.read_csv('Datasets/AmazonFineFoodShort2.csv')
         df = df.drop(['Id', 'ProfileName', 'HelpfulnessNumerator', 'HelpfulnessDenominator', 'Text', 'Summary'],
                      axis=1)
         # initialize lists
