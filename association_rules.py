@@ -1,9 +1,10 @@
 import numpy as np
 import random
 from itertools import combinations
+import fuzzy_curves as fc
 
 class AssociationRules:
-    def __init__(self, conv_r_matrix, min_support=0.00000001, min_confidence=0.6):
+    def __init__(self, conv_r_matrix, sets_enum: fc.FuzzyCurves.Names, min_support=0.00000001, min_confidence=0.6):
         self.conv_r_matrix = conv_r_matrix
         self.number_of_sets = len(conv_r_matrix[0][0])
         self.number_of_transactions = np.count_nonzero(~np.isnan(conv_r_matrix))/self.number_of_sets
@@ -11,14 +12,16 @@ class AssociationRules:
         self.number_of_products = len(conv_r_matrix[0])
         self.min_support = min_support
         self.min_confidence = min_confidence
+        self.sets_enum = sets_enum
 
     # "Product" representation: [index of Product, index of Fuzzy Set]
-    ProductScore = tuple[int, int]
+    ProductScore = tuple[int, str] #int]
 
     def support(self, items: list[ProductScore]):
         count = 0
         for user_transactions_all in self.conv_r_matrix: # for all users
             user_transactions = np.nonzero(~np.isnan(user_transactions_all))[0] # products bought by the user (with repetition)
+            # print(items)
             items_nums = [item[0] for item in items] # indexes of items
             items_scores = [item[1] for item in items] # idexes of items' scores
             if all(item in user_transactions for item in items_nums): # if all items are in a transaction
@@ -82,8 +85,8 @@ class AssociationRules:
     def create_c_1(self):
         c_1 = []
         for product_num in range(self.number_of_products):
-            for set_num in range(self.number_of_sets):
-                product_score = [product_num, set_num] # join all products and scores (sets' number) possible
+            for set_n in self.sets_enum: #for set_n in range(self.number_of_sets):
+                product_score = [product_num, set_n.value] # join all products and scores (sets' number) possible
                 c_1.append([product_score]) # add created products to C1
         return c_1
 
@@ -118,7 +121,7 @@ class AssociationRules:
                 if k <= 2: # when there are no members < k-2
                     candidates.append([first, second])
                     continue
-                candidates.append([l_prev[set1][:k - 2], first, second])
+                candidates.append(l_prev[set1][:k - 2] + [first, second])
 
         # PRUNING
         for candidate in candidates:

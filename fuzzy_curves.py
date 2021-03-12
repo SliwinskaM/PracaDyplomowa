@@ -1,3 +1,5 @@
+from enum import IntEnum
+
 # Parent class for fuzzy curves
 class FuzzyCurves():
     def __init__(self, min_score, max_score, list_of_curves):
@@ -10,6 +12,9 @@ class FuzzyCurves():
 
     def get_list_of_curves(self):
         return self._list_of_curves
+
+    class Names(IntEnum):
+        pass
 
 
 # Three curves
@@ -46,6 +51,10 @@ class Curves1(FuzzyCurves):
             return 1
         return 0
 
+    class Names(FuzzyCurves.Names):
+        LOW = 0
+        MEDIUM = 1
+        HIGH = 2
 
 # Two curves
 class Curves2(FuzzyCurves):
@@ -62,3 +71,6 @@ class Curves2(FuzzyCurves):
         score_norm = (score - self.min_score) / (self.max_score - self.min_score)
         return score_norm
 
+    class Names(FuzzyCurves.Names):
+        LOW = 0
+        HIGH = 1
