@@ -7,18 +7,18 @@ from additional_functions import create_converted_r_matrix
 import fuzzy_curves as fc
 
 # read data
-data = import_data.ImportData()
-data.import_amazon_fine_food_short()
+data = import_data.ImportData('movies')
+data.import_data()
+print('o')
 r_matrix = data.r_matrix
 t_matrix = data.t_matrix
 #choose fuzzy curves class
 curves = fc.Curves1(data.min_score, data.max_score)
 # create fuzzy association rules
-print(curves.curves_enum)
-# conv_r_matrix = create_converted_r_matrix(r_matrix, curves)
-# apriori = apr.AssociationRules(conv_r_matrix)
-# rules = apriori.algorithm_main()
-# print(rules)
+conv_r_matrix = create_converted_r_matrix(r_matrix, curves)
+apriori = apr.AssociationRules(conv_r_matrix, curves.Names, 0.0001)
+rules = apriori.algorithm_main()
+print(rules)
 
 
 # Wizualizacja funkcji przynależności
