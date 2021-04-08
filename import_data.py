@@ -26,14 +26,14 @@ class ImportData:
             self.args = args
 
     params_dict = {
-        'amazon_fine_food': Parameters('Datasets/AmazonFineFoodShort2.csv',
+        'fine_food': Parameters('Datasets/AmazonFineFoodShort3.csv',
                                        1, 5, 'UserId', 'ProductId', 'Score', 'Time'),
-        'amazon_beauty': Parameters('Datasets/RatingBeautyShort.csv', 1, 5, 'UserId', 'ProductId', 'Rating',
-                                    'Timestamp'),
-        'amazon_products': Parameters('Datasets/AmazonProducts.csv',
+        'beauty': Parameters('Datasets/RatingBeautyShort.csv', 1, 5, 'UserId', 'ProductId', 'Rating',
+                                    'Timestamp'), # najczęstszy support: 0.0053...
+        'products': Parameters('Datasets/AmazonProductsShort.csv',
                                       1, 5, 'reviews.username', 'id', 'reviews.rating',
                                       'reviews.dateAdded'),  # ten zbiór nie ma sensu skrócony (abo wgl)
-        'amazon_electronics': Parameters('Datasets/ElectronicsShort.csv', 1, 5, 0, 1, 2, 3),
+        'electronics': Parameters('Datasets/ElectronicsShort.csv', 1, 5, 0, 1, 2, 3),
         'movies': Parameters('Datasets/MoviesShort.csv', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp') # to 0.5 podejrzane
     }
 

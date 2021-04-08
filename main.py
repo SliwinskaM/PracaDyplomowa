@@ -3,11 +3,12 @@ import numpy as np
 
 import import_data
 import association_rules as apr
+# import association_rules_pure_python as apr
 from additional_functions import create_converted_r_matrix
 import fuzzy_curves as fc
 
 # read data
-data = import_data.ImportData('movies')
+data = import_data.ImportData('beauty')
 data.import_data()
 print('o')
 r_matrix = data.r_matrix
@@ -16,9 +17,10 @@ t_matrix = data.t_matrix
 curves = fc.Curves1(data.min_score, data.max_score)
 # create fuzzy association rules
 conv_r_matrix = create_converted_r_matrix(r_matrix, curves)
-apriori = apr.AssociationRules(conv_r_matrix, curves.Names, 0.0001)
+apriori = apr.AssociationRules(conv_r_matrix, curves.Names, 0.0052)
+# apriori = association_rules_pure_python.AssociationRules(conv_r_matrix, curves.Names, 0.0052)
 rules = apriori.algorithm_main()
-print(rules)
+# print(rules)
 
 
 # Wizualizacja funkcji przynależności
