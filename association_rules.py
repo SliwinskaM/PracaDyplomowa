@@ -1,6 +1,7 @@
 import numpy as np
 import random
-from itertools import combinations
+from itertools import combinations, chain, permutations
+from scipy.special import comb
 import fuzzy_curves as fc
 
 class AssociationRules:
@@ -13,152 +14,129 @@ class AssociationRules:
         self.min_support = min_support
         self.min_confidence = min_confidence
         self.sets_enum = sets_enum
+        self.transactions_all_np = np.nonzero(~np.isnan(self.conv_r_matrix[:, :, 0]))
 
     # "Product" representation: [index of Product, index of Fuzzy Set]
-    ProductScore = tuple[int, str] #int]
-
-    def support(self, items: list[ProductScore]):
-        count = 0
-        for user_transactions_all in self.conv_r_matrix: # for all users
-            user_transactions = np.nonzero(~np.isnan(user_transactions_all))[0] # products bought by the user (with repetition)
-            # print(items)
-            items_nums = [item[0] for item in items] # indexes of items
-            items_scores = [item[1] for item in items] # idexes of items' scores
-            if all(item in user_transactions for item in items_nums): # if all items are in a transaction
-                count_temp = []
-                for i in range(len(items)):
-                    count_temp.append(user_transactions_all[items_nums[i]][items_scores[i]]) # add their score
-                count += np.min(count_temp)
-        return count / self.number_of_transactions
-
-    # optional
-    def support_heuristic(self, items: list[ProductScore]):
-        count = 0
-        # chosen_sample = random.sample(range(round(self.number_of_users)), round(0.6 * self.number_of_users)) #count only for random sample of users
-        # checkpoint = round(0.6 * self.number_of_users)
-        count_threshold = self.min_support * self.number_of_transactions # threshold to stop counting after
-        # c = 0
-        for i in range(len(self.conv_r_matrix)):  # chosen_sample:
-            user_transactions_all = self.conv_r_matrix[i]
-            user_transactions = np.nonzero(~np.isnan(user_transactions_all))[0] # products bought by the user (with repetition)
-            items_nums = [item[0] for item in items] # indexes of items
-            items_scores = [item[1] for item in items] # indexes of items' scores
-            if all(item in user_transactions for item in items_nums): # if all items are in a transaction
-                count_temp = []
-                for i in range(len(items)):
-                    count_temp.append(user_transactions_all[items_nums[i]][items_scores[i]]) # add their score
-                count += np.min(count_temp)
-            # heuristics - stop counting when possible
-            if count >= count_threshold:
-                break
-            # if i == checkpoint: # w tym celu trzebaby pomieszać kolejność próbek, dla których są wykonywane obliczenia
-            #     if count == 0:
-            #         break
-            # c += 1
-        return count / self.number_of_transactions
+    ProductScore = np.array([int, int]) #str]
 
 
-    def confidence(self, pred: list[ProductScore], desc: list[ProductScore]):
-        # MOŻE: NA PODSTAWIE SUPPORT / HEURYSTYKA
-        pred_nums = [item[0] for item in pred]  # indexes of predecessing items
-        pred_scores = [item[1] for item in pred]  # idexes of predecessing items' scores
-        count_both = 0
-        count_pred = 0
-        for user_transactions_all in self.conv_r_matrix: # for all users
-            user_transactions = np.nonzero(~np.isnan(user_transactions_all))[0] # products bought by the user (with repetition)
-            if all(item in user_transactions for item in pred_nums): # if all predecessing items are in a transaction
-                count_pred_temp = []
-                for i in range(len(pred)):
-                    count_pred_temp.append(user_transactions_all[pred_nums[i]][pred_scores[i]]) # add their fuzzy function
-                count_pred += np.min(count_pred_temp) # median of the scores
-                desc_nums = [item[0] for item in desc]  # indexes of descending items
-                desc_scores = [item[1] for item in desc]  # idexes of descending items' scores
-                if all(item in user_transactions for item in desc_nums):  # if all descending items are in a transaction
-                    count_both_temp = []
-                    count_both_temp.append(user_transactions_all[pred_nums[i]][pred_scores[i]]) # add predescessors' fuzzy function
-                    for i in range(len(desc)):
-                        count_both_temp.append(user_transactions_all[desc_nums[i]][desc_scores[i]])  # add descendors' fuzzy function
-                    count_both += np.min(count_both_temp) # median of the scores
-        return count_both / count_pred
+    def support_numpy(self, items):
+        count_np = 0
+        items_nums = np.array(items[:, 0]) # indexes of items
+        items_scores = np.array(items[:, 1])  # indexes of items' scores
+        items_in_transactions_mask = np.isin(self.transactions_all_np[1], items_nums)
+        users_for_items = self.transactions_all_np[0][items_in_transactions_mask]
+        unique, counts = np.unique(users_for_items, return_counts=True)
+        users_ok = unique[counts == len(items)]
+        if users_ok.size > 0:
+            rows_supports = self.conv_r_matrix[users_ok][:, items_nums, items_scores]
+            counts = np.min(rows_supports, axis=1)
+            count_np = sum(counts)
+        return count_np / self.number_of_transactions
+
+
+
+    def confidence(self, pred, desc):
+        conf_np = self.support_numpy(np.append(pred, desc, axis=0)) / self.support_numpy(pred)
+        return conf_np
 
     # First candidates - all possibilities
     def create_c_1(self):
-        c_1 = []
-        for product_num in range(self.number_of_products):
-            for set_n in self.sets_enum: #for set_n in range(self.number_of_sets):
-                product_score = [product_num, set_n.value] # join all products and scores (sets' number) possible
-                c_1.append([product_score]) # add created products to C1
+        c_1 = np.transpose(np.meshgrid(range(self.number_of_products), self.sets_enum)).reshape(-1, 1, 2)
         return c_1
 
     # Check candidates' support
     def gen_l_k(self, c_k):
-        l_k = []
-        for products_scores in c_k:
-            if self.support(products_scores) >= self.min_support:
-                l_k.append(products_scores) # add accepted products to L
+        l_k_mask = np.nonzero([[self.support_numpy(row) >= self.min_support] for row in c_k]) # itemsets with proper support
+        l_k = c_k[l_k_mask[0]]
         return l_k
+
+
+
+
+    #Helper function
+    def comb_index(self, n, k):
+        count = comb(n, k, exact=True)
+        index = np.fromiter(chain.from_iterable(combinations(range(n), k)),
+                            int, count=count * k)
+        return index.reshape(-1, k)
 
     # Generate candidates
     def gen_c_k(self, l_prev, k):
         # JOINING
-        candidates = []
-        for set1, set2 in combinations(range(len(l_prev)), 2):
-            join = True
-            # compare all members except the last
-            for i in range(k-2):
-                if l_prev[set1][i] == l_prev[set2][i]:
-                    join = True #pass?
-                else:
-                    join = False
-                    break
-            # compare last members
-            if l_prev[set1][k - 2][0] == l_prev[set2][k - 2][0]:
-                join = False
-            if join:
-                # to avoid repetitions and to retain order
-                first = min(l_prev[set1][k - 2], l_prev[set2][k - 2])
-                second = max(l_prev[set1][k - 2], l_prev[set2][k - 2])
-                if k <= 2: # when there are no members < k-2
-                    candidates.append([first, second])
-                    continue
-                candidates.append(l_prev[set1][:k - 2] + [first, second])
+        set_pairs_all = np.array(np.meshgrid(range(len(l_prev)), range(len(l_prev)))).T.reshape(-1,2)  # pary indeksów zbiorów do potencjalnego połączenia
+        set_pairs = np.unique(np.sort(set_pairs_all,axis=1),axis=0)
+        join_1 = [[True]] * len(set_pairs)
+        if k > 2:
+            # sort arrays to compare
+            pair0 = l_prev[set_pairs[:, 0], :k - 2]
+            pair1 = l_prev[set_pairs[:, 1], :k - 2]
+            join_1 = np.all(np.all(np.equal(pair0, pair1), axis=1), axis=1).reshape(-1,1)
+        join_2 = ~(np.equal(l_prev[set_pairs[:,0], k - 2][:,0], l_prev[set_pairs[:,1], k - 2][:,0])).reshape(-1,1)
+        join_both = np.concatenate((join_1, join_2), axis=1)
+        join_np = np.all(join_both, axis=1) # oba warunki połączneia spełnione
+        to_join = set_pairs[join_np] #pary indeksów zbiorów do połączenia
+
+        if np.any(to_join):
+            # to retain order - item with bigger index goes first
+            first_0 = l_prev[to_join[:,0], k - 2][:,0] < l_prev[to_join[:,1], k - 2][:,0]
+            first_0 = np.stack((first_0, first_0)).T
+            firsts = np.where(first_0, l_prev[to_join[:,0], k - 2], l_prev[to_join[:,1], k - 2])
+            seconds = np.where(~first_0, l_prev[to_join[:,0], k - 2], l_prev[to_join[:,1], k - 2])
+
+            # final joining
+            if k <= 2:
+                candidates = np.array(list(zip(firsts, seconds)))
+            else:
+                candidates = np.concatenate((l_prev[to_join[:, 0], :k-2], np.expand_dims(firsts, axis=1), np.expand_dims(seconds, axis=1)), axis=-2)
+        else:
+            candidates = np.array([])
 
         # PRUNING
-        for candidate in candidates:
-            for subset in combinations(candidate, k-1):
-                if list(subset) not in l_prev:
-                    candidates.remove(candidate)
-                    break
+        if np.any(to_join):
+            subsets_idx = self.comb_index(k, k-1)
+            subsets = candidates[:, subsets_idx]
+            prune_mask = np.all(np.all(np.all(np.isin(subsets, l_prev), axis=1), axis=1), axis=1)  #to może nie do końca działać - zrób coś raczej z any
+            candidates = candidates[prune_mask]
+        candidates = np.unique(candidates, axis=0)
         return candidates
+
+
+
 
     # Main Apriori
     def apriori(self):
         c = self.create_c_1()
         l = self.gen_l_k(c)
-        l_final = []
+        l_final = [] # np.empty([1, 1, 1], dtype=object)
         for k in range(2, self.number_of_products):
             c = self.gen_c_k(l, k)
             l = self.gen_l_k(c)
-            if not l:
+            if l.size == 0:
                 break
-            l_final += l
-        return l_final
+            l_final.append(l)
+        return l_final # np.array(l_final) #ulepszyć jakoś?
+
 
     # Generate association rules based on frequent itemsets
     def generate_rules(self, frequent_sets):
-        rules = []
-        for itemset in frequent_sets:
-            # generate all possible rules from a set
-            for pred_length in range(1, len(itemset)):
-                for pred in combinations(itemset, pred_length):
-                    desc = [item for item in itemset if item not in pred]
-                    # check the confidence
-                    conf = self.confidence(list(pred), desc)
-                    if conf >= self.min_confidence:
-                        rules.append([list(pred), desc])
-        return rules
+        rules2 = []
+        for itemset_length_idx in range(len(frequent_sets)):
+            itemset_length = itemset_length_idx + 2
+            for itemset in frequent_sets[itemset_length_idx]:
+                # generate all possible rules from a set
+                for pred_length in range(1, itemset_length):
+                    for pred_idx in combinations(range(itemset_length), pred_length):
+                        pred = itemset[list(tuple(pred_idx))]
+                        desc = np.delete(itemset, pred_idx, 0)
+                        # check the confidence
+                        conf = self.confidence(pred, desc)
+                        if conf >= self.min_confidence:
+                            rules2.append([pred, desc])
+        return rules2
 
 
     def algorithm_main(self):
         frequent_sets = self.apriori()
-        return self.generate_rules(frequent_sets)
+        debug = self.generate_rules(frequent_sets)
+        return debug
