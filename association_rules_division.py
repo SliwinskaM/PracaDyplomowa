@@ -38,10 +38,10 @@ class AssociationRules:
         lengths1 = np.array([np.shape(elem)[1] for elem in sub_tdb1])
         ### merge both sub-databases
         for length_idx2 in range(len(sub_tdb2)):
-            # operate on same sets' lengths in both sub-databases
-            length_idx1 = np.where(lengths1 == length_idx2 + 1)
             # iterate through freguent sets in sub_tdb2
             for t_idx in range(len(sub_tdb2[length_idx2])):
+                # operate on same sets' lengths in both sub-databases
+                length_idx1 = np.where(lengths1 == length_idx2 + 1)
                 # if matching length in sub_tdb1 found
                 if len(length_idx1[0]) > 0:
                     # check if frequent set already exists in sub_tdb1
