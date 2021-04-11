@@ -1,3 +1,6 @@
+"""-----------------------------------------------------------------------------------------------------------
+FILE FOR DEBUGGING---------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------- """
 import numpy as np
 import random
 from itertools import combinations
@@ -21,7 +24,6 @@ class AssociationRules:
         count = 0
         for user_transactions_all in self.conv_r_matrix: # for all users
             user_transactions = np.nonzero(~np.isnan(user_transactions_all))[0] # products bought by the user (with repetition)
-            # print(items)
             items_nums = [item[0] for item in items] # indexes of items
             items_scores = [item[1] for item in items] # idexes of items' scores
             if all(item in user_transactions for item in items_nums): # if all items are in a transaction
@@ -93,11 +95,14 @@ class AssociationRules:
     # Check candidates' support
     def gen_l_k(self, c_k):
         l_k = []
+        supports = []
         for products_scores in c_k:
             # print(self.support(products_scores))
-            if self.support(products_scores) >= self.min_support:
+            support1 = self.support(products_scores)
+            if support1 >= self.min_support:
                 l_k.append(products_scores) # add accepted products to L
-        return l_k
+                supports.append(support1)
+        return l_k, supports
 
     # Generate candidates
     def gen_c_k(self, l_prev, k):
@@ -145,15 +150,17 @@ class AssociationRules:
     # Main Apriori
     def apriori(self):
         c = self.create_c_1()
-        l = self.gen_l_k(c)
-        l_final = []
+        l, sup0 = self.gen_l_k(c)
+        l_final = [l]
+        supports_final = [sup0]
         for k in range(2, self.number_of_products):
             c = self.gen_c_k(l, k)
-            l = self.gen_l_k(c)
-            if not l:
+            l, sup = self.gen_l_k(c)
+            if l.size == 0:
                 break
             l_final += l
-        return l_final
+            supports_final.append(sup)
+        return l_final, supports_final
 
     # Generate association rules based on frequent itemsets
     def generate_rules(self, frequent_sets):
