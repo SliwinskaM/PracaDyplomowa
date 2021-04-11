@@ -3,7 +3,7 @@ import random
 from itertools import combinations, chain, permutations
 from scipy.special import comb
 import fuzzy_curves as fc
-import apriori as ar
+import apriori as apr
 import math
 
 class AssociationRules:
@@ -78,11 +78,11 @@ class AssociationRules:
 
         # find frequent sets in every division
         for division in self.r_divisions:
-            apriori = ar.AssociationRules(division, self.sets_enum, self.min_support)
-            apr = apriori.apriori()
-            frequent_matrix.append(apr[0])
+            apriori = apr.Apriori(division, self.sets_enum, self.min_support)
+            frequent_sets, supports = apriori.apriori()
+            frequent_matrix.append(frequent_sets)
             # supports counted in relation to the whole database
-            supports_matrix.append([elem / number_of_divisions for elem in apr[1]])
+            supports_matrix.append([elem / number_of_divisions for elem in supports])
 
         # UNITING
         # minimum support needed increases with every level

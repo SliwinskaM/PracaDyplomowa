@@ -19,7 +19,7 @@ curves = fc.Curves1(data.min_score, data.max_score)
 # create fuzzy association rules
 conv_r_matrix = create_converted_r_matrix(r_matrix, curves)
 
-apriori1 = apr.AssociationRules(conv_r_matrix, curves.Names, 0.0052)
+apriori1 = apr.Apriori(conv_r_matrix, curves.Names, 0.0052)
 freq1, sup1 = apriori1.apriori()
 
 apriori2 = ard.AssociationRules(conv_r_matrix, 20, curves.Names, 0.0052)
