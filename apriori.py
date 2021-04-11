@@ -4,7 +4,7 @@ from itertools import combinations, chain, permutations
 from scipy.special import comb
 import fuzzy_curves as fc
 
-class AssociationRules:
+class Apriori:
     def __init__(self, conv_r_matrix, sets_enum, min_support=0.001, min_confidence=0.6):
         self.conv_r_matrix = conv_r_matrix
         self.number_of_sets = len(conv_r_matrix[0][0])
