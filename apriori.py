@@ -115,7 +115,6 @@ class Apriori:
                 for subset in subsets_list[c]:
                     if subset not in l_prev_list:
                         prune_mask[c] = False
-            pass
             # leave only subsets that fulfill the condition
             candidates = candidates[prune_mask]
         return candidates
