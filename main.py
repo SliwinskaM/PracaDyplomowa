@@ -39,6 +39,8 @@ for i in range(len(freq1)):
 
 rules1 = apriori1.algorithm_main()
 rules2 = apriori2.algorithm_main()
+
+print(rules1)
 # equal = []
 # for i in range(len(rules1)):
 #     u = rules1[i]

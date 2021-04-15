@@ -74,8 +74,8 @@ class Apriori:
         # JOINING
         # pairs of indexes of sets to potentially join
         set_pairs_all = np.array(np.meshgrid(range(len(l_prev)), range(len(l_prev)))).T.reshape(-1,2)
-        set_pairs = np.unique(np.sort(set_pairs_all,axis=1),axis=0)
-        # check conditions
+        set_pairs = np.unique(np.sort(set_pairs_all, axis=1), axis=0)
+        # check conditions on pairs of sets
         join_1 = [[True]] * len(set_pairs)
         if k > 2:
             # condition 1 - all elements equal except last
@@ -89,6 +89,7 @@ class Apriori:
 
         if np.any(to_join):
             # to retain order - item with bigger index goes first
+            # which pairs have greater element on index[k-2] in pair 0
             first_0 = l_prev[to_join[:,0], k - 2][:,0] < l_prev[to_join[:,1], k - 2][:,0]
             first_0 = np.stack((first_0, first_0)).T
             firsts = np.where(first_0, l_prev[to_join[:,0], k - 2], l_prev[to_join[:,1], k - 2])
@@ -103,7 +104,6 @@ class Apriori:
             candidates = np.array([])
 
         # PRUNING
-        if np.any(to_join):
             # subsets of all sets in candidates
             subsets_idx = self.comb_index(k, k-1)
             subsets = candidates[:, subsets_idx]

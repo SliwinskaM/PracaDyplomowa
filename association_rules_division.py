@@ -118,6 +118,8 @@ class AssociationRules:
                         pred_support = supports[pred_length-1][pred_support_idx]
 
                         successor = np.delete(itemset, pred_idx, 0)
+                        # check if the rule generates high scored products
+
                         # check the confidence
                         conf = self.confidence(itemset_support, pred_support)
                         if conf >= self.min_confidence:
