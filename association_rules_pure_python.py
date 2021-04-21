@@ -107,8 +107,8 @@ class AssociationRules:
     # Generate candidates
     def gen_c_k(self, l_prev, k):
         # JOINING
-        print('-------------------------------------------------------')
-        print(k)
+        # print('-------------------------------------------------------')
+        # print(k)
         candidates = []
         cnt = 0
         for set1, set2 in combinations(range(len(l_prev)), 2):
@@ -121,13 +121,13 @@ class AssociationRules:
                 else:
                     join = False
                     # print(str(l_prev[set1]) + "  iii  " + str(l_prev[set2]) + "    " + str(all(item in l_prev[set1][:-1] for item in l_prev[set2][:-1])))
-                    print(str(set1) + " iii " + str(set2))
+                    # print(str(set1) + " iii " + str(set2))
                     break
             # compare last members
             if l_prev[set1][k - 2][0] == l_prev[set2][k - 2][0]:
                 join = False
                 # print(str(l_prev[set1]) + "  i  " + str(l_prev[set2]))
-                print(str(set1) + " i " + str(set2))
+                # print(str(set1) + " i " + str(set2))
             if join:
                 # to avoid repetitions and to retain order
                 first = min(l_prev[set1][k - 2], l_prev[set2][k - 2])
@@ -136,15 +136,15 @@ class AssociationRules:
                     candidates.append([first, second])
                     continue
                 candidates.append(l_prev[set1][:k - 2] + [first, second])
-        print('')
+        # print('')
         # PRUNING
         for candidate in candidates:
             for subset in combinations(candidate, k-1):
                 if list(subset) not in l_prev:
                     candidates.remove(candidate)
                     break
-        print(cnt)
-        print("--------------------------------------------------")
+        # print(cnt)
+        # print("--------------------------------------------------")
         return candidates
 
     # Main Apriori
@@ -156,7 +156,7 @@ class AssociationRules:
         for k in range(2, self.number_of_products):
             c = self.gen_c_k(l, k)
             l, sup = self.gen_l_k(c)
-            if l.size == 0:
+            if len(l) == 0:
                 break
             l_final += l
             supports_final.append(sup)
@@ -170,10 +170,13 @@ class AssociationRules:
             for pred_length in range(1, len(itemset)):
                 for pred in combinations(itemset, pred_length):
                     desc = [item for item in itemset if item not in pred]
-                    # check the confidence
-                    conf = self.confidence(list(pred), desc)
-                    if conf >= self.min_confidence:
-                        rules.append([list(pred), desc])
+                    # consider only rules leading to the highest score
+                    successor_scores = desc[:, 1]
+                    if np.all(successor_scores == len(self.sets_enum) - 1):
+                        # check the confidence
+                        conf = self.confidence(list(pred), desc)
+                        if conf >= self.min_confidence:
+                            rules.append([list(pred), desc])
         return rules
 
 

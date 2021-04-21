@@ -16,10 +16,10 @@ class Apriori:
         self.transactions_all_np = np.nonzero(~np.isnan(self.conv_r_matrix[:, :, 0]))
 
     # "Product" representation: [index of Product, index of Fuzzy Set]
-    ProductScore = np.array([int, int])
+    ProductScore = tuple([int, int])
 
 
-    def support(self, items):
+    def count(self, items):
         count_np = 0
         # indexes of items and scores
         items_nums = np.array(items[:, 0])
@@ -37,7 +37,10 @@ class Apriori:
             counts = np.min(rows_scores, axis=1)
             # final sum
             count_np = sum(counts)
-        return count_np / self.number_of_transactions
+        return count_np
+
+    def support(self, count):
+        return count / self.number_of_transactions
 
 
     def confidence(self, itemset_support, pred_support):
@@ -54,12 +57,12 @@ class Apriori:
     # Check candidates' support
     def gen_l_k(self, c_k):
         # support of each candidate
-        supports = np.array([self.support(row) for row in c_k])
+        counts = np.array([self.count(row) for row in c_k])
         # find candidates with proper support
-        l_k_mask = np.where(supports >= self.min_support) # itemsets with proper support
+        l_k_mask = np.where(self.support(counts) >= self.min_support) # itemsets with proper support
         l_k = c_k[l_k_mask]
-        supports = supports[l_k_mask]
-        return l_k, supports
+        counts_matr = counts[l_k_mask]
+        return l_k, counts_matr
 
 
     # Helper function - indexes of combinations with given parameters
@@ -74,8 +77,8 @@ class Apriori:
         # JOINING
         # pairs of indexes of sets to potentially join
         set_pairs_all = np.array(np.meshgrid(range(len(l_prev)), range(len(l_prev)))).T.reshape(-1,2)
-        set_pairs = np.unique(np.sort(set_pairs_all, axis=1), axis=0)
-        # check conditions on pairs of sets
+        set_pairs = np.unique(np.sort(set_pairs_all,axis=1),axis=0)
+        # check conditions
         join_1 = [[True]] * len(set_pairs)
         if k > 2:
             # condition 1 - all elements equal except last
@@ -89,7 +92,6 @@ class Apriori:
 
         if np.any(to_join):
             # to retain order - item with bigger index goes first
-            # which pairs have greater element on index[k-2] in pair 0
             first_0 = l_prev[to_join[:,0], k - 2][:,0] < l_prev[to_join[:,1], k - 2][:,0]
             first_0 = np.stack((first_0, first_0)).T
             firsts = np.where(first_0, l_prev[to_join[:,0], k - 2], l_prev[to_join[:,1], k - 2])
@@ -104,6 +106,7 @@ class Apriori:
             candidates = np.array([])
 
         # PRUNING
+        if np.any(to_join):
             # subsets of all sets in candidates
             subsets_idx = self.comb_index(k, k-1)
             subsets = candidates[:, subsets_idx]
@@ -115,6 +118,7 @@ class Apriori:
                 for subset in subsets_list[c]:
                     if subset not in l_prev_list:
                         prune_mask[c] = False
+            pass
             # leave only subsets that fulfill the condition
             candidates = candidates[prune_mask]
         return candidates
@@ -126,44 +130,48 @@ class Apriori:
         # generate first array of candidates
         c = self.create_c_1()
         # generate first array of frequent sets and supports
-        l, sup0 = self.gen_l_k(c)
+        l, cnt = self.gen_l_k(c)
 
-        supports_final = [sup0]
-        l_final = [l] # np.empty([1, 1, 1], dtype=object)
+        counts_final = [cnt]
+        l_final = [l]
         for k in range(2, self.number_of_products):
             # generate array of candidates
             c = self.gen_c_k(l, k)
             # generate array of frequent sets and supports
-            l, sup = self.gen_l_k(c)
+            l, cnt = self.gen_l_k(c)
             # if there are no more frequent sets
             if l.size == 0:
                 break
             l_final.append(l)
-            supports_final.append(sup)
-        return l_final, supports_final # np.array(l_final) #ulepszyć jakoś?
+            counts_final.append(cnt)
+        return l_final, counts_final
+
 
 
 
 # -- FOR DEBUGGING --------------------------------------------------------
     # Generate association rules based on frequent itemsets
-    def generate_rules(self, frequent_sets, supports):
+    def generate_rules(self, frequent_sets, counts):
         rules2 = []
         for itemset_length_idx in range(1, len(frequent_sets)):
             itemset_length = itemset_length_idx + 1
             for itemset_idx in range(len(frequent_sets[itemset_length_idx])):
                 itemset = frequent_sets[itemset_length_idx][itemset_idx]
-                itemset_support = supports[itemset_length_idx][itemset_idx]
+                itemset_support = counts[itemset_length_idx][itemset_idx]
                 # generate all possible rules from a set
                 for pred_length in range(1, itemset_length):
                     for pred_idx in combinations(range(itemset_length), pred_length):
                         pred = itemset[list(tuple(pred_idx))]
                         pred_support_idx = np.nonzero(np.all(np.all(frequent_sets[pred_length-1] == pred, axis=1), axis=1))
-                        pred_support = supports[pred_length-1][pred_support_idx]
+                        pred_support = counts[pred_length - 1][pred_support_idx]
                         desc = np.delete(itemset, pred_idx, 0)
-                        # check the confidence
-                        conf = self.confidence(itemset_support, pred_support)
-                        if conf >= self.min_confidence:
-                            rules2.append([pred, desc])
+                        # consider only rules leading to the highest score
+                        successor_scores = desc[:,1]
+                        if np.all(successor_scores == len(self.sets_enum) - 1):
+                            # check the confidence
+                            conf = self.confidence(itemset_support, pred_support)
+                            if conf >= self.min_confidence:
+                                rules2.append([pred, desc])
         return rules2
 
 
