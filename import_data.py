@@ -31,7 +31,7 @@ class ImportData:
     params_dict = {
         'fine_food': Parameters('Datasets/AmazonFineFoodShort3.csv',
                                        1, 5, 'UserId', 'ProductId', 'Score', 'Time'),
-        'beauty': Parameters('Datasets/RatingBeautyShort4.csv', 1, 5, 'UserId', 'ProductId', 'Rating',
+        'beauty': Parameters('Datasets/RatingBeautyShort.csv', 1, 5, 'UserId', 'ProductId', 'Rating',
                                     'Timestamp'), # najczęstszy support: 0.0053...
         'products': Parameters('Datasets/AmazonProductsShort.csv',
                                       1, 5, 'reviews.username', 'id', 'reviews.rating',

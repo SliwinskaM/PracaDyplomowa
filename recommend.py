@@ -11,8 +11,8 @@ class Recommend:
         # self.transactions_all_np = np.nonzero(~np.isnan(self.conv_r_matrix[:, :, 0]))
 
 
-    def recommend_to_user(self, rules, user_idx):
-        user_p_s_idxs = np.nonzero(~np.isnan(self.conv_r_matrix[user_idx]))
+    def recommend_to_user(self, rules, matrix, user_idx):
+        user_p_s_idxs = np.nonzero(~np.isnan(matrix[user_idx]))
         user_p_s = list(zip(user_p_s_idxs[0], user_p_s_idxs[1]))
 
         recomm_list = []
@@ -25,17 +25,20 @@ class Recommend:
                 uu = user_p_s
                 if tuple(elem) not in user_p_s:
                     antec_in_user = False
-                elif self.conv_r_matrix[user_idx][elem[0]][elem[1]] <= 0.5:
+                elif matrix[user_idx][elem[0]][elem[1]] <= 0.5:
                     antec_in_user = False
 
             # check if user bought consequent's elements
-            conseq_in_user = False
-            for elem in conseq:
-                if tuple(elem) in user_p_s:
-                    conseq_in_user = True
+            # conseq_in_user = False
+            conseq_to_delete = []
+            for elem_idx in range(len(conseq)):
+                if tuple(conseq[elem_idx]) in user_p_s:
+                    # conseq_in_user = True
+                    conseq_to_delete.append(elem_idx)
+            conseq = np.delete(conseq, conseq_to_delete, axis=0)
 
             # join both conditions
-            if antec_in_user and not conseq_in_user:
+            if antec_in_user and len(conseq) != 0: # not conseq_in_user:
                 recomm_list.append(conseq[:,0])
         return recomm_list
 
@@ -55,7 +58,7 @@ class Recommend:
             # randomly split products and add them to respective sets
             if len(user_prod_idxs[0]) > 1:
                 train_tmp, test_tmp = train_test_split(user_prod_idxs[0], test_size=test_size)
-                train_mask[user_idx, train_tmp, :] = True
+                train_mask[user_idx, train_tmp, :]= True
                 test_mask[user_idx, test_tmp, :] = True
             else:
                 # if there is only one element
@@ -106,7 +109,7 @@ class Recommend:
         # recommend products for every user and check if they really bought it
         for test_user_idx in range(len(test)):
             test_p_s_idxs = np.nonzero(~np.isnan(self.conv_r_matrix[test_user_idx]))
-            recomm = self.recommend_to_user(rules, test_user_idx)
+            recomm = self.recommend_to_user(rules, train, test_user_idx)
             recomm_in_test = 0
             for prod in recomm:
                 # if user bought the product, add its fuzzy function for HIGH to recommendation counter
