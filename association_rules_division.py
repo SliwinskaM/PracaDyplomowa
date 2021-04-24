@@ -5,39 +5,40 @@ import apriori as apr
 import math
 
 class AssociationRules:
-    def __init__(self, conv_r_matrix, div_percentage, sets_enum: fc.FuzzyCurves.Names, min_support=0.00000001, min_confidence=0.6):
+    def __init__(self, conv_r_matrix, div_percentage, sets_enum, min_support=0.0005, min_confidence=0.6):
         self.conv_r_matrix = conv_r_matrix
-        self.number_of_transactions = np.count_nonzero(~np.isnan(conv_r_matrix)) / len(conv_r_matrix[0][0])
         self.number_of_users = len(conv_r_matrix)
         self.min_support = min_support
         self.min_confidence = min_confidence
         self.sets_enum = sets_enum
         self.max_div_size = div_percentage * self.number_of_users / 100  # users instead of transactions
         self.r_divisions = []
+        self.number_of_transactions = np.count_nonzero(~np.isnan(conv_r_matrix))/len(sets_enum)
+        self.min_count = self.min_support * self.number_of_transactions
 
     # "Product" representation: [index of Product, index of Fuzzy Set]
     ProductScore = np.array([int, int])
 
     # find maximum level of division and number of divisions
     def division_params(self):
-        acc_size = self.number_of_users
-        level = 0
+        curr_size = self.number_of_users
+        level = 1
         number_of_divisions = 1
         # divide until maximum division size is reached
-        while acc_size > self.max_div_size:
-            acc_size /= 2
+        while curr_size > self.max_div_size:
+            curr_size /= 2
             level += 1
             number_of_divisions *= 2
         return level, number_of_divisions
 
     # Unite two sub-databases
-    def unite(self, min_support, sub_tdb1, sub_tdb2, supports_tdb1, supports_tdb2):
+    def unite(self, min_count, sub_tdb1, sub_tdb2, counts_tdb1, counts_tdb2):
         # sets' lengths in sub_tdb1
         lengths1 = np.array([np.shape(elem)[1] for elem in sub_tdb1])
         # merge both sub-databases
         for length_idx2 in range(len(sub_tdb2)):
             # iterate through freguent sets in sub_tdb2
-            for t_idx in range(len(sub_tdb2[length_idx2])):
+            for t_idx in range(len(sub_tdb2[length_idx2])): #zrobić lengths2
                 # operate on same sets' lengths in both sub-databases
                 length_idx1 = np.where(lengths1 == length_idx2 + 1)
                 # if matching length in sub_tdb1 found
@@ -46,24 +47,24 @@ class AssociationRules:
                     t_in_tdb1 = np.where(np.all(np.all(sub_tdb2[length_idx2][t_idx] == sub_tdb1[length_idx1[0][0]], axis=1), axis=1))
                     # if set already exists in sub_tdb1, increase its support
                     if len(t_in_tdb1[0]) > 0:
-                        supports_tdb1[length_idx2][t_in_tdb1] += supports_tdb2[length_idx2][t_idx]
+                        counts_tdb1[length_idx2][t_in_tdb1] += counts_tdb2[length_idx2][t_idx]
                     # if not, add it to respective length
-                    elif supports_tdb2[length_idx2][t_idx] >= min_support:
+                    elif counts_tdb2[length_idx2][t_idx] >= min_count:
                         sub_tdb1[length_idx2] = np.append(sub_tdb1[length_idx2], [sub_tdb2[length_idx2][t_idx]], axis=0)
-                        supports_tdb1[length_idx2] = np.append(supports_tdb1[length_idx2], [supports_tdb2[length_idx2][t_idx]], axis=0)
+                        counts_tdb1[length_idx2] = np.append(counts_tdb1[length_idx2], [counts_tdb2[length_idx2][t_idx]], axis=0)
                 # if matching length not found, add new row to sub_tdb1
-                elif supports_tdb2[length_idx2][t_idx] >= min_support:
+                elif counts_tdb2[length_idx2][t_idx] >= min_count:
                     sub_tdb1.append(np.array(np.expand_dims(sub_tdb2[length_idx2][t_idx], axis=0), dtype=object))
-                    supports_tdb1.append(np.array([supports_tdb2[length_idx2][t_idx]]))
+                    counts_tdb1.append(np.array([counts_tdb2[length_idx2][t_idx]]))
                     lengths1 = np.append(lengths1, length_idx2+1)
 
         # check if updated supports match the condition
         for length_idx1 in range(len(sub_tdb1)):
-            sup_mask = supports_tdb1[length_idx1] >= min_support
+            sup_mask = counts_tdb1[length_idx1] >= min_count
             sub_tdb1[length_idx1] = sub_tdb1[length_idx1][sup_mask]
-            supports_tdb1[length_idx1] = supports_tdb1[length_idx1][sup_mask]
+            counts_tdb1[length_idx1] = counts_tdb1[length_idx1][sup_mask]
 
-        return sub_tdb1, supports_tdb1
+        return sub_tdb1, counts_tdb1
 
 
     def main(self):
@@ -71,64 +72,81 @@ class AssociationRules:
         # divide transactional database into parts
         self.r_divisions = np.array_split(self.conv_r_matrix, number_of_divisions)
         frequent_matrix = []
-        supports_matrix = []
+        counts_matrix = []
 
         # find frequent sets in every division
         for division in self.r_divisions:
             apriori = apr.Apriori(division, self.sets_enum, self.min_support)
-            frequent_sets, supports = apriori.apriori()
+            frequent_sets, counts = apriori.apriori()
             frequent_matrix.append(frequent_sets)
             # supports counted in relation to the whole database
-            supports_matrix.append([elem / number_of_divisions for elem in supports])
+            counts_matrix.append(counts)
 
         # UNITING
-        # minimum support needed increases with every level
-        curr_min_support = self.min_support / number_of_divisions
-        for lvl in range(number_of_levels, -1, -1):
-            divs = int(math.pow(2, lvl))
-            for j in range(int(divs / 2)):
-                frequent_matrix[j], supports_matrix[j] = self.unite(curr_min_support, frequent_matrix[j*2], frequent_matrix[j*2+1], supports_matrix[j*2], supports_matrix[j*2+1])
-            curr_min_support *= 2
-        return frequent_matrix[0], supports_matrix[0]
+        # minimum count needed increases with every level
+        for lvl in range(number_of_levels, 0, -1):
+            divs_num = int(math.pow(2, lvl - 1))
+            curr_min_count = self.min_count / divs_num * 2
+            for j in range(int(divs_num / 2)):
+                frequent_matrix[j], counts_matrix[j] = self.unite(curr_min_count, frequent_matrix[j*2], frequent_matrix[j*2+1], counts_matrix[j*2], counts_matrix[j*2+1])
+        return frequent_matrix[0], counts_matrix[0]
 
 
-    def confidence(self, itemset_support, pred_support):
-        conf_np = itemset_support / pred_support
+    def confidence(self, itemset_count, pred_count):
+        conf_np = itemset_count / pred_count
         return conf_np
 
 
     # Generate association rules based on frequent itemsets
-    def generate_rules(self, frequent_sets, supports):
-        rules2 = []
+    def generate_rules(self, frequent_sets, counts):
+        rules = []
         # for all frequent itemsets
         for itemset_length_idx in range(1, len(frequent_sets)):
             itemset_length = itemset_length_idx + 1
             for itemset_idx in range(len(frequent_sets[itemset_length_idx])):
                 itemset = frequent_sets[itemset_length_idx][itemset_idx]
-                itemset_support = supports[itemset_length_idx][itemset_idx]
-                # generate all possible rules from a set
-                for pred_length in range(1, itemset_length):
-                    for pred_idx in combinations(range(itemset_length), pred_length):
-                        # get predecessors' items and support
-                        predecessor = itemset[list(tuple(pred_idx))]
-                        pred_support_idx = np.nonzero(np.all(np.all(frequent_sets[pred_length-1] == predecessor, axis=1), axis=1))
-                        pred_support = supports[pred_length-1][pred_support_idx]
+                itemset_count = counts[itemset_length_idx][itemset_idx]
+                potential_rules = []
+                # generate all possible rules from a set - beginning from these with longest predecessors
+                for antec_length in range(itemset_length - 1, 0, -1):
+                    for antec_idx in combinations(range(itemset_length), antec_length):
+                        # get antecedent and consequent
+                        antecedent = itemset[list(tuple(antec_idx))]
+                        consequent = np.delete(itemset, antec_idx, 0)
+                        potential_rules.append([antecedent, consequent])
 
-                        successor = np.delete(itemset, pred_idx, 0)
-                        # check the confidence
-                        conf = self.confidence(itemset_support, pred_support)
-                        if conf >= self.min_confidence:
+                # check the potencial rules
+                for pot_rule in potential_rules:
+                    antecedent, consequent = pot_rule
+                    # get the antecedent's supports
+                    antec_count_idx = np.nonzero(
+                        np.all(np.all(frequent_sets[len(antecedent) - 1] == antecedent, axis=1), axis=1))
+                    # consider only rules leading to the highest score
+                    consequent_scores = consequent[:,1]
+                    antec_count = counts[len(antecedent) - 1][antec_count_idx]
+                    # check the confidence
+                    conf = self.confidence(itemset_count, antec_count)
+                    if conf >= self.min_confidence:
+                        # check if rule leads to the highest score
+                        if np.all(consequent_scores == len(self.sets_enum) - 1):
                             #generate rule
-                            rules2.append([predecessor, successor])
-        return rules2
+                            rules.append(np.array((antecedent, consequent), dtype=object))
+                    # if rule's confidence is too low, its 'children' in the rules tree also can be excluded
+                    else:
+                        pot_rules_to_delete = []
+                        for lower_antec_length in range(len(antecedent) - 1, 0, -1):
+                            for lower_antec in combinations(antecedent, lower_antec_length):
+                                for pot_rule_del_idx in range(len(potential_rules)):
+                                    if np.all(np.all(potential_rules[pot_rule_del_idx][0] == np.array(lower_antec))):
+                                        pot_rules_to_delete.append(pot_rule_del_idx)
+                        potential_rules = np.delete(potential_rules, pot_rules_to_delete, axis=0)
+                        pass
+                        #                 pot_rules_mask[pot_rule_del_idx] = False
+                        # potential_rules = potential_rules[pot_rules_mask]
+
+        return rules
 
 
     def algorithm_main(self):
-        frequent_sets, supports = self.main()
-        return self.generate_rules(frequent_sets, supports)
-
-
-
-
-
-
+        frequent_sets, counts = self.main()
+        return self.generate_rules(frequent_sets, counts)
