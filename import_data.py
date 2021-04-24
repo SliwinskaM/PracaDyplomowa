@@ -1,5 +1,8 @@
 import numpy as np
 import pandas as pd
+import time
+import datetime
+
 
 
 class ImportData:
@@ -7,7 +10,6 @@ class ImportData:
         self.dataset = dataset
         self.r_matrix = []  # R matrix (users x products, elements: ratings)
         self.t_matrix = []  # T matrix (users x products, elements: timestamps)
-        self.similarity = []  # optional
         self.users = np.array([], dtype=str)  # already searched users
         self.products = np.array([], dtype=str)  # already searched products
         self.min_score = 0
@@ -15,7 +17,7 @@ class ImportData:
 
     class Parameters:
         def __init__(self, filename, min_score, max_score, user_column, product_column, score_column,
-                     time_column, args=None):
+                     time_column, parse_date=0, args=None):
             self.filename = filename
             self.min_score = min_score
             self.max_score = max_score
@@ -23,16 +25,17 @@ class ImportData:
             self.product_column = product_column
             self.score_column = score_column
             self.time_column = time_column
+            self.parse_date = parse_date
             self.args = args
 
     params_dict = {
         'fine_food': Parameters('Datasets/AmazonFineFoodShort3.csv',
                                        1, 5, 'UserId', 'ProductId', 'Score', 'Time'),
-        'beauty': Parameters('Datasets/RatingBeautyShort.csv', 1, 5, 'UserId', 'ProductId', 'Rating',
+        'beauty': Parameters('Datasets/RatingBeautyShort4.csv', 1, 5, 'UserId', 'ProductId', 'Rating',
                                     'Timestamp'), # najczęstszy support: 0.0053...
         'products': Parameters('Datasets/AmazonProductsShort.csv',
                                       1, 5, 'reviews.username', 'id', 'reviews.rating',
-                                      'reviews.dateAdded'),  # ten zbiór nie ma sensu skrócony (abo wgl)
+                                      'reviews.dateAdded', 1),  # ten zbiór nie ma sensu skrócony (abo wgl)
         'electronics': Parameters('Datasets/ElectronicsShort.csv', 1, 5, 0, 1, 2, 3),
         'movies': Parameters('Datasets/MoviesShort.csv', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp') # to 0.5 podejrzane
     }
@@ -68,10 +71,21 @@ class ImportData:
                     r_matrix[i].append(np.nan)
                     t_matrix[i].append(np.nan)
             r_matrix[user_idx][prod_idx] = row[params.score_column]
-            t_matrix[user_idx][prod_idx] = row[params.time_column]
+
+            # parse timestamps
+            time_val = row[params.time_column]
+            # %d%m%y
+            if params.parse_date == 1:
+                time_val = time.mktime(datetime.datetime.strptime(time_val, "%Y-%m-%dT%H:%M:%SZ").timetuple())
+
+            time_val = float(time_val)
+            t_matrix[user_idx][prod_idx] = time_val
+
+
+
         self.users = np.array(users)
         self.products = np.array(products)
         self.r_matrix = np.array(r_matrix, dtype=object)
-        self.t_matrix = np.array(t_matrix, dtype=object)
+        self.t_matrix = np.array(t_matrix)
         print('u')
 

@@ -99,7 +99,7 @@ class AssociationRules:
 
     # Generate association rules based on frequent itemsets
     def generate_rules(self, frequent_sets, counts):
-        rules2 = []
+        rules = []
         # for all frequent itemsets
         for itemset_length_idx in range(1, len(frequent_sets)):
             itemset_length = itemset_length_idx + 1
@@ -108,38 +108,43 @@ class AssociationRules:
                 itemset_count = counts[itemset_length_idx][itemset_idx]
                 potential_rules = []
                 # generate all possible rules from a set - beginning from these with longest predecessors
-                for pred_length in range(itemset_length - 1, 0, -1):
-                    for pred_idx in combinations(range(itemset_length), pred_length):
-                        # get predecessor and successor
-                        predecessor = itemset[list(tuple(pred_idx))]
-                        successor = np.delete(itemset, pred_idx, 0)
-                        potential_rules.append([predecessor, successor])
+                for antec_length in range(itemset_length - 1, 0, -1):
+                    for antec_idx in combinations(range(itemset_length), antec_length):
+                        # get antecedent and consequent
+                        antecedent = itemset[list(tuple(antec_idx))]
+                        consequent = np.delete(itemset, antec_idx, 0)
+                        potential_rules.append([antecedent, consequent])
 
                 # check the potencial rules
                 for pot_rule in potential_rules:
-                    predecessor, successor = pot_rule
-                    # get the predecessor's supports
-                    pred_count_idx = np.nonzero(
-                        np.all(np.all(frequent_sets[len(predecessor) - 1] == predecessor, axis=1), axis=1))
+                    antecedent, consequent = pot_rule
+                    # get the antecedent's supports
+                    antec_count_idx = np.nonzero(
+                        np.all(np.all(frequent_sets[len(antecedent) - 1] == antecedent, axis=1), axis=1))
                     # consider only rules leading to the highest score
-                    successor_scores = successor[:,1]
-                    pred_count = counts[len(predecessor) - 1][pred_count_idx]
+                    consequent_scores = consequent[:,1]
+                    antec_count = counts[len(antecedent) - 1][antec_count_idx]
                     # check the confidence
-                    conf = self.confidence(itemset_count, pred_count)
+                    conf = self.confidence(itemset_count, antec_count)
                     if conf >= self.min_confidence:
                         # check if rule leads to the highest score
-                        if np.all(successor_scores == len(self.sets_enum) - 1):
+                        if np.all(consequent_scores == len(self.sets_enum) - 1):
                             #generate rule
-                            rules2.append([predecessor, successor])
+                            rules.append(np.array((antecedent, consequent), dtype=object))
                     # if rule's confidence is too low, its 'children' in the rules tree also can be excluded
                     else:
-                        for lower_pred_length in range(len(predecessor) - 1, 0, -1):
-                            lower_pred = combinations(predecessor, lower_pred_length)
-                            dont_delete = potential_rules[:][0] != lower_pred
-                            potential_rules = potential_rules[dont_delete] # w drugą stronę jak będzie się dało debugować
-                            print('u')
+                        pot_rules_to_delete = []
+                        for lower_antec_length in range(len(antecedent) - 1, 0, -1):
+                            for lower_antec in combinations(antecedent, lower_antec_length):
+                                for pot_rule_del_idx in range(len(potential_rules)):
+                                    if np.all(np.all(potential_rules[pot_rule_del_idx][0] == np.array(lower_antec))):
+                                        pot_rules_to_delete.append(pot_rule_del_idx)
+                        potential_rules = np.delete(potential_rules, pot_rules_to_delete, axis=0)
+                        pass
+                        #                 pot_rules_mask[pot_rule_del_idx] = False
+                        # potential_rules = potential_rules[pot_rules_mask]
 
-        return rules2
+        return rules
 
 
     def algorithm_main(self):
