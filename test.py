@@ -48,8 +48,8 @@ class TestRecommendation(unittest.TestCase):
         curves = fc.Curves1(1, 5, 0.2, 0.45, 0.55, 0.8)
 
         recom = re.Recommend(test_conv_r_matrix)
-        tr = recom.test_recommend(test_t_matrix, 100, curves.Names, test_size=0.3, min_support=0.0000000001, min_confidence=0.000004)
-        self.assertEqual(tr, 1.0)
+        tr = recom.main_recommend(test_t_matrix, 100, curves.Names, test_size=0.3, min_support=0.0000000001, min_confidence=0.000004)
+        self.assertEqual(tr, ([[], [np.array([1], dtype=object)]], 1.0))
 
 if __name__ == '__main__':
     unittest.main()

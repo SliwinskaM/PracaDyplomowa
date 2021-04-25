@@ -35,9 +35,9 @@ class ImportData:
                                     'Timestamp'), # najczęstszy support: 0.0053...
         'products': Parameters('Datasets/AmazonProductsShort.csv',
                                       1, 5, 'reviews.username', 'id', 'reviews.rating',
-                                      'reviews.dateAdded', 1),  # ten zbiór nie ma sensu skrócony (abo wgl)
+                                      'reviews.dateAdded', 1),
         'electronics': Parameters('Datasets/ElectronicsShort.csv', 1, 5, 0, 1, 2, 3),
-        'movies': Parameters('Datasets/MoviesShort.csv', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp') # to 0.5 podejrzane
+        'movies': Parameters('Datasets/MoviesShort.csv', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp')
     }
 
     def import_data(self):
