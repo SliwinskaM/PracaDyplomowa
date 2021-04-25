@@ -8,12 +8,12 @@
 /httpRequests/
 
 # Self generated files
-/fuzzy_curve_2_1.png
-/fuzzy_curve_2_2.png
-/fuzzy_curve_2_pred.png
-/fuzzy_curve_3_1.png
-/fuzzy_curve_3_2.png
-/fuzzy_curve_3_3.png
-/fuzzy_curve_3_4.png
-/fuzzy_curve_3_pred.png
-/matrixR.png
+../fuzzy_curve_2_1.png
+../fuzzy_curve_2_2.png
+../fuzzy_curve_2_pred.png
+../fuzzy_curve_3_1.png
+../fuzzy_curve_3_2.png
+../fuzzy_curve_3_3.png
+../fuzzy_curve_3_4.png
+../fuzzy_curve_3_pred.png
+../matrixR.png
