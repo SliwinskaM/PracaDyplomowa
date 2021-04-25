@@ -105,7 +105,7 @@ class Recommend:
 
         # cross-validate recommendations on test matrix
         for i_cross in range(cross_num):
-            # initialize cross validation base and cross test
+            # initialize cross validation cross base and cross test
             cross_base = np.empty(test.shape)
             cross_base[:] = np.nan
             cross_test = np.empty(test.shape)
