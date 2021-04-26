@@ -1,0 +1,999 @@
+User,Brand,Variety,Type,Date,Strength,Taste,Price,Rating
+ghanta,Marlboro,Reds,Regular,2007-06-21,Medium,Tolerable,Fair,3
+Karawasa,Marlboro,Reds,Regular,2007-06-23,Very Strong,Tolerable,Fair,4
+Tintedace,Camel,Turkish Gold,Regular,2007-06-23,Medium,Very Poor,High,1
+Karawasa,Camel,Turkish Gold,Regular,2007-06-23,Strong,Pleasant,Fair,4
+Tintedace,Newport,Full Flavor,Regular,2007-06-23,Medium,Very Pleasant,Fair,5
+Karawasa,Marlboro,Blend No. 27,Regular,2007-06-23,Medium,Pleasant,Fair,4
+Grimey,Camel,No. 9,Regular,2007-06-23,Strong,Poor,Fair,2
+Grimey,Marlboro,Reds,Regular,2007-06-23,Very Strong,Poor,Fair,3
+Karawasa,Parliament,Lights (White),Regular,2007-06-23,Medium,Tolerable,Fair,3
+Grimey,Marlboro,Blend No. 27,Regular,2007-06-23,Weak,Poor,Fair,2
+Karawasa,Marlboro,Medium,Regular,2007-06-23,Medium,Poor,Fair,3
+Lothar,American Spirit,Mediums,Regular,2007-06-23,Strong,Very Pleasant,High,5
+Karawasa,American Spirit,Mediums,Regular,2007-06-23,Medium,Tolerable,High,3
+Karawasa,Camel,No. 9,Regular,2007-06-23,Weak,Tolerable,Fair,3
+Gracefuldrunk,Winston,Full Flavor,Regular,2007-06-23,Medium,Pleasant,Low,4
+Ponzi,Basic,Full Flavor,Regular,2007-06-23,Strong,Tolerable,Low,3
+Grimey,Camel,Lights,Regular,2007-06-23,Medium,Very Pleasant,Low,5
+Ogiona,Marlboro,Lights,Regular,2007-06-23,Weak,Tolerable,Fair,2
+Ariel,American Spirit,Lights,Regular,2007-06-23,Medium,Pleasant,High,4
+Karawasa,Marlboro,Lights,Regular,2007-06-23,Medium,Very Pleasant,Fair,4
+Cheever,Winston,Lights,Regular,2007-06-24,Weak,Poor,Fair,2
+Stewie,Camel,Turkish Silver,Regular,2007-06-24,Strong,Very Pleasant,Low,4
+randiskop01,Camel,Lights,Regular,2007-06-24,Medium,Tolerable,Low,3
+Cheever,Benson and Hedges,Menthol,100s,2007-06-24,Strong,Pleasant,Fair,4
+Malboroman,Marlboro,Medium,Regular,2007-06-24,Medium,Very Poor,Fair,1
+Joe Camel,Camel,Reds,Regular,2007-06-24,Strong,Pleasant,Fair,4
+randiskop01,Marlboro,Menthol Lights,Regular,2007-06-24,Weak,Poor,Fair,2
+Joe Camel,Camel,Wides Filters,Regular,2007-06-24,Strong,Pleasant,Fair,5
+Stewie,Marlboro,Lights,Regular,2007-06-24,Medium,Pleasant,Fair,4
+Stewie,Camel,Turkish Royal,Regular,2007-06-24,Very Strong,Pleasant,Fair,4
+Malboroman,Marlboro,Reds,Regular,2007-06-24,Strong,Pleasant,Low,4
+ClassySmoke,Marlboro,Ultra Lights,Regular,2007-06-25,Weak,Pleasant,Fair,3
+ClassySmoke,Parliament,Full Flavor,Regular,2007-06-25,Medium,Tolerable,Fair,3
+SmokingDude,American Spirit,Ultra Lights,Regular,2007-06-25,Very Weak,Tolerable,High,2
+SmokingDude,KOOL,Menthol,Regular,2007-06-25,Medium,Very Poor,Fair,2
+SmokingDude,Camel,Signature Blend Frost,Regular,2007-06-25,Very Weak,Very Poor,Fair,1
+God S Patton,Marlboro,Lights,Regular,2007-06-28,Weak,Tolerable,Low,3
+Odemination,American Spirit,Menthol Lights,Regular,2007-06-28,Very Weak,Very Poor,Very High,1
+raytheon,Marlboro,Blend No. 27,Regular,2007-06-28,Weak,Pleasant,Fair,4
+Tikal,Marlboro,Lights,Regular,2007-06-28,Medium,Pleasant,Fair,4
+Tikal,Marlboro,Menthol Milds,Regular,2007-06-28,Medium,Pleasant,Low,4
+ciggic,Dunhill,Full Flavor (Red),Regular,2007-06-28,Weak,Tolerable,Low,4
+The Gowrie Fan Club,Winston,Lights,Regular,2007-06-28,Medium,Pleasant,Fair,4
+raytheon,Lucky Strike,Filters,Regular,2007-06-28,Medium,Pleasant,High,5
+Odemination,Camel,No. 9 Menthol,Regular,2007-06-28,Medium,Pleasant,Fair,4
+Trophy Husband,Camel,No. 9,Regular,2007-06-28,Strong,Very Pleasant,Low,5
+Tikal,Benson and Hedges,Full Flavor,100s,2007-06-28,Very Strong,Poor,Very High,1
+Listos,Benson and Hedges,Full Flavor,100s,2007-06-30,Strong,Pleasant,Fair,4
+Domonick,Sonoma,Full Flavor,Regular,2007-06-30,Strong,Poor,Low,2
+Nibbles,Camel,Lights,Regular,2007-06-30,Medium,Pleasant,Fair,3
+AddictiousMaximus,Camel,Lights,Regular,2007-06-30,Weak,Very Poor,Fair,1
+AddictiousMaximus,American Spirit,Ultra Lights,Regular,2007-06-30,Weak,Very Pleasant,Low,5
+Bigrigger,KOOL,Menthol,Regular,2007-06-30,Medium,Tolerable,Low,4
+Freed Turkey,Marlboro,Smooth Menthol,Regular,2007-06-30,Medium,Tolerable,High,2
+Cigarette Dromidary,Marlboro,Reds,Regular,2007-06-30,Strong,Pleasant,Low,5
+Eminent,L&M,Full Flavor,Regular,2007-06-30,Medium,Pleasant,Low,4
+Eminent,Camel,Filters Full Flavor,Regular,2007-06-30,Strong,Very Poor,Very High,1
+Sotaka,Camel,Lights,Regular,2007-06-30,Strong,Pleasant,Low,3
+Cigarette Dromidary,American Spirit,Full Flavor,Regular,2007-06-30,Very Weak,Poor,High,2
+Eminent,Camel,Reds,Regular,2007-06-30,Very Strong,Tolerable,Low,2
+Eminent,Marlboro,Reds,Regular,2007-06-30,Very Strong,Poor,High,2
+Sotaka,Benson and Hedges,Full Flavor,100s,2007-06-30,Medium,Pleasant,High,5
+Teen Smoker,Marlboro,Reds,Regular,2007-06-30,Very Strong,Tolerable,Low,4
+Closet Lush,Winston,Lights,Regular,2007-06-30,Medium,Tolerable,Low,3
+ImTheKing,American Spirit,Full Flavor,Regular,2007-07-01,Medium,Very Pleasant,Fair,5
+longgshark,American Spirit,Menthol,Regular,2007-07-01,Strong,Tolerable,High,3
+ImTheKing,Camel,Full Flavor,Unfiltered,2007-07-01,Medium,Poor,Fair,1
+slowmotion,American Spirit,Perique,Regular,2007-07-01,Medium,Pleasant,High,2
+ImTheKing,Newport,Full Flavor,Regular,2007-07-01,Medium,Very Pleasant,Fair,4
+illogic,Newport,Full Flavor,Regular,2007-07-01,Medium,Poor,High,2
+illogic,Camel,Menthol (Silver),Regular,2007-07-01,Medium,Pleasant,Low,4
+Goose,Marlboro,Blend No. 27,Regular,2007-07-02,Medium,Pleasant,Fair,4
+dyaz4ever,Marlboro,Reds,Regular,2007-07-02,Strong,Poor,Low,2
+Karawasa,Camel,No. 9 Menthol,Regular,2007-07-03,Weak,Pleasant,Fair,3
+Bootes,Marlboro,Ultra Lights,Regular,2007-07-03,Weak,Pleasant,Fair,4
+CaliSunbug,Marlboro,Reds,Regular,2007-07-03,Very Strong,Very Poor,Fair,1
+PaulieJ313,Camel,Turkish Silver,Regular,2007-07-03,Medium,Pleasant,Fair,4
+Bootes,Djarum,Black,Regular,2007-07-03,Strong,Pleasant,Very High,4
+Karawasa,Camel,Signature Blend Frost,Regular,2007-07-05,Medium,Pleasant,Fair,4
+Jacki,Benson and Hedges,Full Flavor,100s,2007-07-05,Strong,Pleasant,Fair,4
+Jacki,Virginia Slims,Full Flavor,100s,2007-07-06,Medium,Pleasant,Fair,3
+Optical Star,American Spirit,Lights,Regular,2007-07-07,Weak,Very Pleasant,Very High,5
+Blackasslungs,Camel,Filters Full Flavor,Regular,2007-07-08,Strong,Very Pleasant,High,5
+950,Camel,Turkish Silver,Regular,2007-07-08,Medium,Very Pleasant,Fair,4
+kalku2k,Marlboro,Medium,Regular,2007-07-08,Medium,Very Poor,Fair,1
+Blackasslungs,Marlboro,Menthol Lights,Regular,2007-07-08,Medium,Pleasant,Fair,4
+Ness,Camel,No. 9 Menthol,Regular,2007-07-10,Medium,Very Pleasant,Fair,5
+mxmsky,Dunhill,Full Flavor (Red),Regular,2007-07-11,Strong,Tolerable,Very High,3
+Flava,Marlboro,Reds,Regular,2007-07-11,Very Strong,Tolerable,High,2
+mxmsky,Marlboro,Menthol,Regular,2007-07-11,Strong,Tolerable,Very High,3
+frank725nyc,Marlboro,Blend No. 27,Regular,2007-07-12,Medium,Very Pleasant,High,5
+thomw,Parliament,Lights (White),Regular,2007-07-12,Weak,Poor,High,2
+thomw,Winston,Full Flavor,Regular,2007-07-12,Medium,Tolerable,Fair,3
+thomw,Camel,Lights,Regular,2007-07-12,Medium,Tolerable,Fair,3
+thomw,Camel,Turkish Royal,Regular,2007-07-12,Medium,Very Pleasant,Fair,5
+thomw,Marlboro,Lights,Regular,2007-07-12,Medium,Tolerable,High,2
+thomw,Camel,Turkish Gold,Regular,2007-07-12,Weak,Tolerable,Fair,2
+thomw,American Spirit,Full Flavor,Regular,2007-07-12,Very Strong,Very Pleasant,High,5
+thomw,Camel,Menthol (Silver),Regular,2007-07-12,Strong,Pleasant,Fair,4
+thomw,Camel,Filters Full Flavor,Regular,2007-07-12,Strong,Very Pleasant,Fair,5
+thomw,Marlboro,Reds,Regular,2007-07-12,Strong,Pleasant,High,4
+thomw,Marlboro,Menthol Lights,Regular,2007-07-12,Weak,Poor,High,2
+thomw,Camel,Full Flavor,Unfiltered,2007-07-12,Very Strong,Very Pleasant,Fair,5
+I'llNeverquit324,Djarum,Black,Regular,2007-07-15,Strong,Very Pleasant,High,5
+I'llNeverquit324,Marlboro,Reds,Regular,2007-07-15,Very Strong,Tolerable,Fair,3
+thomw,American Spirit,Organic,Regular,2007-07-21,Strong,Pleasant,Very High,4
+JordanW,Camel,Wides Filters,Regular,2007-07-22,Medium,Pleasant,Fair,5
+JordanW,Marlboro,Reds,Regular,2007-07-22,Very Strong,Pleasant,Fair,5
+bdrummer,Camel,Signature Blend Frost,Regular,2007-07-25,Very Weak,Very Poor,Fair,1
+thomw,Marlboro,Blend No. 27,Regular,2007-07-26,Medium,Pleasant,High,4
+Vedi,Newport,Full Flavor,Regular,2007-07-26,Medium,Very Pleasant,Low,5
+bilsim,Marlboro,Lights,Regular,2007-07-26,Weak,Pleasant,High,4
+Vedi,American Spirit,Lights,Regular,2007-07-26,Medium,Very Pleasant,Very High,5
+bilsim,Lucky Strike,Filters,Regular,2007-07-26,Weak,Very Pleasant,High,4
+JordanW,Camel,Reds,Regular,2007-07-28,Very Strong,Very Pleasant,Very High,5
+Bootes,Marlboro,Blend No. 27,Regular,2007-07-30,Medium,Pleasant,Fair,3
+colt45,Marlboro,Menthol,Regular,2007-07-31,Medium,Very Pleasant,High,5
+homer676,Camel,Reds,Regular,2007-08-01,Very Strong,Very Pleasant,Fair,5
+homer676,Lucky Strike,Classic,Unfiltered,2007-08-02,Strong,Pleasant,Fair,5
+homer676,Camel,Full Flavor,Unfiltered,2007-08-02,Very Strong,Very Pleasant,Fair,5
+homer676,Camel,Filters Full Flavor,Regular,2007-08-02,Strong,Very Pleasant,Fair,5
+Display_Name,Marlboro,Reds,Regular,2007-08-03,Strong,Pleasant,Fair,3
+Display_Name,Lucky Strike,Classic,Unfiltered,2007-08-03,Very Strong,Very Pleasant,Fair,5
+randiskop01,Djarum,Black,Regular,2007-08-03,Strong,Very Pleasant,High,5
+Display_Name,Pall Mall,Full Flavor,Regular,2007-08-03,Strong,Tolerable,Very Low,3
+Display_Name,Camel,Full Flavor,Unfiltered,2007-08-03,Very Strong,Pleasant,Low,5
+n7j,Parliament,Lights (White),Regular,2007-08-03,Medium,Tolerable,Fair,3
+Sherlock,Dunhill,Full Flavor (Red),Regular,2007-08-04,Strong,Very Pleasant,Very High,5
+Sherlock,American Spirit,Full Flavor,Unfiltered,2007-08-04,Strong,Pleasant,High,4
+Sherlock,Benson and Hedges,Full Flavor,100s,2007-08-04,Very Strong,Pleasant,High,4
+Sherlock,Camel,Lights,Regular,2007-08-04,Weak,Tolerable,Low,3
+Sherlock,Parliament,Lights (White),Regular,2007-08-05,Medium,Tolerable,Fair,2
+Petr_4,Dunhill,Full Flavor (Red),Regular,2007-08-05,Medium,Pleasant,High,4
+JMC78,Newport,Full Flavor,Regular,2007-08-06,Weak,Very Poor,Very Low,1
+JMC78,Marlboro,Smooth Menthol,Regular,2007-08-06,Strong,Poor,Fair,2
+JMC78,Marlboro,Lights,Regular,2007-08-06,Medium,Pleasant,Low,4
+JMC78,Lucky Strike,Filters,Regular,2007-08-06,Strong,Pleasant,Very High,4
+JMC78,Pall Mall,Lights (Blue),Regular,2007-08-06,Weak,Tolerable,Fair,3
+JMC78,Parliament,Lights (White),Regular,2007-08-06,Weak,Tolerable,High,3
+n7j,Djarum,Black,Regular,2007-08-06,Very Strong,Tolerable,Very High,2
+JMC78,Marlboro,Menthol,Regular,2007-08-06,Medium,Very Pleasant,Low,4
+JMC78,Marlboro,Reds,Regular,2007-08-06,Strong,Tolerable,Low,4
+950,Camel,Signature Blend Frost,Regular,2007-08-08,Medium,Pleasant,Fair,4
+950,Camel,Turkish Silver,Regular,2007-08-08,Medium,Very Pleasant,Fair,5
+950,Marlboro,Reds,Regular,2007-08-08,Very Strong,Tolerable,Fair,3
+featherofmaat,Djarum,Black,Regular,2007-08-10,Strong,Very Pleasant,High,5
+g28401,Marlboro,Blend No. 27,Regular,2007-08-11,Medium,Pleasant,High,4
+g28401,Marlboro,Reds,Regular,2007-08-11,Medium,Tolerable,Fair,3
+Tony T Bone,Winston,Full Flavor,Regular,2007-08-11,Medium,Tolerable,High,3
+g28401,Camel,Filters Full Flavor,Regular,2007-08-11,Strong,Pleasant,Fair,4
+niggsmoker666,Camel,Turkish Royal,Regular,2007-08-11,Strong,Pleasant,High,4
+JMC78,KOOL,Milds,Regular,2007-08-11,Strong,Very Pleasant,High,4
+niggsmoker666,Camel,No. 9,Regular,2007-08-11,Very Weak,Tolerable,High,3
+g28401,Winston,Lights,Regular,2007-08-11,Medium,Poor,Fair,2
+Tony T Bone,Marlboro,Reds,Regular,2007-08-11,Strong,Pleasant,High,3
+g28401,American Spirit,Full Flavor,Regular,2007-08-11,Medium,Tolerable,High,3
+g28401,American Spirit,Lights,Regular,2007-08-11,Weak,Tolerable,High,2
+g28401,Camel,Turkish Silver,Regular,2007-08-11,Weak,Very Pleasant,High,5
+Tony T Bone,Maverick,Full Flavor,Regular,2007-08-11,Medium,Very Poor,Fair,2
+g28401,American Spirit,Perique,Regular,2007-08-11,Strong,Poor,High,3
+Yanksox,Lucky Strike,Classic,Unfiltered,2007-08-12,Strong,Pleasant,High,5
+Yanksox,Djarum,Black,Regular,2007-08-12,Strong,Poor,Very High,3
+Yanksox,Marlboro,Reds,Regular,2007-08-12,Medium,Poor,Low,2
+Yanksox,American Spirit,Full Flavor,Regular,2007-08-12,Strong,Tolerable,High,3
+Petr_4,Lucky Strike,Filters,Regular,2007-08-12,Medium,Very Pleasant,Fair,5
+savery,Camel,Filters Full Flavor,Regular,2007-08-13,Strong,Pleasant,Fair,5
+JMC78,KOOL,Menthol,Regular,2007-08-14,Strong,Pleasant,High,3
+Strelok,Camel,Lights,Regular,2007-08-15,Medium,Pleasant,Fair,5
+gobias,Camel,Lights,Regular,2007-08-15,Medium,Pleasant,Fair,4
+gobias,Dunhill,Full Flavor (Red),Regular,2007-08-15,Medium,Tolerable,High,3
+gobias,Lucky Strike,Classic,Unfiltered,2007-08-15,Strong,Very Pleasant,High,5
+Rambus,Camel,Lights,Regular,2007-08-16,Very Weak,Very Poor,Very High,1
+Rambus,Lucky Strike,Classic,Unfiltered,2007-08-16,Strong,Very Pleasant,Fair,5
+JMC78,Lucky Strike,Classic,Unfiltered,2007-08-17,Very Strong,Very Pleasant,High,5
+gobias,Parliament,Full Flavor,Regular,2007-08-18,Medium,Very Poor,Fair,2
+gobias,American Spirit,Full Flavor,Regular,2007-08-18,Medium,Pleasant,High,4
+gobias,Parliament,Lights (White),Regular,2007-08-18,Weak,Poor,Fair,3
+17yearsold,Camel,Wides Filters,Regular,2007-08-19,Strong,Pleasant,High,4
+17yearsold,Camel,Turkish Gold,Regular,2007-08-19,Medium,Very Pleasant,High,5
+Rizelico,Djarum,Specials,Regular,2007-08-19,Medium,Tolerable,High,3
+Alex Umrysh,Camel,Filters Full Flavor,Regular,2007-08-20,Strong,Very Pleasant,Fair,5
+ml,Djarum,Specials,Regular,2007-08-21,Medium,Very Pleasant,Fair,5
+Silmarwen,Djarum,Specials,Regular,2007-08-24,Medium,Very Pleasant,Fair,5
+Yanksox,Camel,Reds,Regular,2007-08-26,Strong,Tolerable,High,4
+bilsim,Marlboro,Reds,Regular,2007-08-27,Strong,Very Pleasant,High,5
+Kaijapska,Camel,No. 9,Regular,2007-08-27,Medium,Pleasant,Fair,4
+g28401,Djarum,Black,Regular,2007-08-28,Weak,Tolerable,High,2
+Sherlock,Marlboro,Ultra Lights,Regular,2007-08-28,Very Weak,Very Poor,Low,1
+g28401,Camel,Signature Blend Infused,Regular,2007-08-28,Weak,Tolerable,High,3
+g28401,Camel,Wides Filters,Regular,2007-08-28,Medium,Pleasant,High,4
+Calvicad,Newport,Full Flavor,Regular,2007-08-29,Strong,Very Poor,Fair,1
+Calvicad,Djarum,Black,Regular,2007-08-29,Weak,Tolerable,Very High,3
+Calvicad,Lucky Strike,Filters,Regular,2007-08-29,Strong,Very Pleasant,Very High,5
+Calvicad,KOOL,Menthol,Regular,2007-08-29,Strong,Pleasant,High,4
+Calvicad,Camel,Lights,Regular,2007-08-29,Medium,Pleasant,High,4
+Calvicad,Marlboro,Menthol Lights,Regular,2007-08-29,Medium,Pleasant,High,4
+Calvicad,Marlboro,Reds,Regular,2007-08-29,Strong,Tolerable,High,3
+Calvicad,Parliament,Lights (White),Regular,2007-08-29,Medium,Pleasant,High,4
+Calvicad,Lucky Strike,Classic,Unfiltered,2007-08-29,Very Strong,Very Pleasant,Very High,5
+Calvicad,Marlboro,Smooth Menthol,Regular,2007-08-29,Weak,Very Poor,High,1
+Calvicad,Marlboro,Menthol Milds,Regular,2007-08-29,Medium,Tolerable,High,3
+Calvicad,Pall Mall,Lights (Blue),Regular,2007-08-29,Medium,Poor,Fair,2
+Kaijapska,Camel,Filters Full Flavor,Regular,2007-08-29,Strong,Very Pleasant,Fair,5
+Calvicad,Camel,Signature Blend Frost,Regular,2007-08-29,Very Weak,Tolerable,High,2
+Calvicad,Camel,No. 9 Menthol,Regular,2007-08-29,Very Weak,Tolerable,High,2
+reverb10,American Spirit,Perique,Regular,2007-08-30,Very Strong,Pleasant,Very High,4
+reverb10,Lucky Strike,Filters,Regular,2007-08-30,Strong,Very Pleasant,Very High,5
+reverb10,Winston,Lights,Regular,2007-08-30,Medium,Pleasant,Low,3
+captaincool,Pall Mall,Straights,Unfiltered,2007-08-30,Very Strong,Very Pleasant,Fair,5
+captaincool,Lucky Strike,Classic,Unfiltered,2007-08-30,Very Strong,Very Pleasant,Very High,5
+reverb10,Pall Mall,Full Flavor,Regular,2007-08-30,Very Strong,Tolerable,Fair,3
+reverb10,Parliament,Lights (White),Regular,2007-08-30,Weak,Pleasant,High,4
+reverb10,Camel,Turkish Silver,Regular,2007-08-30,Medium,Tolerable,Fair,3
+reverb10,Camel,Lights,Regular,2007-08-30,Medium,Pleasant,Fair,5
+reverb10,Lucky Strike,Classic,Unfiltered,2007-08-30,Very Strong,Very Pleasant,Very High,5
+reverb10,Camel,Filters Full Flavor,Regular,2007-08-30,Strong,Pleasant,Fair,4
+reverb10,Pall Mall,Lights (Blue),Regular,2007-08-30,Weak,Tolerable,Fair,3
+reverb10,Camel,Turkish Gold,Regular,2007-08-30,Medium,Tolerable,Fair,3
+reverb10,Camel,No. 9,Regular,2007-08-30,Weak,Tolerable,High,3
+ruffio,Lucky Strike,Classic,Unfiltered,2007-08-31,Very Strong,Very Pleasant,High,5
+ruffio,KOOL,Menthol,Regular,2007-08-31,Medium,Tolerable,Low,2
+ruffio,Marlboro,Reds,Regular,2007-08-31,Strong,Pleasant,Fair,4
+thomw,Camel,Wides Filters,Regular,2007-08-31,Strong,Very Pleasant,Fair,4
+PyroLogik,American Spirit,Perique,Regular,2007-09-01,Strong,Pleasant,High,4
+caged in,Newport,Full Flavor,Regular,2007-09-01,Strong,Pleasant,Fair,5
+ruffio,American Spirit,Full Flavor,Regular,2007-09-01,Medium,Very Pleasant,High,5
+caged in,Camel,Signature Blend Infused,Regular,2007-09-01,Weak,Tolerable,Very Low,3
+ZRBJR1216@aol.com,Maverick,Full Flavor,Regular,2007-09-02,Very Strong,Poor,Low,2
+ZRBJR1216@aol.com,Marlboro,Lights,Regular,2007-09-02,Weak,Tolerable,Fair,3
+ruffio,Marlboro,Menthol,Regular,2007-09-02,Medium,Pleasant,Fair,4
+ruffio,Camel,Turkish Gold,Regular,2007-09-02,Medium,Pleasant,Fair,4
+vilerage,Marlboro,Menthol,Regular,2007-09-02,Medium,Tolerable,High,3
+ZRBJR1216@aol.com,American Spirit,Lights,Regular,2007-09-02,Very Strong,Tolerable,High,2
+caged in,Marlboro,Reds,Regular,2007-09-02,Very Strong,Pleasant,Low,2
+caged in,Basic,Full Flavor,Regular,2007-09-02,Medium,Tolerable,Low,3
+ZRBJR1216@aol.com,Marlboro,Reds,Regular,2007-09-02,Strong,Pleasant,High,4
+ruffio,Basic,Full Flavor,Regular,2007-09-02,Strong,Tolerable,Low,3
+ruffio,American Spirit,Full Flavor,Regular,2007-09-02,Strong,Pleasant,Very High,4
+ZRBJR1216@aol.com,Basic,Full Flavor,Regular,2007-09-02,Medium,Pleasant,Low,3
+ruffio,Camel,Wides Filters,Regular,2007-09-02,Strong,Pleasant,Fair,4
+vilerage,Newport,Full Flavor,Regular,2007-09-02,Weak,Very Poor,High,1
+ruffio,Marlboro,Blend No. 27,Regular,2007-09-02,Medium,Pleasant,Fair,4
+ruffio,Camel,Menthol (Silver),Regular,2007-09-02,Strong,Tolerable,Fair,3
+ZRBJR1216@aol.com,KOOL,Milds,Regular,2007-09-02,Medium,Pleasant,Fair,4
+ruffio,Pall Mall,Full Flavor,Regular,2007-09-02,Medium,Pleasant,Low,4
+Tie,Lucky Strike,Filters,Regular,2007-09-03,Medium,Very Pleasant,Fair,5
+JMC78,Pall Mall,Full Flavor,Regular,2007-09-04,Strong,Pleasant,Low,4
+I'llNeverquit324,Newport,Full Flavor,Regular,2007-09-04,Very Strong,Tolerable,Fair,2
+bkramer7,Camel,Turkish Silver,Regular,2007-09-05,Medium,Very Pleasant,Fair,5
+I'llNeverquit324,Marlboro,Smooth Menthol,Regular,2007-09-06,Medium,Pleasant,Fair,4
+Castilla,Lucky Strike,Classic,Unfiltered,2007-09-06,Strong,Very Pleasant,Very High,5
+Castilla,Camel,Signature Blend Frost,Regular,2007-09-06,Weak,Poor,Fair,1
+Castilla,Marlboro,Lights,Regular,2007-09-06,Medium,Poor,Fair,3
+Daniel���,Camel,Wides Filters,Regular,2007-09-07,Strong,Pleasant,Fair,5
+Daniel���,Camel,Turkish Gold,Regular,2007-09-07,Medium,Pleasant,Fair,5
+Johnny,Marlboro,Lights,Regular,2007-09-08,Weak,Tolerable,Low,3
+hankguy,Camel,Full Flavor,Unfiltered,2007-09-10,Strong,Very Pleasant,High,5
+bdrummer,Camel,No. 9 Menthol,Regular,2007-09-11,Weak,Very Pleasant,Fair,5
+SimonBread,Camel,Signature Blend Frost,Regular,2007-09-12,Weak,Pleasant,Fair,4
+moonfairy7,Djarum,Black,Regular,2007-09-12,Medium,Very Pleasant,Fair,5
+SimonBread,Camel,No. 9 Menthol,Regular,2007-09-12,Medium,Pleasant,Fair,4
+SimonBread,KOOL,Milds,Regular,2007-09-12,Strong,Poor,Fair,1
+xodkrm,Dunhill,Full Flavor (Red),Regular,2007-09-13,Strong,Very Pleasant,High,4
+iam18stillalive,Benson and Hedges,Full Flavor,100s,2007-09-15,Strong,Pleasant,Fair,4
+Daniel���,Camel,Filters Full Flavor,Regular,2007-09-15,Medium,Very Pleasant,Fair,5
+iam18stillalive,KOOL,Menthol,Regular,2007-09-15,Medium,Tolerable,Low,4
+Eminent,Djarum,Black,Regular,2007-09-15,Medium,Very Pleasant,High,5
+iam18stillalive,Camel,No. 9 Menthol,Regular,2007-09-15,Medium,Very Pleasant,Fair,5
+iam18stillalive,Marlboro,Blend No. 27,Regular,2007-09-15,Medium,Pleasant,Fair,4
+Daniel���,Marlboro,Reds,Regular,2007-09-15,Strong,Tolerable,Fair,4
+iam18stillalive,Newport,Full Flavor,Regular,2007-09-15,Strong,Poor,Fair,2
+gobias,American Spirit,Lights,Regular,2007-09-15,Weak,Tolerable,Fair,3
+Nash,American Spirit,Organic,Regular,2007-09-15,Medium,Very Pleasant,Fair,5
+iam18stillalive,Pall Mall,Full Flavor,Regular,2007-09-15,Strong,Poor,Low,2
+iam18stillalive,Marlboro,Reds,Regular,2007-09-15,Very Strong,Tolerable,Fair,2
+Jon2thejon,American Spirit,Ultra Lights,Regular,2007-09-15,Very Weak,Tolerable,Fair,1
+PackingMarlboros,Marlboro,Reds,Regular,2007-09-16,Strong,Very Pleasant,High,5
+Daniel���,Camel,Turkish Royal,Regular,2007-09-16,Strong,Very Pleasant,High,5
+juggalo420_015,KOOL,Milds,Regular,2007-09-17,Medium,Pleasant,Low,4
+juggalo420_015,Newport,Full Flavor,Regular,2007-09-17,Strong,Very Pleasant,Very High,5
+juggalo420_015,Marlboro,Menthol,Regular,2007-09-17,Strong,Very Pleasant,High,4
+Nash,American Spirit,Full Flavor,Regular,2007-09-18,Strong,Tolerable,High,2
+Daniel���,Camel,Turkish Silver,Regular,2007-09-18,Weak,Pleasant,High,1
+Nash,American Spirit,Organic,Regular,2007-09-18,Strong,Very Poor,High,1
+Eminent,Djarum,Black,Regular,2007-09-18,Weak,Very Pleasant,High,4
+Daniel���,Camel,No. 9,Regular,2007-09-18,Very Weak,Tolerable,High,2
+Daniel���,Camel,Filters Full Flavor,Regular,2007-09-18,Strong,Pleasant,Fair,5
+EmphyzemaWOOHOO,Camel,Turkish Royal,Regular,2007-09-19,Strong,Very Pleasant,Fair,5
+EmphyzemaWOOHOO,Marlboro,Lights,Regular,2007-09-19,Weak,Very Poor,Fair,2
+EmphyzemaWOOHOO,Camel,Signature Blend Infused,Regular,2007-09-19,Weak,Very Pleasant,High,4
+EmphyzemaWOOHOO,Camel,Wides Filters,Regular,2007-09-19,Strong,Tolerable,Fair,3
+EmphyzemaWOOHOO,Marlboro,Blend No. 27,Regular,2007-09-19,Strong,Tolerable,Fair,4
+EmphyzemaWOOHOO,Camel,Filters Full Flavor,Regular,2007-09-19,Strong,Very Pleasant,Fair,5
+EmphyzemaWOOHOO,Pall Mall,Full Flavor,Regular,2007-09-19,Strong,Tolerable,Low,3
+EmphyzemaWOOHOO,Marlboro,Medium,Regular,2007-09-19,Medium,Tolerable,Fair,3
+EmphyzemaWOOHOO,Camel,No. 9,Regular,2007-09-19,Very Weak,Pleasant,High,2
+EmphyzemaWOOHOO,Camel,Turkish Silver,Regular,2007-09-19,Very Weak,Poor,High,1
+EmphyzemaWOOHOO,Marlboro,Ultra Lights,Regular,2007-09-19,Very Weak,Very Poor,Fair,1
+EmphyzemaWOOHOO,Djarum,Black,Regular,2007-09-19,Very Strong,Pleasant,Very High,3
+EmphyzemaWOOHOO,Camel,Reds,Regular,2007-09-19,Very Strong,Pleasant,Very High,4
+EmphyzemaWOOHOO,Camel,Full Flavor,Unfiltered,2007-09-19,Very Strong,Pleasant,Very High,4
+EmphyzemaWOOHOO,Marlboro,Reds,Regular,2007-09-19,Very Strong,Tolerable,Fair,3
+Daniel���,Camel,Menthol (Silver),Regular,2007-09-22,Strong,Pleasant,Fair,4
+Echelon,Djarum,Black,Regular,2007-09-23,Medium,Very Pleasant,Fair,5
+Echelon,Djarum,Specials,Regular,2007-09-23,Medium,Very Pleasant,High,5
+Echelon,Camel,No. 9,Regular,2007-09-23,Strong,Tolerable,Fair,3
+madwaldo,Camel,Filters Full Flavor,Regular,2007-09-24,Weak,Pleasant,Fair,3
+Efflux,American Spirit,Full Flavor,Regular,2007-09-26,Strong,Very Pleasant,High,5
+BASSONICA,Camel,Signature Blend Frost,Regular,2007-09-28,Weak,Very Pleasant,High,5
+BASSONICA,Camel,Signature Blend Infused,Regular,2007-09-28,Medium,Poor,High,2
+BASSONICA,Djarum,Black,Regular,2007-09-28,Strong,Pleasant,High,5
+Vengeance,Camel,Wides Filters,Regular,2007-09-30,Strong,Pleasant,Fair,4
+PyroLogik,Camel,Menthol (Silver),Regular,2007-10-01,Strong,Very Pleasant,Fair,4
+PyroLogik,Benson and Hedges,Menthol,100s,2007-10-01,Medium,Pleasant,Very High,4
+PyroLogik,Marlboro,Menthol,Regular,2007-10-01,Medium,Tolerable,High,1
+gobias,American Spirit,Organic,Regular,2007-10-01,Medium,Pleasant,High,3
+PyroLogik,Marlboro,Medium,Regular,2007-10-01,Strong,Tolerable,High,1
+gobias,American Spirit,Lights,Regular,2007-10-01,Weak,Tolerable,High,2
+gobias,Camel,Signature Blend Frost,Regular,2007-10-01,Weak,Pleasant,Fair,3
+PyroLogik,Winston,Full Flavor,Regular,2007-10-01,Strong,Pleasant,Fair,4
+PyroLogik,Newport,Full Flavor,Regular,2007-10-02,Very Strong,Tolerable,High,2
+PyroLogik,American Spirit,Perique,Regular,2007-10-02,Very Strong,Pleasant,Very High,4
+PyroLogik,Lucky Strike,Classic,Unfiltered,2007-10-02,Very Strong,Very Pleasant,Very High,5
+PyroLogik,American Spirit,Menthol,Regular,2007-10-02,Very Strong,Very Pleasant,Very High,4
+ManchesterManson,Marlboro,Blend No. 27,Regular,2007-10-03,Medium,Pleasant,Fair,4
+camelsmoker,Marlboro,Virginia Blend,Regular,2007-10-04,Strong,Very Pleasant,High,5
+Lotus1990,L&M,Lights,Regular,2007-10-06,Medium,Very Pleasant,Fair,5
+iam18stillalive,Marlboro,Virginia Blend,Regular,2007-10-06,Strong,Very Pleasant,Fair,5
+jackal09,Winston,Full Flavor,Regular,2007-10-07,Medium,Pleasant,Fair,4
+Tom Ato,Camel,Reds,Regular,2007-10-08,Strong,Very Pleasant,High,5
+davey,American Spirit,Lights,Regular,2007-10-08,Weak,Pleasant,High,3
+kokoyo112,Marlboro,Virginia Blend,Regular,2007-10-08,Strong,Very Pleasant,High,5
+gobias,American Spirit,Perique,Regular,2007-10-09,Strong,Pleasant,High,4
+ChampMcGee,Camel,Filters Full Flavor,Regular,2007-10-10,Strong,Pleasant,High,4
+Castilla,Camel,Signature Blend Infused,Regular,2007-10-10,Medium,Pleasant,Fair,4
+ChampMcGee,Benson and Hedges,Menthol,100s,2007-10-10,Strong,Pleasant,High,4
+ChampMcGee,Parliament,Full Flavor,Regular,2007-10-10,Strong,Poor,Fair,2
+BASSONICA,Djarum,Specials,Regular,2007-10-10,Strong,Pleasant,High,5
+Ariel,Marlboro,Virginia Blend,Regular,2007-10-10,Medium,Pleasant,Fair,5
+ChampMcGee,Lucky Strike,Classic,Unfiltered,2007-10-10,Very Strong,Very Pleasant,Very High,5
+jackal09,American Spirit,Full Flavor,Regular,2007-10-11,Strong,Pleasant,Low,5
+jackal09,Marlboro,Medium,Regular,2007-10-11,Strong,Poor,Fair,3
+LungBeetle,Marlboro,Virginia Blend,Regular,2007-10-13,Medium,Very Pleasant,Fair,5
+Kushmaster,Marlboro,Reds,Regular,2007-10-13,Strong,Very Poor,Low,5
+Kushmaster,Djarum,Black,Regular,2007-10-13,Strong,Very Pleasant,Fair,5
+Kushmaster,Djarum,Specials,Regular,2007-10-13,Medium,Pleasant,Fair,5
+Kushmaster,Camel,Signature Blend Infused,Regular,2007-10-13,Medium,Tolerable,Low,2
+Kushmaster,Camel,Signature Blend Frost,Regular,2007-10-13,Very Weak,Pleasant,Low,3
+I'llNeverquit324,Camel,Menthol (Silver),Regular,2007-10-14,Medium,Pleasant,Fair,4
+g28401,Marlboro,Virginia Blend,Regular,2007-10-14,Medium,Very Pleasant,Low,5
+I'llNeverquit324,Camel,Signature Blend Frost,Regular,2007-10-14,Medium,Very Pleasant,Fair,5
+iam18stillalive,Camel,No. 9 Menthol,Regular,2007-10-14,Medium,Very Pleasant,Fair,5
+I'llNeverquit324,Marlboro,Menthol Milds,Regular,2007-10-14,Weak,Poor,Fair,1
+I'llNeverquit324,Marlboro,Lights,Regular,2007-10-14,Very Weak,Tolerable,Fair,2
+Petr_4,L&M,Full Flavor,Regular,2007-10-16,Strong,Tolerable,Low,2
+BASSONICA,Marlboro,Reds,Regular,2007-10-16,Strong,Tolerable,Fair,4
+JMC78,Marlboro,Menthol Milds,Regular,2007-10-16,Weak,Pleasant,Low,3
+Savant,Djarum,Specials,Regular,2007-10-18,Strong,Pleasant,High,4
+PyroLogik,Camel,Signature Blend Infused,Regular,2007-10-18,Very Weak,Poor,Fair,2
+JMC78,Camel,Turkish Royal,Regular,2007-10-18,Medium,Very Pleasant,Fair,5
+PyroLogik,Camel,Signature Blend Frost,Regular,2007-10-18,Weak,Pleasant,Fair,3
+Savant,Marlboro,Reds,Regular,2007-10-18,Medium,Tolerable,Fair,3
+PyroLogik,USA Gold,Full Flavor,Regular,2007-10-18,Very Strong,Very Poor,Low,1
+Savant,Camel,Signature Blend Frost,Regular,2007-10-18,Weak,Pleasant,Fair,3
+Savant,KOOL,Menthol,Regular,2007-10-18,Weak,Tolerable,Fair,2
+Savant,Djarum,Black,Regular,2007-10-18,Strong,Very Pleasant,High,5
+Savant,Camel,Signature Blend Infused,Regular,2007-10-18,Medium,Tolerable,Fair,3
+PyroLogik,Pall Mall,Menthol,Regular,2007-10-19,Weak,Pleasant,High,2
+PyroLogik,Marlboro,Smooth Menthol,Regular,2007-10-19,Strong,Pleasant,High,3
+PyroLogik,Marlboro,Menthol Milds,Regular,2007-10-19,Medium,Tolerable,High,1
+g28401,Marlboro,Virginia Blend,Regular,2007-10-21,Medium,Pleasant,High,4
+JMC78,Camel,Lights,Regular,2007-10-22,Weak,Tolerable,Fair,3
+JMC78,Marlboro,Ultra Lights,Regular,2007-10-22,Very Weak,Very Poor,Fair,1
+kuddusbhai,Camel,Lights,Regular,2007-10-25,Medium,Very Pleasant,Fair,5
+Malboroman,Camel,Reds,Regular,2007-10-26,Medium,Tolerable,High,3
+Malboroman,KOOL,Milds,Regular,2007-10-26,Medium,Very Poor,Low,1
+kuddusbhai,Benson and Hedges,Full Flavor,100s,2007-10-27,Very Strong,Pleasant,High,5
+kuddusbhai,Marlboro,Lights,Regular,2007-10-28,Strong,Tolerable,Low,4
+Petr_4,Marlboro,Reds,Regular,2007-10-28,Strong,Tolerable,Fair,3
+bobbybaby,Newport,Full Flavor,Regular,2007-10-28,Strong,Pleasant,Fair,4
+CloudofSmoke,Djarum,Black,Regular,2007-10-31,Strong,Tolerable,Very High,3
+Petr_4,Pall Mall,Lights (Blue),Regular,2007-10-31,Weak,Tolerable,Very Low,2
+Petr_4,Lucky Strike,Classic,Unfiltered,2007-10-31,Strong,Very Poor,Fair,5
+Petr_4,Camel,Filters Full Flavor,Regular,2007-10-31,Strong,Very Pleasant,Fair,5
+CloudofSmoke,Parliament,Full Flavor,Regular,2007-10-31,Strong,Pleasant,High,5
+CloudofSmoke,Camel,Full Flavor,Unfiltered,2007-10-31,Very Strong,Pleasant,Fair,4
+CloudofSmoke,Marlboro,Virginia Blend,Regular,2007-10-31,Strong,Pleasant,Fair,5
+n7j,Marlboro,72's,Regular,2007-11-05,Very Weak,Very Poor,Fair,1
+ManchesterManson,Camel,Signature Blend Infused,Regular,2007-11-06,Very Weak,Poor,Fair,1
+featherofmaat,Djarum,Specials,Regular,2007-11-07,Medium,Tolerable,High,3
+gaultierfnd200,Marlboro,Smooth Menthol,Regular,2007-11-10,Medium,Pleasant,Fair,4
+Nibbles,Marlboro,Reds,Regular,2007-11-11,Medium,Tolerable,Fair,3
+Nibbles,Marlboro,Virginia Blend,Regular,2007-11-11,Medium,Pleasant,High,4
+Nibbles,American Spirit,Full Flavor,Regular,2007-11-11,Medium,Very Pleasant,High,5
+Nibbles,Lucky Strike,Classic,Unfiltered,2007-11-11,Medium,Very Pleasant,Fair,5
+Nibbles,Camel,Signature Blend Infused,Regular,2007-11-11,Weak,Poor,Fair,2
+besitos_726,Lucky Strike,Classic,Unfiltered,2007-11-12,Medium,Very Pleasant,High,5
+sae,Camel,Signature Blend Frost,Regular,2007-11-12,Weak,Tolerable,High,2
+besitos_726,Camel,Full Flavor,Unfiltered,2007-11-12,Strong,Pleasant,High,4
+besitos_726,Pall Mall,Straights,Unfiltered,2007-11-12,Medium,Pleasant,Fair,4
+sae,Camel,No. 9,Regular,2007-11-13,Very Weak,Pleasant,Fair,3
+Dekker,Pall Mall,Straights,Unfiltered,2007-11-14,Medium,Pleasant,Fair,4
+SalemSmoker,American Spirit,Full Flavor,Unfiltered,2007-11-16,Very Strong,Pleasant,Fair,4
+SalemSmoker,Winston,Full Flavor,Regular,2007-11-16,Weak,Poor,Fair,1
+SalemSmoker,Marlboro,Reds,Regular,2007-11-16,Medium,Poor,Fair,2
+SalemSmoker,KOOL,Menthol,Regular,2007-11-16,Strong,Pleasant,Fair,4
+SalemSmoker,Newport,Full Flavor,Regular,2007-11-16,Strong,Poor,Fair,2
+SalemSmoker,Salem,Green Label Full Flavor,Regular,2007-11-16,Strong,Very Pleasant,Fair,5
+SalemSmoker,Benson and Hedges,Menthol,100s,2007-11-16,Weak,Tolerable,Fair,2
+SalemSmoker,Marlboro,Menthol,Regular,2007-11-16,Medium,Poor,Fair,2
+suleimanXVII,Camel,No. 9 Menthol,Regular,2007-11-18,Medium,Pleasant,High,3
+suleimanXVII,Camel,Turkish Royal,Regular,2007-11-18,Strong,Very Pleasant,High,5
+suleimanXVII,Camel,Signature Blend Frost,Regular,2007-11-18,Medium,Pleasant,Low,4
+suleimanXVII,Marlboro,Blend No. 27,Regular,2007-11-18,Strong,Pleasant,Fair,3
+suleimanXVII,Parliament,Lights (White),Regular,2007-11-18,Medium,Tolerable,High,2
+suleimanXVII,KOOL,Menthol,Regular,2007-11-18,Strong,Tolerable,High,3
+suleimanXVII,Marlboro,Reds,Regular,2007-11-18,Strong,Poor,Fair,2
+suleimanXVII,Marlboro,Ultra Lights,Regular,2007-11-18,Very Weak,Very Poor,Fair,1
+suleimanXVII,Newport,Full Flavor,Regular,2007-11-18,Strong,Tolerable,High,3
+Songy,Marlboro,72's,Regular,2007-11-19,Medium,Tolerable,High,3
+George,Marlboro,Reds,Regular,2007-11-21,Very Strong,Tolerable,High,2
+AlwaysLucky89,Lucky Strike,Classic,Unfiltered,2007-11-22,Very Strong,Very Pleasant,Very High,5
+Dekker,L&M,Full Flavor,Regular,2007-11-23,Weak,Very Poor,Low,1
+Dekker,Dunhill,Full Flavor (Red),Regular,2007-11-23,Medium,Pleasant,High,3
+CrAcKaJaP206,Marlboro,Virginia Blend,Regular,2007-11-24,Medium,Pleasant,Fair,4
+CrAcKaJaP206,Marlboro,Smooth Menthol,Regular,2007-11-24,Strong,Tolerable,Fair,4
+CrAcKaJaP206,Camel,No. 9 Menthol,Regular,2007-11-24,Medium,Pleasant,Fair,4
+alexdubs69,Parliament,Lights (White),Regular,2007-11-27,Medium,Pleasant,High,5
+alexdubs69,Newport,Full Flavor,Regular,2007-11-27,Medium,Very Pleasant,High,5
+Karawasa,Basic,Full Flavor,Regular,2007-11-28,Medium,Tolerable,Low,3
+Karawasa,Marlboro,Virginia Blend,Regular,2007-11-28,Medium,Very Pleasant,Fair,5
+Karawasa,Lucky Strike,Classic,Unfiltered,2007-11-28,Very Strong,Very Pleasant,High,5
+Karawasa,Camel,Lights,Regular,2007-11-28,Weak,Pleasant,Fair,4
+Karawasa,Djarum,Black,Regular,2007-11-28,Strong,Very Pleasant,High,4
+Tony T Bone,Marlboro,Virginia Blend,Regular,2007-11-30,Medium,Pleasant,Fair,4
+Auk,Pall Mall,Straights,Unfiltered,2007-12-01,Very Strong,Very Pleasant,Fair,5
+Karawasa,Marlboro,Smooth Menthol,Regular,2007-12-02,Weak,Tolerable,Fair,3
+Vedi,Marlboro,Lights,Regular,2007-12-06,Very Weak,Very Poor,Fair,1
+Slim,Parliament,Full Flavor,Regular,2007-12-08,Weak,Poor,Very Low,2
+Slim,Camel,Wides Filters,Regular,2007-12-08,Medium,Very Pleasant,Fair,5
+Amy,Parliament,Lights (White),Regular,2007-12-09,Medium,Pleasant,Fair,5
+marlboroman,Camel,Signature Blend Infused,Regular,2007-12-11,Weak,Pleasant,Fair,4
+marlboroman,Marlboro,Lights,Regular,2007-12-11,Medium,Pleasant,Fair,5
+imjustinhi,Marlboro,Lights,Regular,2007-12-11,Weak,Very Pleasant,Fair,4
+infusion,Marlboro,Reds,Regular,2007-12-15,Medium,Very Pleasant,Very High,5
+infusion,Winston,Full Flavor,Regular,2007-12-15,Strong,Tolerable,Very Low,4
+sakofben,Camel,Reds,Regular,2007-12-16,Strong,Tolerable,High,3
+lexx,Camel,Turkish Silver,Regular,2007-12-20,Medium,Pleasant,Fair,4
+lexx,Marlboro,Reds,Regular,2007-12-20,Strong,Tolerable,Fair,3
+lexx,Pall Mall,Full Flavor,Regular,2007-12-20,Strong,Tolerable,Low,4
+lexx,Parliament,Lights (White),Regular,2007-12-20,Weak,Tolerable,Fair,3
+lexx,American Spirit,Organic,Regular,2007-12-20,Medium,Pleasant,High,5
+lexx,KOOL,Menthol,Regular,2007-12-20,Medium,Pleasant,Fair,4
+StrongPawz,Djarum,Black,Regular,2007-12-24,Medium,Very Pleasant,High,5
+colbybabiiee,Newport,Full Flavor,Regular,2007-12-25,Strong,Very Pleasant,Fair,5
+courtneyann281,Newport,Full Flavor,Regular,2007-12-26,Strong,Pleasant,High,4
+courtneyann281,Camel,No. 9 Menthol,Regular,2007-12-26,Medium,Very Pleasant,Fair,4
+blackandmild,Marlboro,Reds,Regular,2008-01-01,Strong,Pleasant,Low,5
+thecigman,Marlboro,Lights,Regular,2008-01-01,Medium,Very Pleasant,Low,5
+thecigman,Marlboro,Smooth Menthol,Regular,2008-01-01,Very Strong,Poor,Fair,1
+thecigman,Parliament,Full Flavor,Regular,2008-01-01,Strong,Tolerable,Fair,4
+Quietly,Camel,Wides Filters,Regular,2008-01-05,Strong,Pleasant,Fair,4
+djarumlover,Newport,Full Flavor,Regular,2008-01-06,Weak,Very Poor,Low,1
+djarumlover,Camel,No. 9,Regular,2008-01-06,Weak,Tolerable,High,3
+djarumlover,Marlboro,Smooth Menthol,Regular,2008-01-06,Medium,Pleasant,Fair,3
+djarumlover,Djarum,Black,Regular,2008-01-06,Strong,Pleasant,Very High,4
+blackandmild,Marlboro,Reds,Regular,2008-01-08,Strong,Pleasant,Fair,5
+blackandmild,KOOL,Menthol,Regular,2008-01-08,Strong,Pleasant,High,3
+FocusFilms,Camel,No. 9 Menthol,Regular,2008-01-09,Weak,Pleasant,High,4
+watadork,Djarum,Black,Regular,2008-01-09,Strong,Pleasant,Very High,4
+Petr_4,Winston,Full Flavor,Regular,2008-01-10,Strong,Pleasant,Low,4
+Petr_4,Marlboro,Ultra Lights,Regular,2008-01-14,Weak,Pleasant,High,4
+smokin' man,Marlboro,Reds,Regular,2008-01-16,Strong,Very Pleasant,Fair,5
+George4,Dunhill,Full Flavor (Red),Regular,2008-01-18,Weak,Poor,High,2
+Dwayne,Marlboro,Smooth Menthol,Regular,2008-01-19,Strong,Very Pleasant,Fair,5
+Dwayne,Camel,Signature Blend Infused,Regular,2008-01-19,Weak,Tolerable,Fair,3
+kreteker,Djarum,Black,Regular,2008-01-23,Medium,Very Pleasant,Fair,4
+teddy420,Lucky Strike,Filters,Regular,2008-01-24,Very Weak,Very Poor,Very High,1
+FocusFilms,Camel,Wides Filters,Regular,2008-01-26,Strong,Very Pleasant,Low,5
+FocusFilms,Camel,Lights,Regular,2008-01-26,Medium,Tolerable,Fair,3
+smokes-up,Marlboro,Reds,Regular,2008-01-27,Strong,Very Pleasant,High,5
+jlknight,Djarum,Black,Regular,2008-01-28,Medium,Pleasant,High,3
+robbie91@aol.com,Marlboro,Reds,Regular,2008-01-28,Strong,Tolerable,Fair,3
+robbie91@aol.com,Marlboro,Menthol Lights,Regular,2008-01-28,Medium,Very Pleasant,Fair,5
+robbie91@aol.com,Marlboro,Ultra Lights,Regular,2008-01-28,Very Weak,Tolerable,High,2
+Shmeagal,American Spirit,Menthol Lights,Regular,2008-01-31,Strong,Pleasant,High,4
+wrale577,Marlboro,Lights,Regular,2008-02-02,Weak,Poor,Fair,2
+wrale577,Marlboro,Smooth Menthol,Regular,2008-02-02,Strong,Pleasant,Fair,4
+wrale577,Marlboro,Ultra Lights,Regular,2008-02-02,Very Weak,Tolerable,High,1
+mvblend,Marlboro,Lights,Regular,2008-02-03,Weak,Pleasant,Fair,4
+mvblend,Marlboro,Menthol Lights,Regular,2008-02-03,Weak,Pleasant,Fair,3
+mvblend,Marlboro,Blend No. 27,Regular,2008-02-03,Strong,Tolerable,Fair,3
+mvblend,Marlboro,Menthol Milds,Regular,2008-02-03,Medium,Pleasant,Fair,4
+mvblend,Marlboro,Reds,Regular,2008-02-03,Strong,Tolerable,Fair,2
+mvblend,Marlboro,Virginia Blend,Regular,2008-02-03,Strong,Very Pleasant,Fair,5
+mvblend,Marlboro,Menthol,Regular,2008-02-03,Medium,Pleasant,Fair,5
+mvblend,Marlboro,72's,Regular,2008-02-03,Medium,Tolerable,Low,2
+CloudofSmoke,Marlboro,Reds,Regular,2008-02-04,Strong,Pleasant,High,4
+CloudofSmoke,Camel,Reds,Regular,2008-02-04,Very Strong,Very Pleasant,Very High,5
+Kendra,Lucky Strike,Classic,Unfiltered,2008-02-07,Strong,Pleasant,High,5
+Kendra,Benson and Hedges,Full Flavor,100s,2008-02-07,Strong,Very Pleasant,High,5
+Kendra,L&M,Full Flavor,Regular,2008-02-07,Weak,Poor,Low,2
+Kendra,Camel,Filters Full Flavor,Regular,2008-02-07,Medium,Tolerable,Fair,3
+Kendra,Winston,Full Flavor,Regular,2008-02-07,Medium,Very Poor,Fair,1
+Kendra,Pall Mall,Full Flavor,Regular,2008-02-07,Strong,Pleasant,Low,5
+Kendra,Camel,Turkish Silver,Regular,2008-02-07,Weak,Very Pleasant,Fair,5
+Kendra,Basic,Full Flavor,Regular,2008-02-07,Very Weak,Tolerable,Low,2
+Kendra,Maverick,Full Flavor,Regular,2008-02-07,Medium,Tolerable,Low,4
+Xxtb2011Xx,Newport,Full Flavor,Regular,2008-02-11,Medium,Very Poor,Very High,1
+Auk,Djarum,Specials,Regular,2008-02-12,Weak,Pleasant,High,4
+Auk,Basic,Full Flavor,Regular,2008-02-12,Medium,Tolerable,Very Low,3
+Auk,Djarum,Black,Regular,2008-02-12,Weak,Pleasant,Fair,3
+Auk,Pall Mall,Straights,Unfiltered,2008-02-12,Very Strong,Very Pleasant,Fair,5
+Auk,Camel,Menthol (Silver),Regular,2008-02-12,Medium,Poor,Very Low,1
+gobias,Camel,Turkish Royal,Regular,2008-02-13,Strong,Very Pleasant,Fair,4
+kyguy1,Lucky Strike,Classic,Unfiltered,2008-02-19,Very Strong,Pleasant,High,4
+kyguy1,Marlboro,Reds,Regular,2008-02-19,Strong,Tolerable,Fair,4
+kyguy1,Salem,Green Label Full Flavor,Regular,2008-02-19,Strong,Tolerable,Fair,3
+kyguy1,KOOL,Menthol,Regular,2008-02-19,Strong,Very Poor,Fair,2
+kyguy1,Camel,Full Flavor,Unfiltered,2008-02-19,Very Strong,Very Pleasant,High,5
+kyguy1,Newport,Full Flavor,Regular,2008-02-19,Strong,Poor,High,2
+kyguy1,Pall Mall,Straights,Unfiltered,2008-02-19,Strong,Pleasant,Fair,3
+kyguy1,Winston,Full Flavor,Regular,2008-02-19,Weak,Very Poor,High,1
+kyguy1,Marlboro,Menthol,Regular,2008-02-19,Medium,Poor,Fair,2
+alexdubs69,KOOL,Menthol,Regular,2008-02-25,Strong,Very Pleasant,Fair,5
+Sylvia_von_Harden,Djarum,Specials,Regular,2008-02-25,Strong,Very Pleasant,High,5
+Sylvia_von_Harden,Camel,Turkish Royal,Regular,2008-02-25,Medium,Very Pleasant,Fair,5
+atzero06,Marlboro,Virginia Blend,Regular,2008-02-26,Strong,Very Pleasant,Fair,5
+winston054,Salem,Green Label Full Flavor,Regular,2008-02-26,Strong,Very Pleasant,Fair,5
+winston054,Marlboro,Reds,Regular,2008-02-26,Strong,Tolerable,Fair,2
+winston054,Camel,Filters Full Flavor,Regular,2008-02-26,Medium,Pleasant,High,3
+winston054,Winston,Lights,Regular,2008-02-26,Medium,Pleasant,Low,4
+winston054,Winston,Full Flavor,Regular,2008-02-26,Strong,Pleasant,Fair,4
+winston054,KOOL,Menthol,Regular,2008-02-26,Strong,Tolerable,Fair,3
+Tdevil,Benson and Hedges,Full Flavor,100s,2008-02-28,Medium,Pleasant,High,4
+sthomas048,Camel,Lights,Regular,2008-02-28,Weak,Tolerable,Fair,3
+smokeandstroke,Marlboro,Medium,Regular,2008-02-29,Strong,Pleasant,Fair,4
+Flash,Marlboro,Virginia Blend,Regular,2008-03-03,Medium,Very Pleasant,Low,5
+robbie91@aol.com,Newport,Full Flavor,Regular,2008-03-04,Strong,Pleasant,Low,4
+robbie91@aol.com,Marlboro,72's,Regular,2008-03-04,Strong,Poor,Low,2
+robbie91@aol.com,Djarum,Black,Regular,2008-03-04,Weak,Pleasant,Very High,3
+robbie91@aol.com,Marlboro,Menthol,Regular,2008-03-04,Strong,Pleasant,Fair,5
+robbie91@aol.com,KOOL,Menthol,Regular,2008-03-13,Strong,Pleasant,Low,5
+marlboroman14,Marlboro,Smooth Menthol,Regular,2008-03-15,Medium,Pleasant,High,2
+robbie91@aol.com,Camel,No. 9 Menthol,Regular,2008-03-15,Weak,Tolerable,High,2
+marlboroman14,Marlboro,Reds,Regular,2008-03-15,Strong,Tolerable,Fair,2
+Mikeymassacre223,Djarum,Black,Regular,2008-03-15,Very Strong,Pleasant,Very High,4
+marlboroman14,Marlboro,Lights,Regular,2008-03-15,Weak,Pleasant,Low,3
+judasmaccabeus,Camel,Filters Full Flavor,Regular,2008-03-16,Strong,Very Pleasant,Low,5
+Vengeance,Camel,Signature Blend Frost,Regular,2008-03-16,Very Weak,Very Poor,High,1
+marlboroman14,Marlboro,Ultra Lights,Regular,2008-03-17,Very Weak,Tolerable,Low,2
+Butters,Marlboro,Menthol,Regular,2008-03-17,Medium,Pleasant,Fair,4
+sthomas048,American Spirit,Lights,Regular,2008-03-17,Weak,Poor,High,2
+Olgaflou,Marlboro,Virginia Blend,Regular,2008-03-19,Strong,Pleasant,Fair,4
+Olgaflou,American Spirit,Perique,Regular,2008-03-19,Very Strong,Very Pleasant,High,5
+Olgaflou,Marlboro,Reds,Regular,2008-03-19,Strong,Poor,Fair,3
+marlboroman14,Newport,Full Flavor,Regular,2008-03-22,Strong,Pleasant,Fair,4
+jlj0005,Camel,Lights,Regular,2008-03-24,Medium,Pleasant,Fair,4
+smokesanything,Marlboro,Smooth Menthol,Regular,2008-03-25,Very Strong,Very Pleasant,Fair,5
+smokesanything,Camel,No. 9,Regular,2008-03-25,Weak,Pleasant,Fair,3
+featherofmaat,Camel,No. 9 Menthol,Regular,2008-03-25,Medium,Very Poor,High,1
+60srock12,Marlboro,Menthol Lights,Regular,2008-03-29,Weak,Pleasant,Fair,4
+60srock12,Newport,Full Flavor,Regular,2008-03-29,Strong,Poor,High,2
+60srock12,Marlboro,Menthol,Regular,2008-03-29,Medium,Pleasant,Fair,5
+60srock12,Marlboro,Lights,Regular,2008-03-29,Medium,Tolerable,Fair,3
+marlboroman14,Marlboro,Menthol,Regular,2008-03-30,Medium,Tolerable,Fair,3
+Auk,American Spirit,Lights,Regular,2008-03-30,Weak,Pleasant,High,4
+Auk,American Spirit,Perique,Regular,2008-03-30,Very Strong,Tolerable,High,3
+Petr_4,Marlboro,Lights,Regular,2008-03-31,Medium,Pleasant,High,4
+VALIS,Camel,Wides Filters,Regular,2008-04-02,Medium,Tolerable,Fair,3
+597Illinois,Pall Mall,Lights (Blue),Regular,2008-04-08,Strong,Pleasant,Low,4
+fluffyinsanity,Marlboro,Lights,Regular,2008-04-09,Strong,Tolerable,Fair,4
+fluffyinsanity,Camel,Lights,Regular,2008-04-09,Very Weak,Very Poor,Fair,1
+fluffyinsanity,Camel,No. 9 Menthol,Regular,2008-04-10,Weak,Tolerable,Fair,3
+fluffyinsanity,Marlboro,Virginia Blend,Regular,2008-04-10,Weak,Tolerable,High,3
+fluffyinsanity,Marlboro,Smooth Menthol,Regular,2008-04-10,Strong,Very Pleasant,Fair,5
+I'llNeverquit324,Camel,Reds,Regular,2008-04-11,Strong,Pleasant,High,4
+clvelvr,Marlboro,Lights,Regular,2008-04-12,Weak,Tolerable,Fair,2
+clvelvr,Camel,Turkish Silver,Regular,2008-04-12,Medium,Pleasant,Fair,4
+clvelvr,Marlboro,Menthol Milds,Regular,2008-04-12,Medium,Pleasant,Fair,3
+clvelvr,American Spirit,Full Flavor,Regular,2008-04-12,Strong,Pleasant,High,4
+clvelvr,Djarum,Black,Regular,2008-04-12,Strong,Very Pleasant,High,5
+I'llNeverquit324,Marlboro,72's,Regular,2008-04-17,Very Weak,Very Poor,Very High,1
+mantera,Lucky Strike,Classic,Unfiltered,2008-04-17,Strong,Pleasant,Fair,5
+mantera,Lucky Strike,Classic,Unfiltered,2008-04-18,Medium,Pleasant,High,5
+mantera,Camel,Full Flavor,Unfiltered,2008-04-18,Medium,Pleasant,High,3
+60srock12,Marlboro,Smooth Menthol,Regular,2008-04-19,Strong,Very Pleasant,Fair,5
+Fujiforker,Parliament,Full Flavor,Regular,2008-04-20,Strong,Very Poor,Fair,1
+Major Tom,Pall Mall,Lights (Blue),Regular,2008-04-22,Weak,Tolerable,Low,3
+Major Tom,Camel,Lights,Regular,2008-04-22,Weak,Poor,Fair,2
+mechamenchi,Marlboro,Smooth Menthol,Regular,2008-04-22,Medium,Very Pleasant,Fair,5
+Auk,Newport,Full Flavor,Regular,2008-04-27,Strong,Poor,High,2
+Auk,American Spirit,Full Flavor,Regular,2008-04-27,Strong,Very Pleasant,High,5
+fluffyinsanity,Marlboro,Medium,Regular,2008-04-28,Strong,Pleasant,Fair,4
+tyler.,Camel,Signature Blend Frost,Regular,2008-04-28,Very Weak,Tolerable,Fair,2
+fluffyinsanity,Djarum,Black,Regular,2008-04-28,Weak,Very Pleasant,High,5
+tyler.,Camel,No. 9 Menthol,Regular,2008-04-28,Medium,Very Pleasant,Fair,4
+tyler.,Camel,Full Flavor,Unfiltered,2008-04-28,Strong,Very Poor,Very High,1
+tyler.,Benson and Hedges,Menthol,100s,2008-04-29,Very Strong,Very Pleasant,High,5
+trickshift,Winston,Lights,Regular,2008-05-02,Medium,Very Pleasant,Fair,5
+trickshift,Camel,Signature Blend Infused,Regular,2008-05-02,Medium,Very Pleasant,High,3
+Petr_4,Winston,Lights,Regular,2008-05-03,Medium,Tolerable,Very Low,4
+I'llNeverquit324,Benson and Hedges,Menthol,100s,2008-05-05,Medium,Pleasant,Fair,4
+TheLastGunslinger,KOOL,Menthol,Regular,2008-05-07,Medium,Very Poor,Fair,1
+TheLastGunslinger,Marlboro,Virginia Blend,Regular,2008-05-07,Medium,Very Pleasant,Fair,5
+TheLastGunslinger,Newport,Full Flavor,Regular,2008-05-07,Medium,Tolerable,Fair,3
+TheLastGunslinger,Winston,Full Flavor,Regular,2008-05-07,Very Weak,Very Poor,Fair,1
+tyler.,Parliament,Lights (White),Regular,2008-05-10,Medium,Pleasant,High,4
+jpaul88,Virginia Slims,Menthol,100s,2008-05-12,Very Weak,Poor,Fair,1
+Tdevil,USA Gold,Full Flavor,Regular,2008-05-12,Very Strong,Very Poor,Very Low,1
+jpaul88,Newport,Full Flavor,Regular,2008-05-12,Very Strong,Pleasant,Fair,5
+humanpixel,Dunhill,Full Flavor (Red),Regular,2008-05-12,Medium,Poor,High,2
+jpaul88,KOOL,Menthol,Regular,2008-05-12,Medium,Very Poor,Fair,3
+jpaul88,Marlboro,Menthol,Regular,2008-05-12,Weak,Tolerable,High,3
+marlborosmooth,Marlboro,Smooth Menthol,Regular,2008-05-13,Strong,Very Pleasant,Fair,5
+Tdevil,Marlboro,Reds,Regular,2008-05-13,Strong,Tolerable,High,4
+Tdevil,Marlboro,Virginia Blend,Regular,2008-05-13,Weak,Pleasant,High,3
+tyler.,Marlboro,Virginia Blend,Regular,2008-05-13,Strong,Pleasant,High,4
+boereklap,Pall Mall,Full Flavor,Regular,2008-05-14,Medium,Very Pleasant,Fair,5
+boereklap,Camel,Filters Full Flavor,Regular,2008-05-14,Medium,Very Pleasant,Fair,4
+juve86,Lucky Strike,Classic,Unfiltered,2008-05-15,Strong,Very Pleasant,Fair,5
+lissa1985,Marlboro,Menthol,Regular,2008-05-15,Strong,Very Pleasant,Low,5
+relakit,Camel,Lights,Regular,2008-05-17,Medium,Poor,Fair,2
+Tdevil,Benson and Hedges,Full Flavor,100s,2008-05-17,Medium,Tolerable,High,3
+sthomas048,Marlboro,Reds,Regular,2008-05-19,Medium,Pleasant,High,3
+Tdevil,Lucky Strike,Classic,Unfiltered,2008-05-22,Very Strong,Very Pleasant,High,5
+ilivesxxx,Pall Mall,Lights (Blue),Regular,2008-05-23,Medium,Poor,Low,3
+ilivesxxx,Marlboro,Lights,Regular,2008-05-23,Medium,Pleasant,Fair,3
+tyler.,KOOL,Menthol,Regular,2008-05-26,Strong,Pleasant,High,4
+Tdevil,Camel,Full Flavor,Unfiltered,2008-05-27,Very Strong,Tolerable,Fair,4
+Petr_4,Camel,Wides Filters,Regular,2008-06-02,Medium,Very Pleasant,Fair,5
+Infin1ty,Marlboro,72's,Regular,2008-06-03,Strong,Very Pleasant,Low,5
+Infin1ty,Marlboro,Virginia Blend,Regular,2008-06-03,Very Weak,Poor,Fair,2
+Songy,Camel,Signature Blend Infused,Regular,2008-06-15,Medium,Pleasant,High,4
+marlboroman14,Camel,Signature Blend Infused,Regular,2008-06-19,Weak,Pleasant,Fair,2
+tey,Winston,Lights,Regular,2008-06-23,Medium,Pleasant,Fair,4
+imjustinhi,Marlboro,Smooth Menthol,Regular,2008-06-25,Very Strong,Very Pleasant,High,5
+imjustinhi,USA Gold,Full Flavor,Regular,2008-06-25,Medium,Tolerable,Very Low,3
+mngrl svnt,Marlboro,Virginia Blend,Regular,2008-06-27,Medium,Pleasant,High,4
+mngrl svnt,Camel,Turkish Royal,Regular,2008-06-27,Medium,Pleasant,High,3
+mngrl svnt,Newport,Full Flavor,Regular,2008-06-27,Medium,Pleasant,Fair,3
+mngrl svnt,Camel,Turkish Silver,Regular,2008-06-27,Weak,Tolerable,High,2
+mngrl svnt,Djarum,Specials,Regular,2008-06-27,Strong,Pleasant,High,4
+mngrl svnt,Camel,Filters Full Flavor,Regular,2008-06-27,Strong,Pleasant,High,4
+mngrl svnt,Camel,No. 9 Menthol,Regular,2008-06-27,Weak,Pleasant,Fair,3
+mngrl svnt,L&M,Full Flavor,Regular,2008-06-27,Very Weak,Very Poor,Low,1
+mngrl svnt,Camel,Wides Filters,Regular,2008-06-27,Strong,Very Pleasant,High,4
+mngrl svnt,Djarum,Black,Regular,2008-06-27,Very Strong,Very Pleasant,High,5
+mngrl svnt,Marlboro,Blend No. 27,Regular,2008-06-30,Strong,Tolerable,Fair,3
+mngrl svnt,Camel,Menthol (Silver),Regular,2008-06-30,Strong,Pleasant,Fair,4
+patriot46121,Marlboro,Reds,Regular,2008-07-03,Very Strong,Very Poor,Fair,1
+marlboroman14,Marlboro,Medium,Regular,2008-07-08,Strong,Tolerable,Fair,4
+the sacred red,Marlboro,Virginia Blend,Regular,2008-07-10,Medium,Pleasant,Fair,3
+mngrl svnt,Marlboro,Lights,Regular,2008-07-11,Weak,Very Poor,Fair,1
+mngrl svnt,American Spirit,Full Flavor,Regular,2008-07-11,Strong,Pleasant,High,4
+mngrl svnt,American Spirit,Perique,Regular,2008-07-11,Strong,Very Pleasant,High,5
+mngrl svnt,American Spirit,Menthol,Regular,2008-07-11,Strong,Very Pleasant,High,5
+Petr_4,American Spirit,Perique,Regular,2008-07-12,Medium,Very Pleasant,High,4
+b3lrod,Camel,Full Flavor,Unfiltered,2008-07-13,Strong,Pleasant,Fair,5
+Reaganomicon,Camel,Turkish Royal,Regular,2008-07-18,Medium,Very Pleasant,Low,5
+DieForDixie,Camel,Wides Filters,Regular,2008-07-25,Strong,Pleasant,Fair,4
+DieForDixie,Marlboro,Reds,Regular,2008-07-25,Strong,Pleasant,Fair,3
+DieForDixie,Pall Mall,Straights,Unfiltered,2008-07-25,Very Strong,Tolerable,Low,3
+DieForDixie,Marlboro,Medium,Regular,2008-07-25,Medium,Pleasant,Fair,4
+DieForDixie,Winston,Full Flavor,Regular,2008-07-25,Strong,Tolerable,Low,3
+DieForDixie,Camel,Turkish Gold,Regular,2008-07-25,Medium,Very Pleasant,Fair,4
+DieForDixie,Lucky Strike,Classic,Unfiltered,2008-07-25,Strong,Very Pleasant,Low,5
+Petr_4,Marlboro,Menthol Lights,Regular,2008-07-30,Medium,Pleasant,High,4
+Brian3075,Benson and Hedges,Full Flavor,100s,2008-07-31,Medium,Pleasant,Fair,5
+Brian3075,American Spirit,Perique,Regular,2008-08-08,Medium,Very Pleasant,Fair,5
+superfluous,USA Gold,Full Flavor,Regular,2008-08-09,Very Strong,Very Poor,Very Low,1
+superfluous,Camel,Wides Filters,Regular,2008-08-09,Strong,Very Pleasant,Low,5
+superfluous,Pall Mall,Straights,Unfiltered,2008-08-09,Strong,Pleasant,Fair,5
+superfluous,Djarum,Black,Regular,2008-08-09,Medium,Very Pleasant,High,5
+jdjd021,Marlboro,Smooth Menthol,Regular,2008-08-21,Strong,Very Pleasant,High,5
+blackindian,Marlboro,Blend No. 27,Regular,2008-08-27,Medium,Pleasant,Fair,4
+Brian3075,Camel,Turkish Royal,Regular,2008-08-29,Medium,Very Pleasant,Fair,5
+Brian3075,Camel,Turkish Gold,Regular,2008-08-30,Medium,Very Pleasant,Fair,5
+jdjd021,Camel,Crush,Regular,2008-08-30,Medium,Pleasant,Very High,4
+Maxwell,Camel,Crush,Regular,2008-09-04,Very Strong,Pleasant,Fair,4
+thoughtcriminal,Camel,Wides Filters,Regular,2008-09-05,Medium,Tolerable,High,3
+thoughtcriminal,Marlboro,Reds,Regular,2008-09-05,Medium,Very Poor,High,1
+thoughtcriminal,Newport,Full Flavor,Regular,2008-09-05,Very Weak,Poor,High,2
+thoughtcriminal,Lucky Strike,Classic,Unfiltered,2008-09-05,Strong,Pleasant,High,3
+thoughtcriminal,Djarum,Black,Regular,2008-09-05,Medium,Pleasant,Very High,4
+alkoenig08,Camel,Reds,Regular,2008-09-08,Strong,Very Pleasant,High,5
+Brent,Pall Mall,Lights (Blue),100s,2008-09-12,Medium,Very Pleasant,Low,5
+Brent,Benson and Hedges,Menthol,100s,2008-09-12,Strong,Very Pleasant,High,5
+Brent,Benson and Hedges,Full Flavor,100s,2008-09-12,Strong,Very Pleasant,High,5
+MARLBORO-dude,Newport,Full Flavor,Regular,2008-09-13,Very Strong,Tolerable,High,4
+MARLBORO-dude,Marlboro,Reds,Regular,2008-09-13,Strong,Pleasant,Fair,5
+MARLBORO-dude,Camel,Signature Blend Infused,Regular,2008-09-13,Weak,Very Poor,Fair,1
+Brent,Pall Mall,Straights,Unfiltered,2008-09-15,Very Strong,Very Pleasant,High,5
+Preach,Camel,Wides Filters,Regular,2008-09-18,Very Strong,Pleasant,Fair,4
+Preach,Camel,Filters Full Flavor,Regular,2008-09-18,Strong,Very Pleasant,Fair,5
+Auk,Lucky Strike,Classic,Unfiltered,2008-09-20,Very Strong,Very Pleasant,High,5
+andrethefireman,Marlboro,Lights,Regular,2008-09-20,Weak,Tolerable,Fair,3
+Ayahuasca,Djarum,Specials,Regular,2008-09-24,Strong,Very Pleasant,High,5
+jlj0005,Djarum,Black,Regular,2008-09-25,Weak,Pleasant,Very High,2
+jlj0005,Camel,Signature Blend Infused,Regular,2008-09-25,Medium,Tolerable,Fair,2
+jlj0005,Marlboro,Blend No. 27,Regular,2008-09-25,Strong,Poor,Fair,3
+Ayahuasca,Salem,Green Label Full Flavor,Regular,2008-09-25,Strong,Pleasant,Low,4
+jlj0005,Parliament,Lights (White),Regular,2008-09-25,Weak,Tolerable,High,3
+mechamenchi,Camel,Crush,Regular,2008-09-26,Very Strong,Pleasant,Fair,3
+mccainisgreat,Camel,Crush,Regular,2008-09-27,Medium,Pleasant,Fair,4
+Auk,Winston,Full Flavor,Regular,2008-09-30,Medium,Tolerable,Fair,4
+DanC1990,Lucky Strike,Filters,Regular,2008-09-30,Medium,Very Pleasant,Fair,5
+PackingMarlboros,Basic,Full Flavor,Regular,2008-10-01,Strong,Tolerable,Fair,4
+PackingMarlboros,Camel,Menthol (Silver),Regular,2008-10-01,Strong,Pleasant,High,4
+mccainisgreat,Camel,Crush,Regular,2008-10-02,Weak,Pleasant,Fair,5
+fkply,Pall Mall,Full Flavor,Regular,2008-10-04,Medium,Pleasant,Fair,5
+PyroLogik,Camel,Crush,Regular,2008-10-05,Medium,Tolerable,High,3
+Maxwell,Camel,Wides Filters,Regular,2008-10-05,Strong,Very Pleasant,Fair,5
+gimmieacig,Salem,Green Label Full Flavor,Regular,2008-10-11,Strong,Pleasant,High,3
+gimmieacig,Camel,Filters Full Flavor,Regular,2008-10-11,Strong,Tolerable,High,3
+Maxwell,L&M,Full Flavor,Regular,2008-10-11,Medium,Poor,Low,2
+hollywood167,Newport,Menthol,100s,2008-10-13,Very Strong,Very Pleasant,High,3
+relakit,Benson and Hedges,Menthol,100s,2008-10-19,Medium,Pleasant,High,4
+ECM630,Camel,Filters Full Flavor,Regular,2008-10-20,Medium,Pleasant,Fair,5
+ECM630,Camel,Crush,Regular,2008-10-20,Medium,Tolerable,Fair,4
+ECM630,Marlboro,Reds,Regular,2008-10-20,Medium,Tolerable,Fair,3
+b3lrod,Lucky Strike,Classic,Unfiltered,2008-10-23,Strong,Very Pleasant,Low,5
+b3lrod,Maverick,Full Flavor,Regular,2008-10-23,Medium,Tolerable,Low,3
+b3lrod,Parliament,Lights (White),Regular,2008-10-23,Medium,Pleasant,Fair,4
+b3lrod,Camel,Full Flavor,Unfiltered,2008-10-23,Strong,Very Pleasant,Low,5
+b3lrod,Camel,Turkish Silver,Regular,2008-10-23,Medium,Very Pleasant,High,4
+AMERICANSpIRTMAN3,Marlboro,Smooth Menthol,Regular,2008-10-24,Strong,Poor,Fair,1
+AMERICANSpIRTMAN3,American Spirit,Menthol,Regular,2008-10-24,Strong,Very Pleasant,High,5
+AMERICANSpIRTMAN3,Marlboro,Menthol,Regular,2008-10-24,Medium,Pleasant,Fair,4
+AMERICANSpIRTMAN3,American Spirit,Menthol Lights,Regular,2008-10-24,Medium,Pleasant,High,4
+AMERICANSpIRTMAN3,Camel,Signature Blend Frost,Regular,2008-10-24,Strong,Tolerable,High,3
+AMERICANSpIRTMAN3,Camel,Menthol (Silver),Regular,2008-10-26,Medium,Tolerable,Fair,3
+ECM630,Camel,Signature Blend Infused,Regular,2008-10-27,Weak,Tolerable,Fair,2
+Smylex,Camel,Turkish Royal,Regular,2008-10-27,Strong,Pleasant,High,4
+Smylex,American Spirit,Full Flavor,Regular,2008-10-27,Medium,Poor,High,3
+Smylex,Lucky Strike,Classic,Unfiltered,2008-10-27,Strong,Very Pleasant,High,5
+Smylex,American Spirit,Full Flavor,Unfiltered,2008-10-27,Very Strong,Tolerable,High,3
+Smylex,Camel,Reds,Regular,2008-10-27,Very Strong,Poor,Very High,2
+Smylex,Parliament,Lights (White),Regular,2008-10-27,Weak,Very Poor,High,1
+ECM630,Djarum,Black,Regular,2008-10-27,Medium,Pleasant,Very High,4
+b3lrod,Djarum,Black,Regular,2008-10-28,Weak,Poor,Very High,2
+b3lrod,American Spirit,Perique,Regular,2008-10-29,Strong,Very Pleasant,Fair,5
+b3lrod,American Spirit,Full Flavor,Unfiltered,2008-10-30,Strong,Pleasant,Fair,4
+b3lrod,Pall Mall,Full Flavor,Regular,2008-11-01,Medium,Very Pleasant,Low,4
+Maxwell,Camel,Full Flavor,Unfiltered,2008-11-02,Very Strong,Tolerable,Very High,3
+alexdubs69,Marlboro,Lights,Regular,2008-11-02,Medium,Pleasant,Fair,4
+sovietmarxist,Camel,Filters Full Flavor,Regular,2008-11-03,Strong,Very Pleasant,Fair,5
+sovietmarxist,Marlboro,Reds,Regular,2008-11-03,Medium,Pleasant,Low,4
+b3lrod,Marlboro,Reds,Regular,2008-11-04,Medium,Pleasant,Low,5
+david hofinger,Winston,Full Flavor,Regular,2008-11-04,Weak,Tolerable,High,3
+david hofinger,Marlboro,Lights,Regular,2008-11-04,Medium,Pleasant,Fair,4
+fyarl,Basic,Full Flavor,Regular,2008-11-07,Weak,Poor,Fair,2
+tonalsmoker,Djarum,Black,Regular,2008-11-07,Very Strong,Tolerable,Very High,1
+tonalsmoker,Camel,Filters Full Flavor,Regular,2008-11-07,Strong,Very Pleasant,Fair,5
+fyarl,Camel,Crush,Regular,2008-11-07,Medium,Tolerable,High,3
+tonalsmoker,Pyramid,Full Flavor,Regular,2008-11-07,Medium,Poor,Fair,3
+tonalsmoker,Marlboro,Reds,Regular,2008-11-07,Medium,Pleasant,High,2
+tonalsmoker,Basic,Full Flavor,Regular,2008-11-07,Strong,Pleasant,Low,4
+tonalsmoker,Lucky Strike,Classic,Unfiltered,2008-11-07,Strong,Very Pleasant,Very High,5
+tonalsmoker,Pall Mall,Straights,Unfiltered,2008-11-07,Strong,Very Pleasant,High,4
+b3lrod,Camel,No. 9 Menthol,Regular,2008-11-07,Medium,Poor,High,1
+b3lrod,Pall Mall,Straights,Unfiltered,2008-11-09,Strong,Pleasant,Very Low,4
+b3lrod,Camel,No. 9,Regular,2008-11-09,Weak,Tolerable,High,3
+b3lrod,Camel,Turkish Gold,Regular,2008-11-10,Medium,Pleasant,Fair,4
+tonalsmoker,Benson and Hedges,Full Flavor,100s,2008-11-10,Medium,Very Pleasant,Fair,5
+Carl Rogerson,Camel,Wides Filters,Regular,2008-11-10,Strong,Very Pleasant,Fair,5
+Smylex,Pall Mall,Full Flavor,Regular,2008-11-10,Medium,Very Pleasant,Fair,5
+b3lrod,Marlboro,Menthol,Regular,2008-11-13,Very Weak,Poor,Low,2
+tonalsmoker,American Spirit,Full Flavor,Regular,2008-11-14,Strong,Pleasant,High,4
+mrsflitcraft5503,Marlboro,Smooth Menthol,Regular,2008-11-16,Medium,Pleasant,Fair,4
+CamelSmoker91,Marlboro,Blend No. 27,Regular,2008-11-18,Weak,Very Pleasant,Fair,4
+CamelSmoker91,Marlboro,Menthol,Regular,2008-11-18,Very Weak,Tolerable,Fair,3
+cellophanegirl,Camel,Lights,Regular,2008-11-18,Medium,Tolerable,Fair,3
+CamelSmoker91,Camel,Filters Full Flavor,Regular,2008-11-18,Strong,Very Pleasant,Fair,5
+cellophanegirl,Camel,No. 9,Regular,2008-11-18,Weak,Pleasant,Fair,4
+CamelSmoker91,Camel,Turkish Royal,Regular,2008-11-18,Medium,Very Pleasant,Fair,5
+cellophanegirl,Pall Mall,Full Flavor,Regular,2008-11-18,Medium,Very Pleasant,Very Low,5
+CamelSmoker91,Camel,Wides Filters,Regular,2008-11-18,Strong,Pleasant,Fair,4
+CamelSmoker91,Marlboro,Reds,Regular,2008-11-18,Very Strong,Very Poor,Fair,2
+cellophanegirl,Marlboro,Smooth Menthol,Regular,2008-11-18,Strong,Pleasant,Fair,4
+MarlboroMan324,Marlboro,Reds,Regular,2008-11-21,Very Strong,Pleasant,High,5
+CamelSmoker91,Pall Mall,Full Flavor,Regular,2008-11-23,Strong,Tolerable,Low,5
+tonalsmoker,L&M,Full Flavor,Regular,2008-11-23,Strong,Pleasant,Fair,5
+tonalsmoker,Parliament,Lights (White),Regular,2008-11-24,Medium,Pleasant,Fair,5
+Copenhagen High,Parliament,Full Flavor,Regular,2008-11-24,Strong,Pleasant,High,4
+Dark Phoenix,American Spirit,Full Flavor,Regular,2008-11-30,Strong,Very Pleasant,Very High,5
+koolio,Camel,Crush,Regular,2008-12-02,Strong,Very Pleasant,Fair,5
+Elementgreen,Djarum,Black,Regular,2008-12-05,Medium,Very Pleasant,Very High,3
+Elementgreen,Camel,Filters Full Flavor,Regular,2008-12-05,Strong,Pleasant,Fair,4
+Elementgreen,Camel,Crush,Regular,2008-12-05,Medium,Tolerable,Fair,3
+Elementgreen,Marlboro,Smooth Menthol,Regular,2008-12-05,Very Strong,Very Pleasant,Fair,5
+Elementgreen,Marlboro,Reds,Regular,2008-12-05,Strong,Very Pleasant,Fair,4
+seantheone,Marlboro,Reds,Regular,2008-12-06,Strong,Very Pleasant,High,5
+seantheone,Camel,Reds,Regular,2008-12-06,Strong,Tolerable,Fair,3
+seantheone,Winston,Full Flavor,Regular,2008-12-06,Very Strong,Very Poor,Fair,1
+seantheone,Marlboro,Smooth Menthol,Regular,2008-12-06,Strong,Pleasant,Fair,3
+seantheone,Camel,Lights,Regular,2008-12-06,Medium,Very Poor,Fair,1
+seantheone,Pall Mall,Full Flavor,Regular,2008-12-06,Strong,Very Pleasant,Fair,5
+theman,Djarum,Black,Regular,2008-12-07,Strong,Very Pleasant,High,5
+smokeybear,Marlboro,Reds,Regular,2008-12-08,Strong,Tolerable,Fair,3
+AMERICANSpIRTMAN3,Marlboro,Reds,Regular,2008-12-08,Strong,Pleasant,Fair,4
+smokeybear,Camel,Full Flavor,Unfiltered,2008-12-08,Strong,Pleasant,High,4
+jayisimmortal,Camel,Turkish Gold,Regular,2008-12-11,Strong,Very Pleasant,High,5
+jayisimmortal,Marlboro,Smooth Menthol,Regular,2008-12-11,Strong,Very Pleasant,Low,5
+jayisimmortal,Camel,Turkish Royal,Regular,2008-12-11,Strong,Very Pleasant,High,5
+jayisimmortal,Djarum,Black,Regular,2008-12-11,Strong,Pleasant,Very High,4
+theman,Marlboro,Reds,Regular,2008-12-11,Medium,Poor,High,2
+jayisimmortal,Marlboro,Reds,Regular,2008-12-11,Strong,Very Pleasant,Low,5
+jayisimmortal,Marlboro,Blend No. 27,Regular,2008-12-11,Strong,Very Pleasant,Low,5
+boudiou,Camel,Filters Full Flavor,Regular,2008-12-16,Medium,Pleasant,Fair,5
+wdho,L&M,Full Flavor,Regular,2008-12-17,Strong,Pleasant,Low,4
+wdho,Lucky Strike,Filters,Regular,2008-12-17,Strong,Tolerable,High,2
+Smylex,Lucky Strike,Filters,Regular,2008-12-19,Strong,Very Pleasant,Very High,5
+Smylex,Marlboro,Virginia Blend,Regular,2008-12-19,Medium,Tolerable,High,3
+gouley,Benson and Hedges,Menthol,100s,2008-12-20,Medium,Very Pleasant,High,4
+Smylex,Camel,Filters Full Flavor,Regular,2008-12-20,Strong,Tolerable,High,3
+gouley,Pall Mall,Full Flavor,Regular,2008-12-20,Strong,Poor,High,1
+baby_blue_in_boxers,USA Gold,Full Flavor,Regular,2008-12-21,Very Strong,Pleasant,Very Low,4
+baby_blue_in_boxers,Marlboro,Reds,Regular,2008-12-21,Very Strong,Very Pleasant,High,5
+Anny,Marlboro,Reds,Regular,2008-12-22,Weak,Very Pleasant,Very Low,5
+pilgrimskrew,Camel,Full Flavor,Unfiltered,2008-12-22,Strong,Pleasant,High,4
+apache2392,Lucky Strike,Filters,Regular,2008-12-22,Strong,Very Pleasant,High,5
+cooljay78,Camel,Lights,Regular,2008-12-25,Weak,Very Poor,Very High,1
+cooljay78,KOOL,Menthol,Regular,2008-12-25,Medium,Very Poor,Fair,1
+cooljay78,Marlboro,Menthol,Regular,2008-12-25,Strong,Tolerable,Fair,3
+cooljay78,Marlboro,Menthol Milds,Regular,2008-12-25,Weak,Poor,Fair,2
+cooljay78,Marlboro,Blend No. 27,Regular,2008-12-25,Medium,Very Poor,Fair,1
+cooljay78,Parliament,Lights (White),Regular,2008-12-25,Weak,Poor,Fair,2
+cooljay78,Winston,Full Flavor,Regular,2008-12-25,Medium,Poor,Very High,2
+cooljay78,Marlboro,Menthol Lights,Regular,2008-12-25,Medium,Tolerable,Fair,4
+cooljay78,Marlboro,Reds,Regular,2008-12-25,Medium,Pleasant,Fair,5
+cooljay78,Newport,Full Flavor,Regular,2008-12-25,Very Strong,Very Pleasant,Very High,5
+cooljay78,Newport,Menthol,100s,2008-12-25,Very Strong,Very Pleasant,Very High,5
+cooljay78,Benson and Hedges,Menthol,100s,2008-12-25,Strong,Pleasant,Very High,5
+cooljay78,Marlboro,Lights,Regular,2008-12-25,Medium,Pleasant,Very High,5
+cooljay78,Virginia Slims,Menthol,100s,2008-12-25,Strong,Tolerable,Fair,3
+cooljay78,Salem,Green Label Full Flavor,Regular,2008-12-25,Weak,Very Poor,Very High,2
+cooljay78,Benson and Hedges,Full Flavor,100s,2008-12-25,Strong,Pleasant,Very High,4
+cooljay78,Winston,Lights,Regular,2008-12-25,Medium,Tolerable,Fair,5
+apache2392,American Spirit,Perique,Regular,2008-12-26,Strong,Very Pleasant,High,5
+j9@yahoo.com,Marlboro,Menthol,Regular,2008-12-27,Strong,Pleasant,Fair,4
+j9@yahoo.com,Marlboro,Menthol Milds,Regular,2008-12-27,Medium,Very Pleasant,Fair,5
+angryadam070,Marlboro,Menthol Milds,Regular,2008-12-27,Strong,Very Pleasant,Very Low,5
+smkreds,Pall Mall,Full Flavor,Regular,2008-12-28,Strong,Very Pleasant,Low,5
+smkreds,Marlboro,Reds,Regular,2008-12-28,Strong,Very Pleasant,Fair,5
+Rodwy,Marlboro,Reds,Regular,2008-12-28,Medium,Pleasant,Fair,4
+angryadam070,Camel,Crush,Regular,2008-12-28,Very Strong,Very Poor,Very High,1
+smkreds,Camel,Wides Filters,Regular,2008-12-28,Strong,Very Pleasant,High,5
+Arctang3nt,Marlboro,Virginia Blend,Regular,2008-12-29,Medium,Very Pleasant,Fair,5
+Arctang3nt,Camel,Crush,Regular,2008-12-29,Strong,Tolerable,Fair,2
+apache2392,American Spirit,Organic,Regular,2008-12-29,Strong,Pleasant,High,5
+apache2392,American Spirit,Menthol Lights,Regular,2008-12-29,Medium,Very Pleasant,High,5
+apache2392,Marlboro,Smooth Menthol,Regular,2008-12-30,Medium,Pleasant,Fair,5
+123mark6,Marlboro,Menthol Milds,Regular,2008-12-30,Medium,Pleasant,High,3
+123mark6,KOOL,Menthol,Regular,2008-12-30,Medium,Pleasant,High,4
+123mark6,Marlboro,Smooth Menthol,Regular,2008-12-30,Strong,Very Pleasant,High,4
+123mark6,Basic,Full Flavor,Regular,2008-12-30,Strong,Pleasant,Low,4
+123mark6,Marlboro,Reds,Regular,2008-12-30,Strong,Poor,Fair,2
+123mark6,Camel,Crush,Regular,2008-12-30,Medium,Very Pleasant,High,4
+Rodwy,Lucky Strike,Classic,Unfiltered,2008-12-31,Strong,Very Pleasant,Fair,5
+Ritz,Camel,No. 9,Regular,2008-12-31,Weak,Very Pleasant,Very High,4
+Ritz,Maverick,Full Flavor,Regular,2008-12-31,Strong,Tolerable,Fair,4
+cody,KOOL,XL Green,Regular,2008-12-31,Strong,Pleasant,Very High,5
+PiccoloNamek,Lucky Strike,Classic,Unfiltered,2009-01-01,Very Strong,Tolerable,Fair,3
+PiccoloNamek,Djarum,Black,Regular,2009-01-01,Weak,Very Pleasant,Fair,5
+Narrator,Marlboro,Menthol,Regular,2009-01-02,Strong,Pleasant,Fair,4
+apache2392,Camel,Crush,Regular,2009-01-02,Medium,Very Pleasant,Fair,5
+Narrator,Camel,Signature Blend Infused,Regular,2009-01-02,Weak,Poor,Fair,2
+Narrator,Camel,Lights,Regular,2009-01-02,Medium,Pleasant,Fair,4
+Narrator,Marlboro,Smooth Menthol,Regular,2009-01-02,Strong,Pleasant,Fair,4
+meli110780,Camel,Signature Blend Frost,Regular,2009-01-03,Medium,Very Pleasant,High,5
+cigdude,Newport,Full Flavor,Regular,2009-01-07,Very Strong,Tolerable,High,2
+cigdude,KOOL,Menthol,Regular,2009-01-07,Medium,Pleasant,Low,5
+Smylex,American Spirit,Perique,Regular,2009-01-07,Strong,Pleasant,High,4
+cigdude,Camel,Menthol (Silver),Regular,2009-01-08,Medium,Pleasant,High,4
+marlboroiswin,Marlboro,Blend No. 27,Regular,2009-01-08,Strong,Pleasant,Fair,5
+jessikalauren,Camel,Crush,Regular,2009-01-08,Medium,Very Pleasant,Fair,5
+marlboroiswin,Marlboro,Reds,Regular,2009-01-08,Very Strong,Poor,Fair,3
+cigdude,Marlboro,Reds,Regular,2009-01-08,Very Strong,Pleasant,High,5
+cigdude,Camel,Crush,Regular,2009-01-08,Strong,Pleasant,Fair,4
+jessikalauren,Djarum,Black,Regular,2009-01-08,Very Strong,Very Pleasant,High,5
+cigdude,Marlboro,Menthol,Regular,2009-01-08,Medium,Pleasant,High,3
+cigdude,Marlboro,Lights,Regular,2009-01-08,Weak,Poor,High,2
+smkreds,Marlboro,Lights,Regular,2009-01-10,Weak,Poor,High,2
+cooljay78,Camel,Wides Filters,Regular,2009-01-12,Strong,Poor,High,3
+Petr_4,American Spirit,Full Flavor,Regular,2009-01-12,Medium,Pleasant,High,4
+sthomas048,Dunhill,Full Flavor (Red),Regular,2009-01-12,Strong,Pleasant,Fair,4
+Ritz,Winston,Full Flavor,Regular,2009-01-13,Strong,Tolerable,Very High,3
+caliistuff,Marlboro,Reds,Regular,2009-01-14,Medium,Pleasant,Fair,5
+newport,Newport,Full Flavor,Regular,2009-01-14,Very Strong,Very Pleasant,Fair,5
+bitsanbits,Marlboro,Full Flavor,100s,2009-01-15,Very Strong,Very Pleasant,Very Low,5
+tavenner,Pall Mall,Full Flavor,Regular,2009-01-18,Strong,Pleasant,Fair,4
+James121,Marlboro,Lights,Regular,2009-01-19,Medium,Very Pleasant,Very High,5
+marlboroiswin,Camel,Wides Filters,Regular,2009-01-20,Medium,Poor,Fair,3
+Giovani1059,Marlboro,Smooth Menthol,Regular,2009-01-20,Medium,Pleasant,High,3
+apache2392,Camel,No. 9 Menthol,Regular,2009-01-20,Weak,Very Pleasant,Fair,5
+marlboroiswin,Camel,Crush,Regular,2009-01-20,Very Weak,Poor,Fair,1
+julian.ferretti,Marlboro,Reds,Regular,2009-01-27,Strong,Pleasant,Fair,4
+smkreds,Newport,Full Flavor,Regular,2009-01-29,Strong,Very Pleasant,High,5
+jlb200703,Djarum,Black,Regular,2009-01-29,Medium,Very Pleasant,Low,5
+cooldude,Djarum,Black,Regular,2009-01-31,Very Strong,Tolerable,High,2
+Smylex,Marlboro,Reds,Regular,2009-01-31,Strong,Pleasant,Fair,4
+Chris89,Djarum,Black,Regular,2009-01-31,Weak,Pleasant,Very High,2
+justin23214,Marlboro,Lights,Regular,2009-02-01,Medium,Very Pleasant,Fair,5
+asland,Marlboro,Lights,Regular,2009-02-05,Medium,Pleasant,Low,4
+asland,Camel,Lights,Regular,2009-02-05,Medium,Tolerable,Low,3
+PackingMarlboros,Newport,Full Flavor,Regular,2009-02-05,Strong,Pleasant,High,4
+Maxwell,Marlboro,Reds,Regular,2009-02-07,Strong,Pleasant,High,3
+justin23214,Marlboro,Medium,Regular,2009-02-08,Medium,Pleasant,Fair,4
+x6u0oe,Camel,No. 9,Regular,2009-02-08,Weak,Very Pleasant,Fair,5
+Devon Andrews,Marlboro,Full Flavor,100s,2009-02-08,Weak,Poor,Very High,1
+chainsmoker,Winston,Full Flavor,Regular,2009-02-11,Strong,Pleasant,Fair,5
+quixote,Camel,Turkish Royal,Regular,2009-02-12,Strong,Very Pleasant,High,5
+quixote,Djarum,Specials,Regular,2009-02-12,Strong,Tolerable,Very High,3
+ECM630,Camel,Menthol (Silver),Regular,2009-02-14,Medium,Pleasant,Fair,4
+ECM630,Camel,No. 9,Regular,2009-02-14,Medium,Tolerable,Fair,3
+tonalsmoker,Camel,Wides Filters,Regular,2009-02-17,Strong,Very Pleasant,Fair,4
+Smylex,Pall Mall,Straights,Unfiltered,2009-02-17,Very Strong,Tolerable,High,3
+tonalsmoker,American Spirit,Organic,Regular,2009-02-19,Strong,Tolerable,High,4
+uscorpx,Marlboro,72's,Regular,2009-02-20,Medium,Pleasant,Very Low,5
+cooldude,American Spirit,Lights,Regular,2009-02-20,Strong,Very Pleasant,High,4
+uscorpx,Marlboro,Full Flavor,100s,2009-02-20,Very Weak,Very Poor,Very High,1
+marlboroiswin,Newport,Full Flavor,Regular,2009-02-21,Strong,Pleasant,High,4
+hakha,Marlboro,Lights,Regular,2009-02-22,Medium,Pleasant,Fair,4
+wrar2,Marlboro,Smooth Menthol,Regular,2009-02-23,Medium,Very Pleasant,Very Low,5
+ECM630,KOOL,Milds,Regular,2009-02-24,Medium,Pleasant,Fair,4
+blake1palmer,Parliament,Lights (White),Regular,2009-02-25,Medium,Pleasant,Fair,4
+blake1palmer,American Spirit,Lights,Regular,2009-02-25,Medium,Pleasant,Fair,4
+smokybear,American Spirit,Lights,Regular,2009-02-26,Medium,Pleasant,Very High,4
+schmoozyduh,American Spirit,Full Flavor,Regular,2009-02-27,Medium,Pleasant,High,4
+schmoozyduh,Camel,No. 9,Regular,2009-02-27,Medium,Pleasant,Fair,3
+schmoozyduh,Basic,Full Flavor,Regular,2009-02-27,Medium,Very Poor,Fair,1
+x6u0oe,Camel,No. 9 Menthol,Regular,2009-03-04,Medium,Very Pleasant,Fair,4
+marlboroiswin,Djarum,Black,Regular,2009-03-05,Very Weak,Pleasant,High,3
+shakakan,Marlboro,Reds,Regular,2009-03-05,Strong,Very Poor,Low,1
+marlboroiswin,Marlboro,Menthol,Regular,2009-03-05,Strong,Pleasant,Fair,4
+tonalsmoker,Camel,Turkish Gold,Regular,2009-03-07,Medium,Very Pleasant,Fair,5
+tonalsmoker,Camel,Turkish Royal,Regular,2009-03-07,Strong,Pleasant,Fair,3
+Raphael,Djarum,Black,Regular,2009-03-10,Weak,Tolerable,Very High,3
+revjr,Newport,Menthol,100s,2009-03-11,Very Weak,Very Poor,Very High,1
+jnickelljr,Camel,Lights,Regular,2009-03-11,Medium,Very Pleasant,Fair,5
+atropine,Marlboro,Blend No. 27,Regular,2009-03-11,Medium,Pleasant,Fair,5
+PiccoloNamek,Djarum,Specials,Regular,2009-03-17,Weak,Pleasant,Very High,4
+tonalsmoker,Marlboro,Virginia Blend,Regular,2009-03-17,Medium,Pleasant,High,5
+tonalsmoker,Marlboro,Blend No. 27,Regular,2009-03-17,Medium,Pleasant,High,4
+Justinturner18,Camel,Crush,Regular,2009-03-19,Very Strong,Pleasant,High,4
+TheOldMan7th,Marlboro,Menthol Milds,Regular,2009-03-19,Medium,Pleasant,Fair,4
+TheOldMan7th,Pall Mall,Full Flavor,Regular,2009-03-19,Strong,Pleasant,Fair,4
+TheOldMan7th,Camel,Full Flavor,Unfiltered,2009-03-19,Strong,Pleasant,High,4
+Brightaay,Marlboro,Lights,Regular,2009-03-23,Weak,Very Pleasant,Fair,4
+bcguy79,Virginia Slims,Luxury Lights,120s,2009-03-24,Strong,Very Pleasant,Very High,5
+bcguy79,Marlboro,Lights,100s,2009-03-24,Medium,Pleasant,High,5
+Gordieo37,Lucky Strike,Filters,Regular,2009-03-24,Strong,Very Pleasant,Very High,5
+Gordieo37,Pall Mall,Full Flavor,Regular,2009-03-24,Very Strong,Very Poor,Very Low,2
+ogmiz,American Spirit,Menthol,Regular,2009-03-24,Strong,Very Pleasant,Fair,5
+ogmiz,Camel,Wides Filters,Regular,2009-03-25,Strong,Pleasant,High,5
+kunal500,American Spirit,Perique,Regular,2009-03-25,Strong,Pleasant,Fair,4
+ogmiz,Pall Mall,Straights,Unfiltered,2009-03-25,Medium,Pleasant,High,5
+kunal500,Pall Mall,Lights (Blue),Regular,2009-03-25,Weak,Poor,Fair,1
+ogmiz,Newport,Menthol,100s,2009-03-25,Strong,Very Pleasant,High,5
+kunal500,Marlboro,Reds,Regular,2009-03-25,Strong,Pleasant,Fair,4
+kunal500,Marlboro,Lights,Regular,2009-03-25,Weak,Very Poor,Fair,1
+kunal500,Newport,Full Flavor,Regular,2009-03-26,Medium,Tolerable,Fair,3
+kunal500,Camel,Filters Full Flavor,Regular,2009-03-27,Strong,Pleasant,Fair,5
+iasd,Winston,Full Flavor,Regular,2009-03-28,Very Weak,Poor,Fair,2
+A.A.R.O.N.,Marlboro,Reds,Regular,2009-03-30,Strong,Tolerable,Fair,4
+A.A.R.O.N.,Parliament,Full Flavor,Regular,2009-03-30,Medium,Very Pleasant,High,4
+A.A.R.O.N.,Camel,Wides Filters,Regular,2009-03-30,Strong,Pleasant,Fair,4
+Raphael,American Spirit,Full Flavor,Regular,2009-03-31,Medium,Pleasant,Very High,4
+americanspirit,Marlboro,Menthol,Regular,2009-03-31,Medium,Pleasant,Fair,3
+mentholkillah,KOOL,Milds,Regular,2009-04-01,Medium,Pleasant,Fair,4
+mentholkillah,Camel,Lights,Regular,2009-04-01,Medium,Poor,Fair,2
+mentholkillah,American Spirit,Lights,Regular,2009-04-01,Strong,Tolerable,High,4
+CHERYL6147,Sonoma,Full Flavor,Regular,2009-04-01,Medium,Pleasant,Very High,3
+johnyjump,Winston,Lights,Regular,2009-04-01,Medium,Pleasant,High,4
+mentholkillah,Marlboro,Menthol Lights,Regular,2009-04-01,Weak,Very Pleasant,Fair,5
+kunal500,Camel,Turkish Royal,Regular,2009-04-01,Strong,Pleasant,High,4
+fosterskate,Newport,Full Flavor,Regular,2009-04-06,Very Strong,Poor,High,2
+bdrummer,Marlboro,Blend No. 27,Regular,2009-04-06,Medium,Pleasant,High,5
+fosterskate,Marlboro,Reds,Regular,2009-04-06,Strong,Very Pleasant,High,5
+fosterskate,Maverick,Full Flavor,Regular,2009-04-06,Strong,Pleasant,Fair,4
+VTheChaosTheory,Newport,Full Flavor,Regular,2009-04-07,Very Strong,Tolerable,High,2
+beachpup,Maverick,Full Flavor,Regular,2009-04-08,Medium,Pleasant,Low,4
+kunal500,Newport,Menthol,100s,2009-04-09,Strong,Very Pleasant,High,5
+beachpup,American Spirit,Lights,Regular,2009-04-10,Medium,Very Pleasant,High,5
+ftbnubs123,Marlboro,Reds,Regular,2009-04-11,Medium,Pleasant,Very High,3
+ftbnubs123,Pall Mall,Lights (Blue),Regular,2009-04-11,Very Weak,Tolerable,Low,1
+ftbnubs123,Lucky Strike,Classic,Unfiltered,2009-04-11,Very Strong,Very Pleasant,Very High,5
+justCopewithit,Lucky Strike,Classic,Unfiltered,2009-04-12,Very Strong,Pleasant,Very High,5
+bookman,Salem,Green Label Full Flavor,Regular,2009-04-16,Medium,Very Pleasant,High,5
+rob420,Marlboro,Smooth Menthol,Regular,2009-04-16,Strong,Pleasant,High,3
+rob420,Marlboro,Menthol,Regular,2009-04-16,Medium,Very Poor,Fair,2
+jerry carpenter,Pall Mall,Ultra Lights (Orange),100s,2009-04-17,Medium,Pleasant,Fair,5
+mikey_se10,Marlboro,Reds,Regular,2009-04-17,Strong,Very Pleasant,Fair,5
+washcloth759,Newport,Full Flavor,Regular,2009-04-19,Very Strong,Poor,High,1
+washcloth759,Camel,Turkish Silver,Regular,2009-04-19,Weak,Very Pleasant,Fair,5
+love2smoke,Camel,Filters Full Flavor,Regular,2009-04-19,Strong,Very Pleasant,Very Low,5
+Duke44,Winston,Full Flavor,Regular,2009-04-20,Very Weak,Poor,High,1

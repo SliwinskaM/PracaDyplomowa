@@ -45,7 +45,7 @@ class ImportData:
                                        'reviews.dateAdded', 1),
         'electronics': Parameters('Datasets/ElectronicsShort3.csv', 1, 5, 0, 1, 2, 3),
         'movies_basic': Parameters('Datasets/MoviesShort.csv', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp'),
-        'smoker': Parameters('Datasets/smokerdata.csv', 1, 5, 'User', 'Brand', 'Rating', read_time=False),
+        'smoker': Parameters('Datasets/smokerdataShort.csv', 1, 5, 'User', 'Brand', 'Rating', read_time=False),
         'movies_short': Parameters('Datasets/movies/ml-latest-small', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp', read_time=False),
     }
 

@@ -38,57 +38,6 @@ class Recommend:
                 recomm_list.append(conseq[:, 0])
         return recomm_list
 
-    # # split to train and test sets randomly
-    # def test_split_random(self, test_size):
-    #     # initialize
-    #     train_r_matrix = np.empty(self.conv_r_matrix.shape)
-    #     train_r_matrix[:] = np.nan
-    #     test_r_matrix = np.empty(self.conv_r_matrix.shape)
-    #     test_r_matrix[:] = np.nan
-    #     train_mask = np.zeros(self.conv_r_matrix.shape, dtype=bool)
-    #     test_mask = np.zeros(self.conv_r_matrix.shape, dtype=bool)
-    #     for user_idx in range(len(self.conv_r_matrix)):
-    #         # products bought by user
-    #         user_prod_idxs = np.nonzero(~np.isnan(self.conv_r_matrix[user_idx][:, 0]))
-    #         # randomly split products and add them to respective sets
-    #         if len(user_prod_idxs[0]) > 1:
-    #             train_tmp, test_tmp = train_test_split(user_prod_idxs[0], test_size=test_size)
-    #             train_mask[user_idx, train_tmp, :] = True
-    #             test_mask[user_idx, test_tmp, :] = True
-    #         else:
-    #             # if there is only one element
-    #             train_mask[user_idx, user_prod_idxs, :] = True
-    #
-    #     train_r_matrix[train_mask] = self.conv_r_matrix[train_mask]
-    #     test_r_matrix[test_mask] = self.conv_r_matrix[test_mask]
-    #     return train_r_matrix, test_r_matrix
-    #
-    # # split to train and test sets by timestamps
-    # def test_split_time(self, t_matrix, test_size):
-    #     # initialize
-    #     train_r_matrix = np.empty(self.conv_r_matrix.shape)
-    #     train_r_matrix[:] = np.nan
-    #     test_r_matrix = np.empty(self.conv_r_matrix.shape)
-    #     test_r_matrix[:] = np.nan
-    #     train_mask = np.zeros((self.conv_r_matrix.shape[0], self.conv_r_matrix.shape[1]), dtype=bool)
-    #     test_mask = np.zeros((self.conv_r_matrix.shape[0], self.conv_r_matrix.shape[1]), dtype=bool)
-    #     # for every user
-    #     for user_idx in range(len(self.conv_r_matrix)):
-    #         # find where timstemps are not nan
-    #         t_not_nan_idx = np.nonzero(~np.isnan(t_matrix[user_idx]))
-    #         [t_not_nan] = t_matrix[user_idx, t_not_nan_idx]
-    #         # calculate test_size portion of users' time
-    #         timestamp_max = max(t_not_nan)
-    #         timestamp_min = min(t_not_nan)
-    #         diff = timestamp_max - timestamp_min
-    #         timestamp_test = timestamp_max - (test_size * diff)
-    #         # check what products were bought before timestamp_test
-    #         train_mask[user_idx] = t_matrix[user_idx] <= timestamp_test
-    #         test_mask[user_idx] = t_matrix[user_idx] > timestamp_test
-    #         pass
-    #     train_r_matrix[train_mask] = self.conv_r_matrix[train_mask]
-    #     test_r_matrix[test_mask] = self.conv_r_matrix[test_mask]
-    #     return train_r_matrix, test_r_matrix
 
     # create and validate recommendations
     def main_recommend(self, S, curves_names, test_size=0.3, cross_num=10, min_support=0.0052, min_confidence=0.9, shuffle_test=False):
@@ -97,6 +46,7 @@ class Recommend:
         train, test = train_test_split(self.conv_r_matrix, test_size=test_size, shuffle=shuffle_test) # self.conv_r_matrix[:train_idx], self.conv_r_matrix[train_idx:] # self.test_split_time(t_matrix, test_size)
         apriori = ard.AssociationRules(train, S, curves_names, min_support, min_confidence)
         rules = apriori.algorithm_main()
+        print('Rules found')
         self.rules = rules
         # all recommendations
         recommendations_all = []

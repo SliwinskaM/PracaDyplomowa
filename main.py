@@ -9,7 +9,7 @@ import visualizations as vs
 import numpy as np
 
 # read data
-data = import_data.ImportData('beauty')
+data = import_data.ImportData('smoker')
 data.import_data()
 # data.import_movies_genres()
 
