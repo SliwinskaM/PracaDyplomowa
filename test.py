@@ -37,19 +37,36 @@ class TestRecommendation(unittest.TestCase):
         test_conv_r_matrix[1, 0] = np.array((0, 0, 1))
         test_conv_r_matrix[1, 1] = np.array((0, 0, 1))
 
-        test_t_matrix = np.empty((2, 3))
-        test_t_matrix[:] = np.nan
-        test_t_matrix[0, 0] = 1
-        test_t_matrix[0, 1] = 2
-        test_t_matrix[0, 2] = 3
-        test_t_matrix[1, 0] = 1
-        test_t_matrix[1, 1] = 2
+        curves = fc.Curves1(1, 5, 0.2, 0.45, 0.55, 0.8)
+
+        recom = re.Recommend(test_conv_r_matrix)
+        tr = recom.main_recommend(100, curves.Names, cross_num=3, test_size=0.3, shuffle_test=False, min_support=0.0000000001, min_confidence=0.000004)
+        self.assertEqual(tr, ([[np.array([0], dtype=object), np.array([2], dtype=object)], # 1 -> 0 and 2
+                                [np.array([1], dtype=object), np.array([2], dtype=object)], # 0 -> 1 and 2
+                                  [np.array([2], dtype=object), np.array([2], dtype=object)]], # 0 and 1 -> 2 and 2
+                                 0.3333333333333333))
+
+
+
+    def test_whole_identical(self):
+        test_conv_r_matrix = np.empty((2, 3, 3))
+        test_conv_r_matrix[:] = np.nan
+        test_conv_r_matrix[0, 0] = np.array((0, 0, 1))
+        test_conv_r_matrix[0, 1] = np.array((0, 0, 1))
+        test_conv_r_matrix[0, 2] = np.array((0, 0, 1))
+        test_conv_r_matrix[1, 0] = np.array((0, 0, 1))
+        test_conv_r_matrix[1, 1] = np.array((0, 0, 1))
+        test_conv_r_matrix[1, 2] = np.array((0, 0, 1))
 
         curves = fc.Curves1(1, 5, 0.2, 0.45, 0.55, 0.8)
 
         recom = re.Recommend(test_conv_r_matrix)
-        tr = recom.main_recommend(test_t_matrix, 100, curves.Names, test_size=0.3, min_support=0.0000000001, min_confidence=0.000004)
-        self.assertEqual(tr, ([[], [np.array([1], dtype=object)]], 1.0))
+        tr = recom.main_recommend(100, curves.Names, cross_num=3, test_size=0.3, shuffle_test=False, min_support=0.0000000001, min_confidence=0.000004)
+        # every time both products in base recommend the third in test
+        self.assertEqual(tr, ([[np.array([0], dtype=object), np.array([0], dtype=object)],
+                                [np.array([1], dtype=object), np.array([1], dtype=object)],
+                                  [np.array([2], dtype=object), np.array([2], dtype=object)]],
+                                 1.0))
 
 if __name__ == '__main__':
     unittest.main()
