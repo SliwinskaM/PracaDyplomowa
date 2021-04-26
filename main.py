@@ -9,8 +9,9 @@ import visualizations as vs
 import numpy as np
 
 # read data
-data = import_data.ImportData('beauty')
-data.import_data()
+data = import_data.ImportData('movies_short')
+# data.import_data()
+data.import_movies_genres()
 
 #choose fuzzy curves class
 curves = fc.Curves1(data.min_score, data.max_score, 0.2, 0.45, 0.55, 0.8)
