@@ -79,6 +79,13 @@ class Recommend:
                 recommendations_all.append(recommendations)
                 # other products bought by user (cross test)
                 cross_test_p_s_idxs = np.nonzero(~np.isnan(cross_test[test_user_idx]))
+
+                #debug
+                debug_r_matrix_p_s_idxs = np.nonzero(~np.isnan(self.conv_r_matrix[test_user_idx]))
+                debug_user_cross_test = cross_test[test_user_idx]
+                debug_user_test = test[test_user_idx]
+                debug_user_r_matrix = self.conv_r_matrix[test_user_idx]
+
                 # count precise recommendations
                 recomm_in_test = 0
                 # if user bought any products belonging to cross test:
@@ -90,13 +97,16 @@ class Recommend:
                             # if product is in cross_test, add its fuzzy function for HIGH to recommendation counter
                             if prod in cross_test_p_s_idxs[0]:
                                 recomm_in_test_local.append(self.conv_r_matrix[test_user_idx, prod, len(curves_names) - 1])
+                                pass
                         # all recommendations for a user precision
                         if len(recomm_in_test_local) > 0:
                             recomm_in_test += mean(recomm_in_test_local)
+                            pass
                 # calculate recommendations' precision
                 if len(recommendations) > 0:
                     precision = recomm_in_test / len(recommendations)
                     precision_all.append(precision)
+                    pass
 
         # calculate collective precision
         if len(precision_all) > 0:

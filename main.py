@@ -35,7 +35,7 @@ t_matrix = data.t_matrix
 
 recomm = re.Recommend(conv_r_matrix)
 # f = recomm.recommend_to_user(rules2, 11)
-recomm_score = recomm.main_recommend(20, curves.Names, test_size=0.3, cross_num=5, min_support=0.0000000001, min_confidence=0.000004)
+recomm_score = recomm.main_recommend(20, curves.Names, test_size=0.3, cross_num=5, min_support=0.001, min_confidence=0.004)
 
 
 pass
