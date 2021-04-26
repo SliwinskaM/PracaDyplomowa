@@ -1,7 +1,10 @@
+from statistics import mean
+
 import numpy as np
 import pandas as pd
 import time
 import datetime
+import math
 
 
 
@@ -59,7 +62,7 @@ class ImportData:
         self.max_score = params.max_score
         # initialize lists
         user_max_idx = -1
-        user_max_idx = -1
+        prod_max_idx = -1
         r_matrix = []
         t_matrix = []
         users = []
@@ -71,17 +74,17 @@ class ImportData:
             if user not in users:  # to avoid repetition # jakieś bardziej efektywne przeszukiwanie?
                 user_max_idx += 1
                 users.append(user)
-                r_matrix.append([np.nan] * (user_max_idx + 1))
+                r_matrix.append([np.nan for i in range(prod_max_idx + 1)])
                 # if params.read_time:
-                #     t_matrix.append([np.nan] * (user_max_idx + 1))
+                #     t_matrix.append([np.nan] * (prod_max_idx + 1))
             if product not in products:  # to avoid repetition
-                user_max_idx += 1
+                prod_max_idx += 1
                 products.append(product)
                 for i in range(len(r_matrix)):
                     r_matrix[i].append(np.nan)
                     # if params.read_time:
                     #     t_matrix[i].append(np.nan)
-                r_matrix[user_max_idx][user_max_idx] = row[params.score_column]
+                r_matrix[user_max_idx][prod_max_idx] = row[params.score_column]
             else:
                 find_prod = products.index(product)
                 r_matrix[user_max_idx][find_prod] = row[params.score_column]
@@ -140,7 +143,7 @@ class ImportData:
             if user not in users:
                 user_max_idx += 1
                 users.append(user)
-                r_matrix.append([[]] * (genre_max_idx + 1))
+                r_matrix.append([[] for i in range(genre_max_idx + 1)])
             for genre in movie_id_to_genres[product]:
                 if genre not in genres:  # to avoid repetition
                     genre_max_idx += 1
@@ -153,6 +156,12 @@ class ImportData:
                     find_genre = genres.index(genre)
                     r_matrix[user_max_idx][find_genre].append(row[params.score_column])
 
+        for row in range(len(r_matrix)):
+            for col in range(len(r_matrix[0])):
+                if len(r_matrix[row][col]) > 0:
+                    r_matrix[row][col] = mean(r_matrix[row][col])
+                else:
+                    r_matrix[row][col] = np.nan
 
 
         self.users = np.array(users)
