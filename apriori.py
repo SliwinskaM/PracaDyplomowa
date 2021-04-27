@@ -5,11 +5,11 @@ from scipy.special import comb
 import fuzzy_curves as fc
 
 class Apriori:
-    def __init__(self, conv_r_matrix, sets_enum, min_support=0.001, min_confidence=0.6):
+    def __init__(self, conv_r_matrix, sets_enum, min_support=0.2, min_confidence=0.5):
         self.conv_r_matrix = conv_r_matrix
         self.number_of_sets = len(conv_r_matrix[0][0])
-        self.number_of_transactions = np.count_nonzero(~np.isnan(conv_r_matrix))/self.number_of_sets
         self.number_of_products = len(conv_r_matrix[0])
+        self.number_of_users = len(conv_r_matrix)
         self.min_support = min_support
         self.min_confidence = min_confidence
         self.sets_enum = sets_enum
@@ -40,7 +40,7 @@ class Apriori:
         return count_np
 
     def support(self, count):
-        return count / self.number_of_transactions
+        return count / self.number_of_users
 
 
     def confidence(self, itemset_support, pred_support):
@@ -59,6 +59,7 @@ class Apriori:
         # support of each candidate
         counts = np.array([self.count(row) for row in c_k])
         # find candidates with proper support
+        u = self.support(counts)
         l_k_mask = np.where(self.support(counts) >= self.min_support) # itemsets with proper support
         l_k = c_k[l_k_mask]
         counts_matr = counts[l_k_mask]
@@ -134,16 +135,17 @@ class Apriori:
 
         counts_final = [cnt]
         l_final = [l]
-        for k in range(2, self.number_of_products):
-            # generate array of candidates
-            c = self.gen_c_k(l, k)
-            # generate array of frequent sets and supports
-            l, cnt = self.gen_l_k(c)
-            # if there are no more frequent sets
-            if l.size == 0:
-                break
-            l_final.append(l)
-            counts_final.append(cnt)
+        if l.size > 0:
+            for k in range(2, self.number_of_products):
+                # generate array of candidates
+                c = self.gen_c_k(l, k)
+                # generate array of frequent sets and supports
+                l, cnt = self.gen_l_k(c)
+                # if there are no more frequent sets
+                if l.size == 0:
+                    break
+                l_final.append(l)
+                counts_final.append(cnt)
         return l_final, counts_final
 
 
