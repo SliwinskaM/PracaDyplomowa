@@ -11,14 +11,12 @@ import numpy as np
 # read data
 data = import_data.ImportData('smoker')
 data.import_data()
-# data.import_movies_genres()
 
 #choose fuzzy curves class
 curves = fc.Curves1(data.min_score, data.max_score, 0.2, 0.45, 0.55, 0.8)
-#
+
 # # create fuzzy association rules
 conv_r_matrix = create_converted_r_matrix(data.r_matrix, curves)
-t_matrix = data.t_matrix
 
 # apriori1 = apr.Apriori(conv_r_matrix, curves.Names, 0.0052)
 # freq1, sup1 = apriori1.apriori()
@@ -35,7 +33,7 @@ t_matrix = data.t_matrix
 
 recomm = re.Recommend(conv_r_matrix)
 # f = recomm.recommend_to_user(rules2, 11)
-recomm_score = recomm.main_recommend(20, curves.Names, test_size=0.3, cross_num=5, min_support=0.001, min_confidence=0.004)
+recomm_score = recomm.main_recommend(20, curves.Names, test_size=0.3, cross_num=10, min_support=0.2, min_confidence=0.5)
 
 
 pass
