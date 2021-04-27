@@ -5,7 +5,7 @@ import apriori as apr
 import math
 
 class AssociationRules:
-    def __init__(self, conv_r_matrix, div_percentage, sets_enum, min_support=0.0005, min_confidence=0.6):
+    def __init__(self, conv_r_matrix, div_percentage, sets_enum, min_support=0.2, min_confidence=0.5):
         self.conv_r_matrix = conv_r_matrix
         self.number_of_users = len(conv_r_matrix)
         self.min_support = min_support
