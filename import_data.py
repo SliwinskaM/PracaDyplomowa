@@ -47,6 +47,7 @@ class ImportData:
         'movies_basic': Parameters('Datasets/MoviesShort.csv', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp'),
         'smoker': Parameters('Datasets/smokerdataShort.csv', 1, 5, 'User', 'Brand', 'Rating', read_time=False),
         'movies_short': Parameters('Datasets/movies/ml-latest-small', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp', read_time=False),
+        'test': Parameters('Datasets/testSet.csv', 1, 5, 'userId', 'prodId', 'score', read_time=False),
     }
 
     def import_data(self):
