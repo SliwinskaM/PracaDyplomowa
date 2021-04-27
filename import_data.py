@@ -1,7 +1,10 @@
+from statistics import mean
+
 import numpy as np
 import pandas as pd
 import time
 import datetime
+import math
 
 
 
@@ -17,7 +20,7 @@ class ImportData:
 
     class Parameters:
         def __init__(self, filename, min_score, max_score, user_column, product_column, score_column,
-                     time_column, parse_date=0, args=None):
+                     time_column=None, parse_date=0, read_time=True, args=None):
             self.filename = filename
             self.min_score = min_score
             self.max_score = max_score
@@ -26,31 +29,41 @@ class ImportData:
             self.score_column = score_column
             self.time_column = time_column
             self.parse_date = parse_date
+            self.read_time = read_time
             self.args = args
 
     params_dict = {
-        'fine_food': Parameters('Datasets/AmazonFineFoodShort3.csv',
+        'fine_food': Parameters('Datasets/AmazonFineFoodShort.csv',
                                        1, 5, 'UserId', 'ProductId', 'Score', 'Time'),
-        'beauty': Parameters('Datasets/RatingBeautyShort5.csv', 1, 5, 'UserId', 'ProductId', 'Rating',
+        'beauty': Parameters('Datasets/RatingBeautyShort.csv', 1, 5, 'UserId', 'ProductId', 'Rating',
                                     'Timestamp'), # najczęstszy support: 0.0053...
         'products': Parameters('Datasets/AmazonProductsShort.csv',
                                       1, 5, 'reviews.username', 'id', 'reviews.rating',
-                                      'reviews.dateAdded', 1),
-        'electronics': Parameters('Datasets/ElectronicsShort.csv', 1, 5, 0, 1, 2, 3),
-        'movies': Parameters('Datasets/MoviesShort.csv', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp')
+                                      'reviews.dateAdded', 1),  # ten zbiór nie ma sensu skrócony (abo wgl)
+        'products_types': Parameters('Datasets/AmazonProducts.csv',
+                                       1, 5, 'reviews.username', 'categories', 'reviews.rating',
+                                       'reviews.dateAdded', 1),
+        'electronics': Parameters('Datasets/ElectronicsShort3.csv', 1, 5, 0, 1, 2, 3),
+        'movies_basic': Parameters('Datasets/MoviesShort.csv', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp'),
+        'smoker': Parameters('Datasets/smokerdataShort.csv', 1, 5, 'User', 'Brand', 'Rating', read_time=False),
+        'movies_short': Parameters('Datasets/movies/ml-latest-small', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp', read_time=False),
+        'test': Parameters('Datasets/testSet.csv', 1, 5, 'userId', 'prodId', 'score', read_time=False),
     }
 
     def import_data(self):
         params = self.params_dict[self.dataset]
         # create database
-        df = pd.read_csv(params.filename,
-                         usecols=[params.user_column, params.product_column, params.score_column, params.time_column])
-        # df = df.drop(params.columns_to_drop, axis=1)
+        if params.read_time:
+            df = pd.read_csv(params.filename,
+                             usecols=[params.user_column, params.product_column, params.score_column, params.time_column])
+        else:
+            df = pd.read_csv(params.filename,
+                             usecols=[params.user_column, params.product_column, params.score_column])
         self.min_score = params.min_score
         self.max_score = params.max_score
         # initialize lists
-        user_idx = -1
-        prod_idx = -1
+        user_max_idx = -1
+        prod_max_idx = -1
         r_matrix = []
         t_matrix = []
         users = []
@@ -60,32 +73,101 @@ class ImportData:
             user = row[params.user_column]
             product = row[params.product_column]
             if user not in users:  # to avoid repetition # jakieś bardziej efektywne przeszukiwanie?
-                user_idx += 1
+                user_max_idx += 1
                 users.append(user)
-                r_matrix.append([np.nan] * (prod_idx + 1))
-                t_matrix.append([np.nan] * (prod_idx + 1))
+                r_matrix.append([np.nan for i in range(prod_max_idx + 1)])
+                # if params.read_time:
+                #     t_matrix.append([np.nan] * (prod_max_idx + 1))
             if product not in products:  # to avoid repetition
-                prod_idx += 1
+                prod_max_idx += 1
                 products.append(product)
                 for i in range(len(r_matrix)):
                     r_matrix[i].append(np.nan)
-                    t_matrix[i].append(np.nan)
-            r_matrix[user_idx][prod_idx] = row[params.score_column]
+                    # if params.read_time:
+                    #     t_matrix[i].append(np.nan)
+                r_matrix[user_max_idx][prod_max_idx] = row[params.score_column]
+            else:
+                find_prod = products.index(product)
+                r_matrix[user_max_idx][find_prod] = row[params.score_column]
 
-            # parse timestamps
-            time_val = row[params.time_column]
-            # %d%m%y
-            if params.parse_date == 1:
-                time_val = time.mktime(datetime.datetime.strptime(time_val, "%Y-%m-%dT%H:%M:%SZ").timetuple())
-
-            time_val = float(time_val)
-            t_matrix[user_idx][prod_idx] = time_val
+            # if params.read_time:
+            #     # parse timestamps
+            #     time_val = row[params.time_column]
+            #     # %d%m%y
+            #     if params.parse_date == 1:
+            #         time_val = time.mktime(datetime.datetime.strptime(time_val, "%Y-%m-%dT%H:%M:%SZ").timetuple())
+            #     time_val = float(time_val)
+            #     t_matrix[user_max_idx] = time_val
 
 
 
         self.users = np.array(users)
         self.products = np.array(products)
         self.r_matrix = np.array(r_matrix, dtype=object)
-        self.t_matrix = np.array(t_matrix)
+        # if params.read_time:
+        #     self.t_matrix = np.array(t_matrix)
         print('u')
 
+
+    def import_movies_genres(self):
+        params = self.params_dict[self.dataset]
+        # create helper database
+        types = pd.read_csv(params.filename + '/movies.csv', usecols=['movieId', 'genres'])
+        # create database
+        if params.read_time:
+            df = pd.read_csv(params.filename,
+                             usecols=[params.user_column, params.product_column, params.score_column, params.time_column])
+        else:
+            df = pd.read_csv(params.filename + '/ratings.csv',
+                             usecols=[params.user_column, params.product_column, params.score_column])
+        self.min_score = params.min_score
+        self.max_score = params.max_score
+        # initialize lists
+        user_max_idx = -1
+        genre_max_idx = -1
+        r_matrix = []
+        t_matrix = []
+        users = []
+        genres = []
+        # helper matrices
+        movie_id_to_genres = {}
+        for index, row in types.iterrows():
+            movie_id = row['movieId']
+            genres_row = row['genres']
+            genres_list = genres_row.split('|')
+            movie_id_to_genres[movie_id] = genres_list
+
+        # Write to lists
+        for index, row in df.iterrows():
+            user = row[params.user_column]
+            product = row[params.product_column]
+            if user not in users:
+                user_max_idx += 1
+                users.append(user)
+                r_matrix.append([[] for i in range(genre_max_idx + 1)])
+            for genre in movie_id_to_genres[product]:
+                if genre not in genres:  # to avoid repetition
+                    genre_max_idx += 1
+                    genres.append(genre)
+                    for i in range(len(r_matrix)):
+                        r_matrix[i].append([])
+                    u = r_matrix[user_max_idx][genre_max_idx]
+                    r_matrix[user_max_idx][genre_max_idx].append(row[params.score_column])
+                else:
+                    find_genre = genres.index(genre)
+                    r_matrix[user_max_idx][find_genre].append(row[params.score_column])
+
+        for row in range(len(r_matrix)):
+            for col in range(len(r_matrix[0])):
+                if len(r_matrix[row][col]) > 0:
+                    r_matrix[row][col] = mean(r_matrix[row][col])
+                else:
+                    r_matrix[row][col] = np.nan
+
+
+        self.users = np.array(users)
+        self.products = np.array(genres)
+        self.r_matrix = np.array(r_matrix, dtype=object)
+        # if params.read_time:
+        #     self.t_matrix = np.array(t_matrix)
+        print('u')

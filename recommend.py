@@ -4,7 +4,7 @@ import math
 import numpy as np
 from sklearn.model_selection import train_test_split
 import association_rules_division as ard
-
+import apriori as apr
 
 class Recommend:
     def __init__(self, conv_r_matrix):
@@ -38,12 +38,19 @@ class Recommend:
                 recomm_list.append(conseq[:, 0])
         return recomm_list
 
+
     # create and validate recommendations
-    def main_recommend(self, S, curves_names, test_size=0.3, cross_num=10, min_support=0.0052, min_confidence=0.9, shuffle_test=False):
+    def main_recommend(self, S, curves_names, test_size=0.3, cross_num=10, min_support=0.2, min_confidence=0.5, shuffle_test=False):
         # initialize
-        train, test = train_test_split(self.conv_r_matrix, test_size=test_size, shuffle=shuffle_test)
+        # train_idx = math.floor((1 - test_size) * len(self.conv_r_matrix))
+        # train, test = train_test_split(self.conv_r_matrix, test_size=test_size, shuffle=shuffle_test)
+        train_idxs, test_idxs = train_test_split(range(len(self.conv_r_matrix)), test_size=test_size, shuffle=shuffle_test)
+        train = self.conv_r_matrix[train_idxs]
+        test = self.conv_r_matrix[test_idxs]
+
         apriori = ard.AssociationRules(train, S, curves_names, min_support, min_confidence)
         rules = apriori.algorithm_main()
+        print('Rules found')
         self.rules = rules
         # all recommendations
         recommendations_all = []
@@ -73,27 +80,38 @@ class Recommend:
             for test_user_idx in range(len(test)):
                 # recommendations based on cross base
                 recommendations = self.recommend_to_user(rules, cross_base, test_user_idx)
-                recommendations_all.append(recommendations)
                 # other products bought by user (cross test)
                 cross_test_p_s_idxs = np.nonzero(~np.isnan(cross_test[test_user_idx]))
+
+                #debug
+                debug_user_test = test[test_user_idx]
+                debug_user_r_matrix = self.conv_r_matrix[test_idxs[test_user_idx]]
+                debug_cond = np.all([np.where(~np.isnan(debug_user_test))[i] == np.where(~np.isnan(debug_user_r_matrix))[i] for i in range(len(np.where(~np.isnan(debug_user_test))))])
+                if not debug_cond:
+                    print('ALERT')
+
                 # count precise recommendations
                 recomm_in_test = 0
-                # if user bought any products belonging to cross test
+                # if user bought any products belonging to cross test:
                 if len(cross_test_p_s_idxs[0]) > 0:
+                    recommendations_all.append(recommendations)
                     # calculate precision of recommendation of every product
                     for recommendation in recommendations:
                         recomm_in_test_local = []
                         for prod in recommendation:
                             # if product is in cross_test, add its fuzzy function for HIGH to recommendation counter
                             if prod in cross_test_p_s_idxs[0]:
-                                recomm_in_test_local.append(self.conv_r_matrix[test_user_idx, prod, len(curves_names) - 1])
+                                recomm_in_test_local.append(self.conv_r_matrix[test_idxs[test_user_idx], prod, len(curves_names) - 1])
+                                pass
                         # all recommendations for a user precision
                         if len(recomm_in_test_local) > 0:
                             recomm_in_test += mean(recomm_in_test_local)
-                # calculate recommendations' precision
-                if len(recommendations) > 0:
-                    precision = recomm_in_test / len(recommendations)
-                    precision_all.append(precision)
+                            pass
+                    # calculate recommendations' precision
+                    if len(recommendations) > 0:
+                        precision = recomm_in_test / len(recommendations)
+                        precision_all.append(precision)
+                        pass
 
         # calculate collective precision
         if len(precision_all) > 0:
