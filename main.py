@@ -28,12 +28,11 @@ conv_r_matrix = create_converted_r_matrix(data.r_matrix, curves)
 # freq3, sup3 = apriori3.apriori()
 
 
-# rules1 = apriori1.algorithm_main()
-# rules2 = apriori2.algorithm_main()
+# rules1, conf1, sup1 = apriori1.algorithm_main()
+# rules2, conf2, supru2 = apriori2.algorithm_main()
+# vs.write_rules(data, rules2, conf2, supru2, curves)
 
 recomm = re.Recommend(conv_r_matrix)
-# f = recomm.recommend_to_user(rules2, 11)
-recomm_score = recomm.main_recommend(20, curves.Names, test_size=0.3, cross_num=10, min_support=0.2, min_confidence=0.5)
-
-
+recomm_score, map_3, map_5, map_10 = recomm.main_recommend(20, curves.Names, test_size=0.3, cross_num=10, min_support=0.0002, min_confidence=0.000005)
+vs.write_recomms(data, recomm_score)
 pass

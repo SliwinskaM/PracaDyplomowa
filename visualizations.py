@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import csv
 
 ########## Wizualizacja macierzy ################################
-def write_matrix(data, conv_r_matrix, curves):
+def write_r_matrix(data, conv_r_matrix, curves):
     with open('matrixR.csv', 'w', newline='') as csvfile:
         r_writer = csv.writer(csvfile, delimiter=',')
         tmp_first = [""]
@@ -19,6 +19,47 @@ def write_matrix(data, conv_r_matrix, curves):
                     for curve in range(len(curves.Names)):
                         tmp[0] += curves.Names(curve).name + ":" + str(round(rating[curve], 2)) + "\n"
                 tmp_row += tmp
+            r_writer.writerow(tmp_row)
+
+
+def write_rules(data, rules, confidences, supports, curves):
+    with open('Rules.csv', 'w', newline='') as csvfile:
+        r_writer = csv.writer(csvfile, delimiter=',')
+        for i in range(len(rules)):
+            antec, conseq = rules[i]
+            conf = confidences[i]
+            sup = supports[i]
+            tmp_row = []
+            tmp_row += [str(conf[0])]
+            tmp_row += [np.round(sup, 4)]
+            tmp = [""]
+            for a in antec:
+                prod = data.products[a[0]]
+                score = curves.Names(a[1]).name
+                tmp[0] += "[" + prod + ": " + score + "]; "
+            tmp_row += tmp
+            tmp_row += ["->"]
+            tmp2 = [""]
+            for c in conseq:
+                prod = data.products[c[0]]
+                score = curves.Names(c[1]).name
+                tmp2[0] += "[" + prod + ": " + score + "]; "
+            tmp_row += tmp2
+            r_writer.writerow(tmp_row)
+
+
+def write_recomms(data, user_recomms):
+    with open('Recommendations.csv', 'w', newline='') as csvfile:
+        r_writer = csv.writer(csvfile, delimiter=',')
+        for user in user_recomms:
+            tmp_row = []
+            tmp_row += [data.users[user]]
+            tmp_row += ["->"]
+            tmp2 = [""]
+            for r in user_recomms[user]:
+                prod = data.products[r]
+                tmp2[0] += prod + "; "
+            tmp_row += tmp2
             r_writer.writerow(tmp_row)
 
 

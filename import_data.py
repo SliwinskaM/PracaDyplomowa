@@ -45,7 +45,7 @@ class ImportData:
                                        'reviews.dateAdded', 1),
         'electronics': Parameters('Datasets/ElectronicsShort3.csv', 1, 5, 0, 1, 2, 3),
         'movies_basic': Parameters('Datasets/MoviesShort.csv', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp'),
-        'smoker': Parameters('Datasets/smokerdataShort.csv', 1, 5, 'User', 'Brand', 'Rating', read_time=False),
+        'smoker': Parameters('Datasets/smokerdataShort2.csv', 1, 5, 'User', 'Brand', 'Rating', read_time=False),
         'movies_short': Parameters('Datasets/movies/ml-latest-small', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp', read_time=False),
         'test': Parameters('Datasets/testSet.csv', 1, 5, 'userId', 'prodId', 'score', read_time=False),
     }
@@ -151,7 +151,6 @@ class ImportData:
                     genres.append(genre)
                     for i in range(len(r_matrix)):
                         r_matrix[i].append([])
-                    u = r_matrix[user_max_idx][genre_max_idx]
                     r_matrix[user_max_idx][genre_max_idx].append(row[params.score_column])
                 else:
                     find_genre = genres.index(genre)

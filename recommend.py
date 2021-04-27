@@ -11,19 +11,26 @@ class Recommend:
         self.conv_r_matrix = conv_r_matrix
         self.rules = []
 
-    def recommend_to_user(self, rules, matrix, user_idx):
+    def recommend_to_user(self, rules, cofidences, supports, matrix, user_idx):
         user_p_s_idxs = np.nonzero(~np.isnan(matrix[user_idx]))
         user_p_s = list(zip(user_p_s_idxs[0], user_p_s_idxs[1]))
 
         recomm_list = []
-        for rule in rules:
-            antec, conseq = rule
+        harm_mean_list = []
+        recomm_to_harm_mean = {}
+
+        for i in range(len(rules)):
+            antec, conseq = rules[i]
+            conseq = list(conseq)
+            conf = cofidences[i][0]
+            supp = supports[i]
             # check if user bought antequant's elements
             antec_in_user = True
             for elem in antec:
                 if tuple(elem) not in user_p_s:
                     antec_in_user = False
-                elif matrix[user_idx][elem[0]][elem[1]] <= 0.5:
+                # check if user liked the product
+                elif matrix[user_idx][elem[0]][elem[1]] == 0:
                     antec_in_user = False
 
             # check if user bought consequent's elements
@@ -31,12 +38,32 @@ class Recommend:
             for elem_idx in range(len(conseq)):
                 if tuple(conseq[elem_idx]) in user_p_s:
                     conseq_to_delete.append(elem_idx)
-            conseq = np.delete(conseq, conseq_to_delete, axis=0)
+            conseq = list(np.delete(conseq, conseq_to_delete, axis=0))
 
             # join both conditions
             if antec_in_user and len(conseq) != 0:
-                recomm_list.append(conseq[:, 0])
-        return recomm_list
+                for elem in conseq:
+                    new_recomm = elem[0]
+                    harm_mean = 2 * conf * supp / (conf + supp)
+                    # if product already recommended
+                    if new_recomm in recomm_list:
+                        recomm_idx = recomm_list.index(new_recomm)
+                        harm_mean_list[recomm_idx] += harm_mean
+                        pass
+                    else:
+                        recomm_list.append(new_recomm)
+                        harm_mean_list.append(harm_mean)
+                        pass
+        return recomm_list, harm_mean_list
+
+    # calculate  AP@N for user
+    def ap_n_user(self, n, all_len, is_relevant_list, precision_k_list):
+        helper_sum = 0
+        for k in range(n):
+            if k < len(is_relevant_list):
+                helper_sum += precision_k_list[k] * is_relevant_list[k]
+        ap_n_user = (1 / all_len) * helper_sum
+        return ap_n_user
 
 
     # create and validate recommendations
@@ -49,13 +76,15 @@ class Recommend:
         test = self.conv_r_matrix[test_idxs]
 
         apriori = ard.AssociationRules(train, S, curves_names, min_support, min_confidence)
-        rules = apriori.algorithm_main()
+        rules, confidences, supports = apriori.algorithm_main()
         print('Rules found')
         self.rules = rules
         # all recommendations
-        recommendations_all = []
+        recommendations_all = {}
         precision_all = []
-
+        ap_3_user_dict = {}
+        ap_5_user_dict = {}
+        ap_10_user_dict = {}
 
         # cross-validate recommendations on test matrix
         for i_cross in range(cross_num):
@@ -78,8 +107,13 @@ class Recommend:
 
                 # recommend products to every user and check if they have really bought it
             for test_user_idx in range(len(test)):
-                # recommendations based on cross base
-                recommendations = self.recommend_to_user(rules, cross_base, test_user_idx)
+                # recommendations based on cross base sorted by their harmonic means
+                recommendations_unsorted, harm_means_unsorted = self.recommend_to_user(rules, confidences, supports, cross_base, test_user_idx)
+                sorting_helper = sorted(zip(harm_means_unsorted, range(len(harm_means_unsorted))))
+                harm_means = [h for h,_ in sorting_helper]
+                sort_idxs = [i for _,i in sorting_helper]
+                recommendations = [recommendations_unsorted[i_s] for i_s in sort_idxs]
+
                 # other products bought by user (cross test)
                 cross_test_p_s_idxs = np.nonzero(~np.isnan(cross_test[test_user_idx]))
 
@@ -94,26 +128,44 @@ class Recommend:
                 recomm_in_test = 0
                 # if user bought any products belonging to cross test:
                 if len(cross_test_p_s_idxs[0]) > 0:
-                    recommendations_all.append(recommendations)
+                    recommendations_all[test_idxs[test_user_idx]] = recommendations
                     # calculate precision of recommendation of every product
-                    for recommendation in recommendations:
-                        recomm_in_test_local = []
-                        for prod in recommendation:
-                            # if product is in cross_test, add its fuzzy function for HIGH to recommendation counter
-                            if prod in cross_test_p_s_idxs[0]:
-                                recomm_in_test_local.append(self.conv_r_matrix[test_idxs[test_user_idx], prod, len(curves_names) - 1])
-                                pass
-                        # all recommendations for a user precision
-                        if len(recomm_in_test_local) > 0:
-                            recomm_in_test += mean(recomm_in_test_local)
-                            pass
-                    # calculate recommendations' precision
+                    relevant_recommendations = 0
+                    current_number_of_recommendations = 0
+                    precision_k_list = []
+                    is_relevant_list = []
+                    for prod in recommendations:
+                        current_number_of_recommendations += 1
+                        #if prod is in cross_test, add its fuzzy function for HIGH to recommendation counter
+                        if prod in cross_test_p_s_idxs[0]:
+                            prod_high_score = self.conv_r_matrix[test_idxs[test_user_idx], prod, len(curves_names) - 1]
+                            # decide whether recommendation is relevant:
+                            if prod_high_score > 0:
+                                relevant_recommendations += prod_high_score
+                                is_relevant_list.append(True)
+                            else:
+                                is_relevant_list.append(False)
+                        else:
+                            is_relevant_list.append(False)
+                        precision_k = relevant_recommendations / current_number_of_recommendations
+                        precision_k_list.append(precision_k)
+
                     if len(recommendations) > 0:
-                        precision = recomm_in_test / len(recommendations)
-                        precision_all.append(precision)
-                        pass
+                        # calculate different AP@N for user
+                        ap_3_user_dict[test_idxs[test_user_idx]] = self.ap_n_user(3, len(recommendations), is_relevant_list, precision_k_list)
+                        ap_5_user_dict[test_idxs[test_user_idx]] = self.ap_n_user(5, len(recommendations),
+                                                                                  is_relevant_list, precision_k_list)
+                        ap_10_user_dict[test_idxs[test_user_idx]] = self.ap_n_user(10, len(recommendations),
+                                                                                  is_relevant_list, precision_k_list)
 
         # calculate collective precision
-        if len(precision_all) > 0:
-            return recommendations_all, mean(precision_all)
-        return recommendations_all, 0
+        map_3_all = 0
+        map_5_all = 0
+        map_10_all = 0
+        if len(ap_3_user_dict.values()) > 0:
+            map_3_all = mean(ap_3_user_dict.values())
+        if len(ap_5_user_dict.values()) > 0:
+            map_5_all = mean(ap_5_user_dict.values())
+        if len(ap_10_user_dict.values()) > 0:
+            map_10_all = mean(ap_10_user_dict.values())
+        return recommendations_all, map_3_all, map_5_all, map_10_all

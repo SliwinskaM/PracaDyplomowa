@@ -13,8 +13,7 @@ class AssociationRules:
         self.sets_enum = sets_enum
         self.max_div_size = div_percentage * self.number_of_users / 100  # users instead of transactions
         self.r_divisions = []
-        self.number_of_transactions = np.count_nonzero(~np.isnan(conv_r_matrix))/len(sets_enum)
-        self.min_count = self.min_support * self.number_of_transactions
+        self.min_count = self.min_support * self.number_of_users
 
     # "Product" representation: [index of Product, index of Fuzzy Set]
     ProductScore = np.array([int, int])
@@ -100,6 +99,9 @@ class AssociationRules:
     # Generate association rules based on frequent itemsets
     def generate_rules(self, frequent_sets, counts):
         rules = []
+        confidences = []
+        supports = []
+
         # for all frequent itemsets
         for itemset_length_idx in range(1, len(frequent_sets)):
             itemset_length = itemset_length_idx + 1
@@ -131,6 +133,8 @@ class AssociationRules:
                         if np.all(consequent_scores == len(self.sets_enum) - 1):
                             #generate rule
                             rules.append(np.array((antecedent, consequent), dtype=object))
+                            confidences.append(conf)
+                            supports.append(itemset_count / self.number_of_users)
                     # if rule's confidence is too low, its 'children' in the rules tree also can be excluded
                     else:
                         pot_rules_to_delete = []
@@ -144,7 +148,7 @@ class AssociationRules:
                         #                 pot_rules_mask[pot_rule_del_idx] = False
                         # potential_rules = potential_rules[pot_rules_mask]
 
-        return rules
+        return rules, confidences, supports
 
 
     def algorithm_main(self):
