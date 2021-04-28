@@ -19,7 +19,11 @@ def write_r_matrix(data, conv_r_matrix, curves):
                     for curve in range(len(curves.Names)):
                         tmp[0] += curves.Names(curve).name + ":" + str(round(rating[curve], 2)) + "\n"
                 tmp_row += tmp
-            r_writer.writerow(tmp_row)
+            try:
+                r_writer.writerow(tmp_row)
+            except UnicodeEncodeError as e:
+                r_writer.writerow(['-'])
+
 
 
 def write_rules(data, rules, confidences, supports, curves):
@@ -45,7 +49,10 @@ def write_rules(data, rules, confidences, supports, curves):
                 score = curves.Names(c[1]).name
                 tmp2[0] += "[" + prod + ": " + score + "]; "
             tmp_row += tmp2
-            r_writer.writerow(tmp_row)
+            try:
+                r_writer.writerow(tmp_row)
+            except UnicodeEncodeError as e:
+                r_writer.writerow(['-'])
 
 
 def write_recomms(data, user_recomms):
@@ -60,7 +67,10 @@ def write_recomms(data, user_recomms):
                 prod = data.products[r]
                 tmp2[0] += prod + "; "
             tmp_row += tmp2
-            r_writer.writerow(tmp_row)
+            try:
+                r_writer.writerow(tmp_row)
+            except UnicodeEncodeError as e:
+                r_writer.writerow(['-'])
 
 
 # Wizualizacja funkcji przynależności
