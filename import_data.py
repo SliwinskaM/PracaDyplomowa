@@ -35,7 +35,7 @@ class ImportData:
     params_dict = {
         'fine_food': Parameters('Datasets/AmazonFineFoodShort.csv',
                                        1, 5, 'UserId', 'ProductId', 'Score', 'Time'),
-        'beauty': Parameters('Datasets/RatingBeautyShort.csv', 1, 5, 'UserId', 'ProductId', 'Rating',
+        'beauty': Parameters('Datasets/RatingBeautyShort6.csv', 1, 5, 'UserId', 'ProductId', 'Rating',
                                     'Timestamp'), # najczęstszy support: 0.0053...
         'products': Parameters('Datasets/AmazonProductsShort.csv',
                                       1, 5, 'reviews.username', 'id', 'reviews.rating',
@@ -45,8 +45,8 @@ class ImportData:
                                        'reviews.dateAdded', 1),
         'electronics': Parameters('Datasets/ElectronicsShort3.csv', 1, 5, 0, 1, 2, 3),
         'movies_basic': Parameters('Datasets/MoviesShort.csv', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp'),
-        'smoker': Parameters('Datasets/smokerdataShort2.csv', 1, 5, 'User', 'Brand', 'Rating', read_time=False),
-        'movies_short': Parameters('Datasets/movies/ml-latest-small', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp', read_time=False),
+        'smoker': Parameters('Datasets/smokerdata.csv', 1, 5, 'User', 'Brand', 'Rating', read_time=False),
+        'movies_short': Parameters('Datasets', 0.5, 5, 'userId', 'movieId', 'rating', 'timestamp', read_time=False),
         'test': Parameters('Datasets/testSet.csv', 1, 5, 'userId', 'prodId', 'score', read_time=False),
     }
 
@@ -112,13 +112,13 @@ class ImportData:
     def import_movies_genres(self):
         params = self.params_dict[self.dataset]
         # create helper database
-        types = pd.read_csv(params.filename + '/movies.csv', usecols=['movieId', 'genres'])
+        types = pd.read_csv(params.filename + '/TypesMovies.csv', usecols=['movieId', 'genres'])
         # create database
         if params.read_time:
-            df = pd.read_csv(params.filename,
+            df = pd.read_csv(params.filename + '/RatingMovies.csv',
                              usecols=[params.user_column, params.product_column, params.score_column, params.time_column])
         else:
-            df = pd.read_csv(params.filename + '/ratings.csv',
+            df = pd.read_csv(params.filename + '/RatingMovies.csv',
                              usecols=[params.user_column, params.product_column, params.score_column])
         self.min_score = params.min_score
         self.max_score = params.max_score
