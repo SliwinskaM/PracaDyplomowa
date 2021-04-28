@@ -5,6 +5,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 import association_rules_division as ard
 import apriori as apr
+import visualizations as vs
 
 class Recommend:
     def __init__(self, conv_r_matrix):
@@ -82,12 +83,22 @@ class Recommend:
         # all recommendations
         recommendations_all = {}
         precision_all = []
-        ap_3_user_dict = {}
-        ap_5_user_dict = {}
-        ap_10_user_dict = {}
+        map_3_list = []
+        map_5_list = []
+        map_7_list = []
+        map_10_list = []
+        map_20_list = []
+
 
         # cross-validate recommendations on test matrix
         for i_cross in range(cross_num):
+            ap_3_user_dict = {}
+            ap_5_user_dict = {}
+            ap_7_user_dict = {}
+            ap_10_user_dict = {}
+            ap_20_user_dict = {}
+
+            print('cross ' + str(i_cross))
             # initialize cross validation cross base and cross test
             cross_base = np.empty(test.shape)
             cross_base[:] = np.nan
@@ -155,17 +166,32 @@ class Recommend:
                         ap_3_user_dict[test_idxs[test_user_idx]] = self.ap_n_user(3, len(recommendations), is_relevant_list, precision_k_list)
                         ap_5_user_dict[test_idxs[test_user_idx]] = self.ap_n_user(5, len(recommendations),
                                                                                   is_relevant_list, precision_k_list)
-                        ap_10_user_dict[test_idxs[test_user_idx]] = self.ap_n_user(10, len(recommendations),
+                        ap_7_user_dict[test_idxs[test_user_idx]] = self.ap_n_user(7, len(recommendations),
                                                                                   is_relevant_list, precision_k_list)
+                        ap_10_user_dict[test_idxs[test_user_idx]] = self.ap_n_user(10, len(recommendations),
+                                                                                   is_relevant_list, precision_k_list)
+                        ap_20_user_dict[test_idxs[test_user_idx]] = self.ap_n_user(20, len(recommendations),
+                                                                                   is_relevant_list, precision_k_list)
 
-        # calculate collective precision
-        map_3_all = 0
-        map_5_all = 0
-        map_10_all = 0
-        if len(ap_3_user_dict.values()) > 0:
-            map_3_all = mean(ap_3_user_dict.values())
-        if len(ap_5_user_dict.values()) > 0:
-            map_5_all = mean(ap_5_user_dict.values())
-        if len(ap_10_user_dict.values()) > 0:
-            map_10_all = mean(ap_10_user_dict.values())
-        return recommendations_all, map_3_all, map_5_all, map_10_all
+            # calculate collective precision
+            map_3_all = 0
+            map_5_all = 0
+            map_7_all = 0
+            map_10_all = 0
+            map_20_all = 0
+            if len(ap_3_user_dict.values()) > 0:
+                map_3_all = round(mean(ap_3_user_dict.values()), 5)
+            if len(ap_5_user_dict.values()) > 0:
+                map_5_all = round(mean(ap_5_user_dict.values()), 5)
+            if len(ap_7_user_dict.values()) > 0:
+                map_7_all = round(mean(ap_7_user_dict.values()), 5)
+            if len(ap_10_user_dict.values()) > 0:
+                map_10_all = round(mean(ap_10_user_dict.values()), 5)
+            if len(ap_20_user_dict.values()) > 0:
+                map_20_all = round(mean(ap_20_user_dict.values()), 5)
+            map_3_list.append(map_3_all)
+            map_5_list.append(map_5_all)
+            map_7_list.append(map_7_all)
+            map_10_list.append(map_10_all)
+            map_20_list.append(map_20_all)
+        return recommendations_all, map_3_list, map_5_list, map_7_list, map_10_list, map_20_list
