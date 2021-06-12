@@ -10,6 +10,7 @@ import recommend as re
 import visualizations as vs
 import numpy as np
 
+#proba
 
 class TestAll(unittest.TestCase):
     def test_apriori(self):
